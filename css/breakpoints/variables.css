@@ -1,0 +1,10 @@
+:root{
+    /** breakpoints */
+    --thrinkle-br-xl: 1200px;
+    --thrinkle-br-lg: 1200px;
+    --thrinkle-br-md: 1024px;
+    --thrinkle-br-sm: 768px;
+    --thrinkle-br-xs: 480px;
+    --thrinkle-br-xxs: 320px;
+    /** breakpoints */
+}

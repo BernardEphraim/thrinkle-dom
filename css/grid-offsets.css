@@ -1,0 +1,38 @@
+/**offset */
+.thrinkle-offset-1{
+    margin-left: calc(100% / 12);
+}
+.thrinkle-offset-2{
+    margin-left: calc(100% * 2 / 12);
+}
+.thrinkle-offset-3{
+    margin-left: calc(100% * 3 / 12);
+}		
+.thrinkle-offset-4{
+    margin-left: calc(100% * 4 / 12);
+}
+.thrinkle-offset-5{
+    margin-left: calc(100% * 5 / 12);
+}
+.thrinkle-offset-6{
+    margin-left: calc(100% * 6 / 12);
+}
+.thrinkle-offset-7{
+    margin-left: calc(100% * 7 / 12);
+}
+.thrinkle-offset-8{
+    margin-left: calc(100% * 8 / 12);
+}
+.thrinkle-offset-9{
+    margin-left: calc(100% * 9 / 12);
+}
+.thrinkle-offset-10{
+    margin-left: calc(100% * 10 / 12);
+}
+.thrinkle-offset-11{
+    margin-left: calc(100% * 11 / 12);
+}
+.thrinkle-offset-12{
+    margin-left: calc(100%);			
+}
+/**offset */

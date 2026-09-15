@@ -1,0 +1,50 @@
+/** columns */
+    /** represents 1/12th of the container */
+    .thrinkle-col-1{
+        width: calc(100% / 12);
+    }
+    /** represents 1/6th of the container */
+    .thrinkle-col-2{
+        width: calc(100% * 2 / 12);
+    }
+    /** represents 1/4th of the container */
+    .thrinkle-col-3{
+        width: calc(100% * 3 / 12);
+    }
+    /** represents 1/3rd of the container */		
+    .thrinkle-col-4{
+        width: calc(100% * 4 / 12);
+    }
+    /** represents 5/12th of the container */
+    .thrinkle-col-5{
+        width: calc(100% * 5 / 12);
+    }
+    /** represents 1/2 of the container */
+    .thrinkle-col-6{
+        width: calc(100% * 6 / 12);
+    }
+    /** represents 7/12th of the container */
+    .thrinkle-col-7{
+        width: calc(100% * 7 / 12);
+    }
+    /** represents 2/3rd of the container */
+    .thrinkle-col-8{
+        width: calc(100% * 8 / 12);
+    }
+    /** represents 3/4th of the container */
+    .thrinkle-col-9{
+        width: calc(100% * 9 / 12);
+    }
+    /** represents 5/6th of the container */
+    .thrinkle-col-10{
+        width: calc(100% * 10 / 12);
+    }
+    /** represents 11/12th of the container */
+    .thrinkle-col-11{
+        width: calc(100% * 11 / 12);
+    }
+    /** represents 100% of the container */
+    .thrinkle-col-12{
+        width: calc(100%);			
+    }
+/** columns */

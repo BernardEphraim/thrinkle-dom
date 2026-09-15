@@ -1,0 +1,68 @@
+@import url('./variables.css');
+/**break points */
+.thrinkle-br-xl,.thrinkle-br-lg,
+.thrinkle-br-md,.thrinkle-br-sm,
+.thrinkle-br-xs,.thrinkle-br-xxs{
+    flex-direction: row;
+}
+@media (width >= 1200px){
+    /** change from row display to column */
+    .thrinkle-br-xl{
+        flex-direction: column;
+    }
+    /** change left margin to zero if display changes from row to column */
+    .thrinkle-br-xl > .thrinkle-column{
+        margin-left: 0px;
+    }
+}
+@media (width < 1200px){
+    /** change from row display to column */
+    .thrinkle-br-lg{
+        flex-direction: column;
+    }
+    /** change left margin to zero if display changes from row to column */
+    .thrinkle-br-lg > .thrinkle-column{
+        margin-left: 0px;
+    }
+}
+@media (width < 1024px){
+    /** change from row display to column */
+    .thrinkle-br-md{
+        flex-direction: column;
+    }
+    /** change left margin to zero if display changes from row to column */
+    .thrinkle-br-md > .thrinkle-column{
+        margin-left: 0px;
+    }
+}
+@media (width < 768px){
+    /** change from row display to column */
+    .thrinkle-br-sm{
+        flex-direction: column;
+    }
+    /** change left margin to zero if display changes from row to column */
+    .thrinkle-br-sm > .thrinkle-column{
+        margin-left: 0px;
+    }
+}
+@media (width < 480px){
+    /** change from row display to column */
+    .thrinkle-br-xs{
+        flex-direction: column;
+    }
+    /** change left margin to zero if display changes from row to column */
+    .thrinkle-br-xs > .thrinkle-column{
+        margin-left: 0px;
+    }
+}
+@media (width < 320px){
+    /** change from row display to column */
+    .thrinkle-br-xxs{
+        flex-direction: column;
+    }
+    /** change left margin to zero if display changes from row to column */
+    .thrinkle-br-xxs > .thrinkle-column{
+        margin-left: 0px;
+    }
+}
+/**break points */

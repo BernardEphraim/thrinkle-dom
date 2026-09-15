@@ -1,0 +1,40 @@
+/** transparent background colors */
+.thrinkle-bg-transparent{
+    background-color: var(--thrinkle-transparent);
+}
+/** transparent background colors */
+/** transparent font colors */
+.thrinkle-text-transparent{
+    color: var(--thrinkle-transparent);
+}
+/** transparent font colors */
+/** transparent border colors */
+.thrinkle-border-transparent{
+    border-color: var(--thrinkle-transparent);
+}
+/** transparent border colors */
+/** transparent outline colors */
+.thrinkle-outline-transparent{
+    outline-color: var(--thrinkle-transparent);
+}
+/** transparent outline colors */
+/** transparent caret colors */
+.thrinkle-caret-transparent{
+    caret-color: var(--thrinkle-transparent);
+}
+/** transparent caret colors */
+/** transparent text-decoration colors */
+.thrinkle-text-decoration-transparent {
+    text-decoration-color: var(--thrinkle-transparent);
+}
+/** transparent text-decoration colors */
+/** transparent text-emphasis colors */
+.thrinkle-text-emphasis-transparent {
+    text-emphasis-color: var(--thrinkle-transparent);
+}
+/** transparent text-emphasis colors */
+/** transparent column-rule colors */
+.thrinkle-column-rule-transparent {
+    column-rule-color: var(--thrinkle-transparent);
+}
+/** transparent column-rule colors */

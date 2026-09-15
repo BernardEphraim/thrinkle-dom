@@ -1,0 +1,20 @@
+/** text alignment */
+.thrinkle-text-justify{
+    text-align: justify;
+}
+.thrinkle-text-center{
+    text-align: center;
+}
+.thrinkle-text-left{
+    text-align: left;
+}
+.thrinkle-text-right{
+    text-align: right;
+}
+.thrinkle-text-end{
+    text-align: end;
+}
+.thrinkle-text-start{
+    text-align: start;
+}
+/** text alignment */

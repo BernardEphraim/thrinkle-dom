@@ -1,0 +1,14 @@
+ :root{
+    /** breakpoints */
+    --thrinkle-animation-name: 'slide-in-spring';
+    --thrinkle-animation-direction: 'forwards';
+    --thrinkle-animation-fill-mode:'both';
+    --thrinkle-animation-duration: 450ms;
+    --thrinkle-animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --thrinkle-animation-iteration-count: 1;
+    --thrinkle-animation-delay: 0ms;
+    --thrinkle-animation-play-state: running;
+    --thrinkle-animation-timeline: running;
+    --thrinkle-animation-rotation-angle: 360deg;
+    /** breakpoints */
+}

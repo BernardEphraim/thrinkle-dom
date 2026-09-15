@@ -1,0 +1,367 @@
+/** fuchsia background colors */
+.thrinkle-bg-fuchsia-50 {
+    background-color: var(--thrinkle-fuchsia-50);
+}
+
+.thrinkle-bg-fuchsia-100 {
+    background-color: var(--thrinkle-fuchsia-100);
+}
+
+.thrinkle-bg-fuchsia-200 {
+    background-color: var(--thrinkle-fuchsia-200);
+}
+
+.thrinkle-bg-fuchsia-300 {
+    background-color: var(--thrinkle-fuchsia-300);
+}
+
+.thrinkle-bg-fuchsia-400 {
+    background-color: var(--thrinkle-fuchsia-400);
+}
+
+.thrinkle-bg-fuchsia-500 {
+    background-color: var(--thrinkle-fuchsia-500);
+}
+
+.thrinkle-bg-fuchsia-600 {
+    background-color: var(--thrinkle-fuchsia-600);
+}
+
+.thrinkle-bg-fuchsia-700 {
+    background-color: var(--thrinkle-fuchsia-700);
+}
+
+.thrinkle-bg-fuchsia-800 {
+    background-color: var(--thrinkle-fuchsia-800);
+}
+
+.thrinkle-bg-fuchsia-900 {
+    background-color: var(--thrinkle-fuchsia-900);
+}
+
+.thrinkle-bg-fuchsia-950 {
+    background-color: var(--thrinkle-fuchsia-950);
+}
+/** fuchsia background colors */
+
+/** fuchsia font colors */
+.thrinkle-text-fuchsia-50 {
+    color: var(--thrinkle-fuchsia-50);
+}
+
+.thrinkle-text-fuchsia-100 {
+    color: var(--thrinkle-fuchsia-100);
+}
+
+.thrinkle-text-fuchsia-200 {
+    color: var(--thrinkle-fuchsia-200);
+}
+
+.thrinkle-text-fuchsia-300 {
+    color: var(--thrinkle-fuchsia-300);
+}
+
+.thrinkle-text-fuchsia-400 {
+    color: var(--thrinkle-fuchsia-400);
+}
+
+.thrinkle-text-fuchsia-500 {
+    color: var(--thrinkle-fuchsia-500);
+}
+
+.thrinkle-text-fuchsia-600 {
+    color: var(--thrinkle-fuchsia-600);
+}
+
+.thrinkle-text-fuchsia-700 {
+    color: var(--thrinkle-fuchsia-700);
+}
+
+.thrinkle-text-fuchsia-800 {
+    color: var(--thrinkle-fuchsia-800);
+}
+
+.thrinkle-text-fuchsia-900 {
+    color: var(--thrinkle-fuchsia-900);
+}
+
+.thrinkle-text-fuchsia-950 {
+    color: var(--thrinkle-fuchsia-950);
+}
+/** fuchsia font colors */
+
+/** fuchsia border colors */
+.thrinkle-border-fuchsia-50 {
+    border-color: var(--thrinkle-fuchsia-50);
+}
+
+.thrinkle-border-fuchsia-100 {
+    border-color: var(--thrinkle-fuchsia-100);
+}
+
+.thrinkle-border-fuchsia-200 {
+    border-color: var(--thrinkle-fuchsia-200);
+}
+
+.thrinkle-border-fuchsia-300 {
+    border-color: var(--thrinkle-fuchsia-300);
+}
+
+.thrinkle-border-fuchsia-400 {
+    border-color: var(--thrinkle-fuchsia-400);
+}
+
+.thrinkle-border-fuchsia-500 {
+    border-color: var(--thrinkle-fuchsia-500);
+}
+
+.thrinkle-border-fuchsia-600 {
+    border-color: var(--thrinkle-fuchsia-600);
+}
+
+.thrinkle-border-fuchsia-700 {
+    border-color: var(--thrinkle-fuchsia-700);
+}
+
+.thrinkle-border-fuchsia-800 {
+    border-color: var(--thrinkle-fuchsia-800);
+}
+
+.thrinkle-border-fuchsia-900 {
+    border-color: var(--thrinkle-fuchsia-900);
+}
+
+.thrinkle-border-fuchsia-950 {
+    border-color: var(--thrinkle-fuchsia-950);
+}
+/** fuchsia border colors */
+
+/** fuchsia outline colors */
+.thrinkle-outline-fuchsia-50 {
+    outline-color: var(--thrinkle-fuchsia-50);
+}
+
+.thrinkle-outline-fuchsia-100 {
+    outline-color: var(--thrinkle-fuchsia-100);
+}
+
+.thrinkle-outline-fuchsia-200 {
+    outline-color: var(--thrinkle-fuchsia-200);
+}
+
+.thrinkle-outline-fuchsia-300 {
+    outline-color: var(--thrinkle-fuchsia-300);
+}
+
+.thrinkle-outline-fuchsia-400 {
+    outline-color: var(--thrinkle-fuchsia-400);
+}
+
+.thrinkle-outline-fuchsia-500 {
+    outline-color: var(--thrinkle-fuchsia-500);
+}
+
+.thrinkle-outline-fuchsia-600 {
+    outline-color: var(--thrinkle-fuchsia-600);
+}
+
+.thrinkle-outline-fuchsia-700 {
+    outline-color: var(--thrinkle-fuchsia-700);
+}
+
+.thrinkle-outline-fuchsia-800 {
+    outline-color: var(--thrinkle-fuchsia-800);
+}
+
+.thrinkle-outline-fuchsia-900 {
+    outline-color: var(--thrinkle-fuchsia-900);
+}
+
+.thrinkle-outline-fuchsia-950 {
+    outline-color: var(--thrinkle-fuchsia-950);
+}
+/** fuchsia outline colors */
+
+/** fuchsia caret colors */
+.thrinkle-caret-fuchsia-50 {
+    caret-color: var(--thrinkle-fuchsia-50);
+}
+
+.thrinkle-caret-fuchsia-100 {
+    caret-color: var(--thrinkle-fuchsia-100);
+}
+
+.thrinkle-caret-fuchsia-200 {
+    caret-color: var(--thrinkle-fuchsia-200);
+}
+
+.thrinkle-caret-fuchsia-300 {
+    caret-color: var(--thrinkle-fuchsia-300);
+}
+
+.thrinkle-caret-fuchsia-400 {
+    caret-color: var(--thrinkle-fuchsia-400);
+}
+
+.thrinkle-caret-fuchsia-500 {
+    caret-color: var(--thrinkle-fuchsia-500);
+}
+
+.thrinkle-caret-fuchsia-600 {
+    caret-color: var(--thrinkle-fuchsia-600);
+}
+
+.thrinkle-caret-fuchsia-700 {
+    caret-color: var(--thrinkle-fuchsia-700);
+}
+
+.thrinkle-caret-fuchsia-800 {
+    caret-color: var(--thrinkle-fuchsia-800);
+}
+
+.thrinkle-caret-fuchsia-900 {
+    caret-color: var(--thrinkle-fuchsia-900);
+}
+
+.thrinkle-caret-fuchsia-950 {
+    caret-color: var(--thrinkle-fuchsia-950);
+}
+/** fuchsia caret colors */
+
+/** fuchsia text-decoration colors */
+.thrinkle-text-decoration-fuchsia-50 {
+    text-decoration-color: var(--thrinkle-fuchsia-50);
+}
+
+.thrinkle-text-decoration-fuchsia-100 {
+    text-decoration-color: var(--thrinkle-fuchsia-100);
+}
+
+.thrinkle-text-decoration-fuchsia-200 {
+    text-decoration-color: var(--thrinkle-fuchsia-200);
+}
+
+.thrinkle-text-decoration-fuchsia-300 {
+    text-decoration-color: var(--thrinkle-fuchsia-300);
+}
+
+.thrinkle-text-decoration-fuchsia-400 {
+    text-decoration-color: var(--thrinkle-fuchsia-400);
+}
+
+.thrinkle-text-decoration-fuchsia-500 {
+    text-decoration-color: var(--thrinkle-fuchsia-500);
+}
+
+.thrinkle-text-decoration-fuchsia-600 {
+    text-decoration-color: var(--thrinkle-fuchsia-600);
+}
+
+.thrinkle-text-decoration-fuchsia-700 {
+    text-decoration-color: var(--thrinkle-fuchsia-700);
+}
+
+.thrinkle-text-decoration-fuchsia-800 {
+    text-decoration-color: var(--thrinkle-fuchsia-800);
+}
+
+.thrinkle-text-decoration-fuchsia-900 {
+    text-decoration-color: var(--thrinkle-fuchsia-900);
+}
+
+.thrinkle-text-decoration-fuchsia-950 {
+    text-decoration-color: var(--thrinkle-fuchsia-950);
+}
+/** fuchsia text-decoration colors */
+
+/** fuchsia text-emphasis colors */
+.thrinkle-text-emphasis-fuchsia-50 {
+    text-emphasis-color: var(--thrinkle-fuchsia-50);
+}
+
+.thrinkle-text-emphasis-fuchsia-100 {
+    text-emphasis-color: var(--thrinkle-fuchsia-100);
+}
+
+.thrinkle-text-emphasis-fuchsia-200 {
+    text-emphasis-color: var(--thrinkle-fuchsia-200);
+}
+
+.thrinkle-text-emphasis-fuchsia-300 {
+    text-emphasis-color: var(--thrinkle-fuchsia-300);
+}
+
+.thrinkle-text-emphasis-fuchsia-400 {
+    text-emphasis-color: var(--thrinkle-fuchsia-400);
+}
+
+.thrinkle-text-emphasis-fuchsia-500 {
+    text-emphasis-color: var(--thrinkle-fuchsia-500);
+}
+
+.thrinkle-text-emphasis-fuchsia-600 {
+    text-emphasis-color: var(--thrinkle-fuchsia-600);
+}
+
+.thrinkle-text-emphasis-fuchsia-700 {
+    text-emphasis-color: var(--thrinkle-fuchsia-700);
+}
+
+.thrinkle-text-emphasis-fuchsia-800 {
+    text-emphasis-color: var(--thrinkle-fuchsia-800);
+}
+
+.thrinkle-text-emphasis-fuchsia-900 {
+    text-emphasis-color: var(--thrinkle-fuchsia-900);
+}
+
+.thrinkle-text-emphasis-fuchsia-950 {
+    text-emphasis-color: var(--thrinkle-fuchsia-950);
+}
+/** fuchsia text-emphasis colors */
+
+/** fuchsia column-rule colors */
+.thrinkle-column-rule-fuchsia-50 {
+    column-rule-color: var(--thrinkle-fuchsia-50);
+}
+
+.thrinkle-column-rule-fuchsia-100 {
+    column-rule-color: var(--thrinkle-fuchsia-100);
+}
+
+.thrinkle-column-rule-fuchsia-200 {
+    column-rule-color: var(--thrinkle-fuchsia-200);
+}
+
+.thrinkle-column-rule-fuchsia-300 {
+    column-rule-color: var(--thrinkle-fuchsia-300);
+}
+
+.thrinkle-column-rule-fuchsia-400 {
+    column-rule-color: var(--thrinkle-fuchsia-400);
+}
+
+.thrinkle-column-rule-fuchsia-500 {
+    column-rule-color: var(--thrinkle-fuchsia-500);
+}
+
+.thrinkle-column-rule-fuchsia-600 {
+    column-rule-color: var(--thrinkle-fuchsia-600);
+}
+
+.thrinkle-column-rule-fuchsia-700 {
+    column-rule-color: var(--thrinkle-fuchsia-700);
+}
+
+.thrinkle-column-rule-fuchsia-800 {
+    column-rule-color: var(--thrinkle-fuchsia-800);
+}
+
+.thrinkle-column-rule-fuchsia-900 {
+    column-rule-color: var(--thrinkle-fuchsia-900);
+}
+
+.thrinkle-column-rule-fuchsia-950 {
+    column-rule-color: var(--thrinkle-fuchsia-950);
+}
+/** fuchsia column-rule colors */

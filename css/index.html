@@ -1,0 +1,6274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <style>
+    /** white background colors */
+        .thrinkle-bg-white{
+            background-color: #ffffff;
+        }
+    /** white background colors */
+    /** white font colors */
+        .thrinkle-text-white{
+            color: #ffffff;
+        }
+    /** white font colors */
+    /** white border colors */
+        .thrinkle-border-white{
+            border-color: #ffffff;
+        }
+    /** white border colors */
+    /** white outline colors */
+        .thrinkle-outline-white{
+            outline-color: #ffffff;
+        }
+    /** white outline colors */
+    /** white caret colors */
+        .thrinkle-caret-white{
+            caret-color: #ffffff;
+        }
+    /** white caret colors */
+
+    /** black background colors */
+        .thrinkle-bg-black{
+            background-color: #000000;
+        }
+    /** black background colors */
+    /** black font colors */
+        .thrinkle-text-black{
+            color: #000000;
+        }
+    /** black font colors */
+    /** black border colors */
+        .thrinkle-border-black{
+            border-color: #000000;
+        }
+    /** black border colors */
+    /** black outline colors */
+        .thrinkle-outline-black{
+            outline-color: #000000;
+        }
+    /** black outline colors */
+    /** black caret colors */
+        .thrinkle-caret-black{
+            caret-color: #000000;
+        }
+    /** black caret colors */
+
+    /** transparent background colors */
+        .thrinkle-bg-transparent{
+            background-color: #00000000;
+        }
+    /** transparent background colors */
+    /** transparent font colors */
+        .thrinkle-text-transparent{
+            color: #00000000;
+        }
+    /** transparent font colors */
+    /** transparent border colors */
+        .thrinkle-border-transparent{
+            border-color: #00000000;
+        }
+    /** transparent border colors */
+    /** transparent outline colors */
+        .thrinkle-outline-transparent{
+            outline-color: #00000000;
+        }
+    /** transparent outline colors */
+    /** transparent caret colors */
+        .thrinkle-caret-transparent{
+            caret-color: #00000000;
+        }
+    /** transparent caret colors */
+
+    /** slate background colors */
+        .thrinkle-bg-slate-50{
+            background-color: #f8fafc;
+        }
+        .thrinkle-bg-slate-100{
+            background-color: #e2e8f0;
+        }
+        .thrinkle-bg-slate-200{
+            background-color: #e2e8f0;
+        }
+        .thrinkle-bg-slate-300{
+            background-color: #cbd5e1;
+        }
+        .thrinkle-bg-slate-400{
+            background-color: #94a3b8;
+        }
+        .thrinkle-bg-slate-500{
+            background-color: #64748b;
+        }
+        .thrinkle-bg-slate-600{
+            background-color: #475569;
+        }
+        .thrinkle-bg-slate-700{
+            background-color: #334155;
+        }
+        .thrinkle-bg-slate-800{
+            background-color: #1e293b;
+        }
+        .thrinkle-bg-slate-900{
+            background-color: #0f172a;
+        }
+        .thrinkle-bg-slate-950{
+            background-color: #020617;
+        }
+    /** slate background colors */
+/** slate font colors */
+        .thrinkle-text-slate-50{
+            color: #f8fafc;
+        }
+        .thrinkle-text-slate-100{
+            color: #e2e8f0;
+        }
+        .thrinkle-text-slate-200{
+            color: #e2e8f0;
+        }
+        .thrinkle-text-slate-300{
+            color: #cbd5e1;
+        }
+        .thrinkle-text-slate-400{
+            color: #94a3b8;
+        }
+        .thrinkle-text-slate-500{
+            color: #64748b;
+        }
+        .thrinkle-text-slate-600{
+            color: #475569;
+        }
+        .thrinkle-text-slate-700{
+            color: #334155;
+        }
+        .thrinkle-text-slate-800{
+            color: #1e293b;
+        }
+        .thrinkle-text-slate-900{
+            color: #0f172a;
+        }
+        .thrinkle-text-slate-950{
+            color: #020617;
+        }
+    /** slate font colors */
+    /** slate border colors */
+        .thrinkle-border-slate-50{
+            border-color: #f8fafc;
+        }
+        .thrinkle-border-slate-100{
+            border-color: #e2e8f0;
+        }
+        .thrinkle-border-slate-200{
+            border-color: #e2e8f0;
+        }
+        .thrinkle-border-slate-300{
+            border-color: #cbd5e1;
+        }
+        .thrinkle-border-slate-400{
+            border-color: #94a3b8;
+        }
+        .thrinkle-border-slate-500{
+            border-color: #64748b;
+        }
+        .thrinkle-border-slate-600{
+            border-color: #475569;
+        }
+        .thrinkle-border-slate-700{
+            border-color: #334155;
+        }
+        .thrinkle-border-slate-800{
+            border-color: #1e293b;
+        }
+        .thrinkle-border-slate-900{
+            border-color: #0f172a;
+        }
+        .thrinkle-border-slate-950{
+            border-color: #020617;
+        }
+    /** slate border colors */
+    /** slate outline colors */
+        .thrinkle-outline-slate-50{
+            outline-color: #f8fafc;
+        }
+        .thrinkle-outline-slate-100{
+            outline-color: #e2e8f0;
+        }
+        .thrinkle-outline-slate-200{
+            outline-color: #e2e8f0;
+        }
+        .thrinkle-outline-slate-300{
+            outline-color: #cbd5e1;
+        }
+        .thrinkle-outline-slate-400{
+            outline-color: #94a3b8;
+        }
+        .thrinkle-outline-slate-500{
+            outline-color: #64748b;
+        }
+        .thrinkle-outline-slate-600{
+            outline-color: #475569;
+        }
+        .thrinkle-outline-slate-700{
+            outline-color: #334155;
+        }
+        .thrinkle-outline-slate-800{
+            outline-color: #1e293b;
+        }
+        .thrinkle-outline-slate-900{
+            outline-color: #0f172a;
+        }
+        .thrinkle-outline-slate-950{
+            outline-color: #020617;
+        }
+    /** slate outline colors */
+    /** slate caret colors */
+        .thrinkle-caret-slate-50{
+            caret-color: #f8fafc;
+        }
+        .thrinkle-caret-slate-100{
+            caret-color: #e2e8f0;
+        }
+        .thrinkle-caret-slate-200{
+            caret-color: #e2e8f0;
+        }
+        .thrinkle-caret-slate-300{
+            caret-color: #cbd5e1;
+        }
+        .thrinkle-caret-slate-400{
+            caret-color: #94a3b8;
+        }
+        .thrinkle-caret-slate-500{
+            caret-color: #64748b;
+        }
+        .thrinkle-caret-slate-600{
+            caret-color: #475569;
+        }
+        .thrinkle-caret-slate-700{
+            caret-color: #334155;
+        }
+        .thrinkle-caret-slate-800{
+            caret-color: #1e293b;
+        }
+        .thrinkle-caret-slate-900{
+            caret-color: #0f172a;
+        }
+        .thrinkle-caret-slate-950{
+            caret-color: #020617;
+        }
+    /** slate caret colors */
+    /** slate text-decoration colors */
+        .thrinkle-text-decoration-slate-50{
+            text-decoration-color: #f8fafc;
+        }
+        .thrinkle-text-decoration-slate-100{
+            text-decoration-color: #e2e8f0;
+        }
+        .thrinkle-text-decoration-slate-200{
+            text-decoration-color: #e2e8f0;
+        }
+        .thrinkle-text-decoration-slate-300{
+            text-decoration-color: #cbd5e1;
+        }
+        .thrinkle-text-decoration-slate-400{
+            text-decoration-color: #94a3b8;
+        }
+        .thrinkle-text-decoration-slate-500{
+            text-decoration-color: #64748b;
+        }
+        .thrinkle-text-decoration-slate-600{
+            text-decoration-color: #475569;
+        }
+        .thrinkle-text-decoration-slate-700{
+            text-decoration-color: #334155;
+        }
+        .thrinkle-text-decoration-slate-800{
+            text-decoration-color: #1e293b;
+        }
+        .thrinkle-text-decoration-slate-900{
+            text-decoration-color: #0f172a;
+        }
+        .thrinkle-text-decoration-slate-950{
+            text-decoration-color: #020617;
+        }
+    /** slate text-decoration colors */
+    /** slate text-emphasis colors */
+        .thrinkle-text-emphasis-slate-50{
+            text-emphasis-color: #f8fafc;
+        }
+        .thrinkle-text-emphasis-slate-100{
+            text-emphasis-color: #e2e8f0;
+        }
+        .thrinkle-text-emphasis-slate-200{
+            text-emphasis-color: #e2e8f0;
+        }
+        .thrinkle-text-emphasis-slate-300{
+            text-emphasis-color: #cbd5e1;
+        }
+        .thrinkle-text-emphasis-slate-400{
+            text-emphasis-color: #94a3b8;
+        }
+        .thrinkle-text-emphasis-slate-500{
+            text-emphasis-color: #64748b;
+        }
+        .thrinkle-text-emphasis-slate-600{
+            text-emphasis-color: #475569;
+        }
+        .thrinkle-text-emphasis-slate-700{
+            text-emphasis-color: #334155;
+        }
+        .thrinkle-text-emphasis-slate-800{
+            text-emphasis-color: #1e293b;
+        }
+        .thrinkle-text-emphasis-slate-900{
+            text-emphasis-color: #0f172a;
+        }
+        .thrinkle-text-emphasis-slate-950{
+            text-emphasis-color: #020617;
+        }
+    /** slate text-emphasis colors */
+    /** slate column-rule colors */
+        .thrinkle-column-rule-slate-50{
+            column-rule-color: #f8fafc;
+        }
+        .thrinkle-column-rule-slate-100{
+            column-rule-color: #e2e8f0;
+        }
+        .thrinkle-column-rule-slate-200{
+            column-rule-color: #e2e8f0;
+        }
+        .thrinkle-column-rule-slate-300{
+            column-rule-color: #cbd5e1;
+        }
+        .thrinkle-column-rule-slate-400{
+            column-rule-color: #94a3b8;
+        }
+        .thrinkle-column-rule-slate-500{
+            column-rule-color: #64748b;
+        }
+        .thrinkle-column-rule-slate-600{
+            column-rule-color: #475569;
+        }
+        .thrinkle-column-rule-slate-700{
+            column-rule-color: #334155;
+        }
+        .thrinkle-column-rule-slate-800{
+            column-rule-color: #1e293b;
+        }
+        .thrinkle-column-rule-slate-900{
+            column-rule-color: #0f172a;
+        }
+        .thrinkle-column-rule-slate-950{
+            column-rule-color: #020617;
+        }
+    /** slate column-rule colors */
+
+    /** gray background colors */
+        .thrinkle-bg-gray-50{
+            background-color: #f9fafb;
+        }
+        .thrinkle-bg-gray-100{
+            background-color: #f3f4f6;
+        }
+        .thrinkle-bg-gray-200{
+            background-color: #e5e7eb;
+        }
+        .thrinkle-bg-gray-300{
+            background-color: #d1d5db;
+        }
+        .thrinkle-bg-gray-400{
+            background-color: #9ca3af;
+        }
+        .thrinkle-bg-gray-500{
+            background-color: #6b7280;
+        }
+        .thrinkle-bg-gray-600{
+            background-color: #4b5563;
+        }
+        .thrinkle-bg-gray-700{
+            background-color: #374151;
+        }
+        .thrinkle-bg-gray-800{
+            background-color: #1f2937;
+        }
+        .thrinkle-bg-gray-900{
+            background-color: #111827;
+        }
+        .thrinkle-bg-gray-950{
+            background-color: #030712;
+        }
+    /** gray background colors */
+    /** gray font colors */
+        .thrinkle-text-gray-50{
+            color: #f9fafb;
+        }
+        .thrinkle-text-gray-100{
+            color: #f3f4f6;
+        }
+        .thrinkle-text-gray-200{
+            color: #e5e7eb;
+        }
+        .thrinkle-text-gray-300{
+            color: #d1d5db;
+        }
+        .thrinkle-text-gray-400{
+            color: #9ca3af;
+        }
+        .thrinkle-text-gray-500{
+            color: #6b7280;
+        }
+        .thrinkle-text-gray-600{
+            color: #4b5563;
+        }
+        .thrinkle-text-gray-700{
+            color: #374151;
+        }
+        .thrinkle-text-gray-800{
+            color: #1f2937;
+        }
+        .thrinkle-text-gray-900{
+            color: #111827;
+        }
+        .thrinkle-text-gray-950{
+            color: #030712;
+        }
+    /** gray font colors */
+    /** gray border colors */
+        .thrinkle-border-gray-50{
+            border-color: #f9fafb;
+        }
+        .thrinkle-border-gray-100{
+            border-color: #f3f4f6;
+        }
+        .thrinkle-border-gray-200{
+            border-color: #e5e7eb;
+        }
+        .thrinkle-border-gray-300{
+            border-color: #d1d5db;
+        }
+        .thrinkle-border-gray-400{
+            border-color: #9ca3af;
+        }
+        .thrinkle-border-gray-500{
+            border-color: #6b7280;
+        }
+        .thrinkle-border-gray-600{
+            border-color: #4b5563;
+        }
+        .thrinkle-border-gray-700{
+            border-color: #374151;
+        }
+        .thrinkle-border-gray-800{
+            border-color: #1f2937;
+        }
+        .thrinkle-border-gray-900{
+            border-color: #111827;
+        }
+        .thrinkle-border-gray-950{
+            border-color: #030712;
+        }
+    /** gray border colors */
+    /** gray outline colors */
+        .thrinkle-outline-gray-50{
+            outline-color: #f9fafb;
+        }
+        .thrinkle-outline-gray-100{
+            outline-color: #f3f4f6;
+        }
+        .thrinkle-outline-gray-200{
+            outline-color: #e5e7eb;
+        }
+        .thrinkle-outline-gray-300{
+            outline-color: #d1d5db;
+        }
+        .thrinkle-outline-gray-400{
+            outline-color: #9ca3af;
+        }
+        .thrinkle-outline-gray-500{
+            outline-color: #6b7280;
+        }
+        .thrinkle-outline-gray-600{
+            outline-color: #4b5563;
+        }
+        .thrinkle-outline-gray-700{
+            outline-color: #374151;
+        }
+        .thrinkle-outline-gray-800{
+            outline-color: #1f2937;
+        }
+        .thrinkle-outline-gray-900{
+            outline-color: #111827;
+        }
+        .thrinkle-outline-gray-950{
+            outline-color: #030712;
+        }
+    /** gray outline colors */
+    /** gray caret colors */
+        .thrinkle-caret-gray-50{
+            caret-color: #f9fafb;
+        }
+        .thrinkle-caret-gray-100{
+            caret-color: #f3f4f6;
+        }
+        .thrinkle-caret-gray-200{
+            caret-color: #e5e7eb;
+        }
+        .thrinkle-caret-gray-300{
+            caret-color: #d1d5db;
+        }
+        .thrinkle-caret-gray-400{
+            caret-color: #9ca3af;
+        }
+        .thrinkle-caret-gray-500{
+            caret-color: #6b7280;
+        }
+        .thrinkle-caret-gray-600{
+            caret-color: #4b5563;
+        }
+        .thrinkle-caret-gray-700{
+            caret-color: #374151;
+        }
+        .thrinkle-caret-gray-800{
+            caret-color: #1f2937;
+        }
+        .thrinkle-caret-gray-900{
+            caret-color: #111827;
+        }
+        .thrinkle-caret-gray-950{
+            caret-color: #030712;
+        }
+    /** gray caret colors */
+    /** gray text-decoration colors */
+        .thrinkle-text-decoration-gray-50{
+            text-decoration-color: #f9fafb;
+        }
+        .thrinkle-text-decoration-gray-100{
+            text-decoration-color: #f3f4f6;
+        }
+        .thrinkle-text-decoration-gray-200{
+            text-decoration-color: #e5e7eb;
+        }
+        .thrinkle-text-decoration-gray-300{
+            text-decoration-color: #d1d5db;
+        }
+        .thrinkle-text-decoration-gray-400{
+            text-decoration-color: #9ca3af;
+        }
+        .thrinkle-text-decoration-gray-500{
+            text-decoration-color: #6b7280;
+        }
+        .thrinkle-text-decoration-gray-600{
+            text-decoration-color: #4b5563;
+        }
+        .thrinkle-text-decoration-gray-700{
+            text-decoration-color: #374151;
+        }
+        .thrinkle-text-decoration-gray-800{
+            text-decoration-color: #1f2937;
+        }
+        .thrinkle-text-decoration-gray-900{
+            text-decoration-color: #111827;
+        }
+        .thrinkle-text-decoration-gray-950{
+            text-decoration-color: #030712;
+        }
+    /** gray text-decoration colors */
+    /** gray text-emphasis colors */
+        .thrinkle-text-emphasis-gray-50{
+            text-emphasis-color: #f9fafb;
+        }
+        .thrinkle-text-emphasis-gray-100{
+            text-emphasis-color: #f3f4f6;
+        }
+        .thrinkle-text-emphasis-gray-200{
+            text-emphasis-color: #e5e7eb;
+        }
+        .thrinkle-text-emphasis-gray-300{
+            text-emphasis-color: #d1d5db;
+        }
+        .thrinkle-text-emphasis-gray-400{
+            text-emphasis-color: #9ca3af;
+        }
+        .thrinkle-text-emphasis-gray-500{
+            text-emphasis-color: #6b7280;
+        }
+        .thrinkle-text-emphasis-gray-600{
+            text-emphasis-color: #4b5563;
+        }
+        .thrinkle-text-emphasis-gray-700{
+            text-emphasis-color: #374151;
+        }
+        .thrinkle-text-emphasis-gray-800{
+            text-emphasis-color: #1f2937;
+        }
+        .thrinkle-text-emphasis-gray-900{
+            text-emphasis-color: #111827;
+        }
+        .thrinkle-text-emphasis-gray-950{
+            text-emphasis-color: #030712;
+        }
+    /** gray text-emphasis colors */
+    /** gray column-rule colors */
+        .thrinkle-column-rule-gray-50{
+            column-rule-color: #f9fafb;
+        }
+        .thrinkle-column-rule-gray-100{
+            column-rule-color: #f3f4f6;
+        }
+        .thrinkle-column-rule-gray-200{
+            column-rule-color: #e5e7eb;
+        }
+        .thrinkle-column-rule-gray-300{
+            column-rule-color: #d1d5db;
+        }
+        .thrinkle-column-rule-gray-400{
+            column-rule-color: #9ca3af;
+        }
+        .thrinkle-column-rule-gray-500{
+            column-rule-color: #6b7280;
+        }
+        .thrinkle-column-rule-gray-600{
+            column-rule-color: #4b5563;
+        }
+        .thrinkle-column-rule-gray-700{
+            column-rule-color: #374151;
+        }
+        .thrinkle-column-rule-gray-800{
+            column-rule-color: #1f2937;
+        }
+        .thrinkle-column-rule-gray-900{
+            column-rule-color: #111827;
+        }
+        .thrinkle-column-rule-gray-950{
+            column-rule-color: #030712;
+        }
+    /** gray column-rule colors */
+
+    /** zinc background colors */
+        .thrinkle-bg-zinc-50{
+            background-color: #fafafa;
+        }
+        .thrinkle-bg-zinc-100{
+            background-color: #f4f4f5;
+        }
+        .thrinkle-bg-zinc-200{
+            background-color: #e4e4e7;
+        }
+        .thrinkle-bg-zinc-300{
+            background-color: #d4d4d8;
+        }
+        .thrinkle-bg-zinc-400{
+            background-color: #a1a1aa;
+        }
+        .thrinkle-bg-zinc-500{
+            background-color: #71717a;
+        }
+        .thrinkle-bg-zinc-600{
+            background-color: #52525b;
+        }
+        .thrinkle-bg-zinc-700{
+            background-color: #3f3f46;
+        }
+        .thrinkle-bg-zinc-800{
+            background-color: #27272a;
+        }
+        .thrinkle-bg-zinc-900{
+            background-color: #18181b;
+        }
+        .thrinkle-bg-zinc-950{
+            background-color: #09090b;
+        }
+    /** zinc background colors */
+    /** zinc font colors */
+        .thrinkle-text-zinc-50{
+            color: #fafafa;
+        }
+        .thrinkle-text-zinc-100{
+            color: #f4f4f5;
+        }
+        .thrinkle-text-zinc-200{
+            color: #e4e4e7;
+        }
+        .thrinkle-text-zinc-300{
+            color: #d4d4d8;
+        }
+        .thrinkle-text-zinc-400{
+            color: #a1a1aa;
+        }
+        .thrinkle-text-zinc-500{
+            color: #71717a;
+        }
+        .thrinkle-text-zinc-600{
+            color: #52525b;
+        }
+        .thrinkle-text-zinc-700{
+            color: #3f3f46;
+        }
+        .thrinkle-text-zinc-800{
+            color: #27272a;
+        }
+        .thrinkle-text-zinc-900{
+            color: #18181b;
+        }
+        .thrinkle-text-zinc-950{
+            color: #09090b;
+        }
+    /** zinc font colors */
+    /** zinc border colors */
+        .thrinkle-border-zinc-50{
+            border-color: #fafafa;
+        }
+        .thrinkle-border-zinc-100{
+            border-color: #f4f4f5;
+        }
+        .thrinkle-border-zinc-200{
+            border-color: #e4e4e7;
+        }
+        .thrinkle-border-zinc-300{
+            border-color: #d4d4d8;
+        }
+        .thrinkle-border-zinc-400{
+            border-color: #a1a1aa;
+        }
+        .thrinkle-border-zinc-500{
+            border-color: #71717a;
+        }
+        .thrinkle-border-zinc-600{
+            border-color: #52525b;
+        }
+        .thrinkle-border-zinc-700{
+            border-color: #3f3f46;
+        }
+        .thrinkle-border-zinc-800{
+            border-color: #27272a;
+        }
+        .thrinkle-border-zinc-900{
+            border-color: #18181b;
+        }
+        .thrinkle-border-zinc-950{
+            border-color: #09090b;
+        }
+    /** zinc border colors */
+    /** zinc outline colors */
+        .thrinkle-outline-zinc-50{
+            outline-color: #fafafa;
+        }
+        .thrinkle-outline-zinc-100{
+            outline-color: #f4f4f5;
+        }
+        .thrinkle-outline-zinc-200{
+            outline-color: #e4e4e7;
+        }
+        .thrinkle-outline-zinc-300{
+            outline-color: #d4d4d8;
+        }
+        .thrinkle-outline-zinc-400{
+            outline-color: #a1a1aa;
+        }
+        .thrinkle-outline-zinc-500{
+            outline-color: #71717a;
+        }
+        .thrinkle-outline-zinc-600{
+            outline-color: #52525b;
+        }
+        .thrinkle-outline-zinc-700{
+            outline-color: #3f3f46;
+        }
+        .thrinkle-outline-zinc-800{
+            outline-color: #27272a;
+        }
+        .thrinkle-outline-zinc-900{
+            outline-color: #18181b;
+        }
+        .thrinkle-outline-zinc-950{
+            outline-color: #09090b;
+        }
+    /** zinc outline colors */
+    /** zinc caret colors */
+        .thrinkle-caret-zinc-50{
+            caret-color: #fafafa;
+        }
+        .thrinkle-caret-zinc-100{
+            caret-color: #f4f4f5;
+        }
+        .thrinkle-caret-zinc-200{
+            caret-color: #e4e4e7;
+        }
+        .thrinkle-caret-zinc-300{
+            caret-color: #d4d4d8;
+        }
+        .thrinkle-caret-zinc-400{
+            caret-color: #a1a1aa;
+        }
+        .thrinkle-caret-zinc-500{
+            caret-color: #71717a;
+        }
+        .thrinkle-caret-zinc-600{
+            caret-color: #52525b;
+        }
+        .thrinkle-caret-zinc-700{
+            caret-color: #3f3f46;
+        }
+        .thrinkle-caret-zinc-800{
+            caret-color: #27272a;
+        }
+        .thrinkle-caret-zinc-900{
+            caret-color: #18181b;
+        }
+        .thrinkle-caret-zinc-950{
+            caret-color: #09090b;
+        }
+    /** zinc caret colors */
+    /** zinc text-decoration colors */
+        .thrinkle-text-decoration-zinc-50{
+            text-decoration-color: #fafafa;
+        }
+        .thrinkle-text-decoration-zinc-100{
+            text-decoration-color: #f4f4f5;
+        }
+        .thrinkle-text-decoration-zinc-200{
+            text-decoration-color: #e4e4e7;
+        }
+        .thrinkle-text-decoration-zinc-300{
+            text-decoration-color: #d4d4d8;
+        }
+        .thrinkle-text-decoration-zinc-400{
+            text-decoration-color: #a1a1aa;
+        }
+        .thrinkle-text-decoration-zinc-500{
+            text-decoration-color: #71717a;
+        }
+        .thrinkle-text-decoration-zinc-600{
+            text-decoration-color: #52525b;
+        }
+        .thrinkle-text-decoration-zinc-700{
+            text-decoration-color: #3f3f46;
+        }
+        .thrinkle-text-decoration-zinc-800{
+            text-decoration-color: #27272a;
+        }
+        .thrinkle-text-decoration-zinc-900{
+            text-decoration-color: #18181b;
+        }
+        .thrinkle-text-decoration-zinc-950{
+            text-decoration-color: #09090b;
+        }
+    /** zinc text-decoration colors */
+    /** zinc text-emphasis colors */
+        .thrinkle-text-emphasis-zinc-50{
+            text-emphasis-color: #fafafa;
+        }
+        .thrinkle-text-emphasis-zinc-100{
+            text-emphasis-color: #f4f4f5;
+        }
+        .thrinkle-text-emphasis-zinc-200{
+            text-emphasis-color: #e4e4e7;
+        }
+        .thrinkle-text-emphasis-zinc-300{
+            text-emphasis-color: #d4d4d8;
+        }
+        .thrinkle-text-emphasis-zinc-400{
+            text-emphasis-color: #a1a1aa;
+        }
+        .thrinkle-text-emphasis-zinc-500{
+            text-emphasis-color: #71717a;
+        }
+        .thrinkle-text-emphasis-zinc-600{
+            text-emphasis-color: #52525b;
+        }
+        .thrinkle-text-emphasis-zinc-700{
+            text-emphasis-color: #3f3f46;
+        }
+        .thrinkle-text-emphasis-zinc-800{
+            text-emphasis-color: #27272a;
+        }
+        .thrinkle-text-emphasis-zinc-900{
+            text-emphasis-color: #18181b;
+        }
+        .thrinkle-text-emphasis-zinc-950{
+            text-emphasis-color: #09090b;
+        }
+    /** zinc text-emphasis colors */
+    /** zinc column-rule colors */
+        .thrinkle-column-rule-zinc-50{
+            column-rule-color: #fafafa;
+        }
+        .thrinkle-column-rule-zinc-100{
+            column-rule-color: #f4f4f5;
+        }
+        .thrinkle-column-rule-zinc-200{
+            column-rule-color: #e4e4e7;
+        }
+        .thrinkle-column-rule-zinc-300{
+            column-rule-color: #d4d4d8;
+        }
+        .thrinkle-column-rule-zinc-400{
+            column-rule-color: #a1a1aa;
+        }
+        .thrinkle-column-rule-zinc-500{
+            column-rule-color: #71717a;
+        }
+        .thrinkle-column-rule-zinc-600{
+            column-rule-color: #52525b;
+        }
+        .thrinkle-column-rule-zinc-700{
+            column-rule-color: #3f3f46;
+        }
+        .thrinkle-column-rule-zinc-800{
+            column-rule-color: #27272a;
+        }
+        .thrinkle-column-rule-zinc-900{
+            column-rule-color: #18181b;
+        }
+        .thrinkle-column-rule-zinc-950{
+            column-rule-color: #09090b;
+        }
+    /** zinc column-rule colors */
+
+    /** neutral background colors */
+        .thrinkle-bg-neutral-50{
+            background-color: #fafafa;
+        }
+        .thrinkle-bg-neutral-100{
+            background-color: #f5f5f5;
+        }
+        .thrinkle-bg-neutral-200{
+            background-color: #e5e5e5;
+        }
+        .thrinkle-bg-neutral-300{
+            background-color: #d4d4d4;
+        }
+        .thrinkle-bg-neutral-400{
+            background-color: #a3a3a3;
+        }
+        .thrinkle-bg-neutral-500{
+            background-color: #737373;
+        }
+        .thrinkle-bg-neutral-600{
+            background-color: #525252;
+        }
+        .thrinkle-bg-neutral-700{
+            background-color: #404040;
+        }
+        .thrinkle-bg-neutral-800{
+            background-color: #262626;
+        }
+        .thrinkle-bg-neutral-900{
+            background-color: #171717;
+        }
+        .thrinkle-bg-neutral-950{
+            background-color: #0a0a0a;
+        }
+    /** neutral background colors */
+    /** neutral font colors */
+        .thrinkle-text-neutral-50{
+            color: #fafafa;
+        }
+        .thrinkle-text-neutral-100{
+            color: #f5f5f5;
+        }
+        .thrinkle-text-neutral-200{
+            color: #e5e5e5;
+        }
+        .thrinkle-text-neutral-300{
+            color: #d4d4d4;
+        }
+        .thrinkle-text-neutral-400{
+            color: #a3a3a3;
+        }
+        .thrinkle-text-neutral-500{
+            color: #737373;
+        }
+        .thrinkle-text-neutral-600{
+            color: #525252;
+        }
+        .thrinkle-text-neutral-700{
+            color: #404040;
+        }
+        .thrinkle-text-neutral-800{
+            color: #262626;
+        }
+        .thrinkle-text-neutral-900{
+            color: #171717;
+        }
+        .thrinkle-text-neutral-950{
+            color: #0a0a0a;
+        }
+    /** neutral font colors */
+    /** neutral border colors */
+        .thrinkle-border-neutral-50{
+            color: #fafafa;
+        }
+        .thrinkle-border-neutral-100{
+            color: #f5f5f5;
+        }
+        .thrinkle-border-neutral-200{
+            color: #e5e5e5;
+        }
+        .thrinkle-border-neutral-300{
+            color: #d4d4d4;
+        }
+        .thrinkle-border-neutral-400{
+            color: #a3a3a3;
+        }
+        .thrinkle-border-neutral-500{
+            color: #737373;
+        }
+        .thrinkle-border-neutral-600{
+            color: #525252;
+        }
+        .thrinkle-border-neutral-700{
+            color: #404040;
+        }
+        .thrinkle-border-neutral-800{
+            color: #262626;
+        }
+        .thrinkle-border-neutral-900{
+            color: #171717;
+        }
+        .thrinkle-border-neutral-950{
+            color: #0a0a0a;
+        }
+    /** neutral border colors */
+    /** neutral outline colors */
+        .thrinkle-outline-neutral-50{
+            outline-color: #fafafa;
+        }
+        .thrinkle-outline-neutral-100{
+            outline-color: #f5f5f5;
+        }
+        .thrinkle-outline-neutral-200{
+            outline-color: #e5e5e5;
+        }
+        .thrinkle-outline-neutral-300{
+            outline-color: #d4d4d4;
+        }
+        .thrinkle-outline-neutral-400{
+            outline-color: #a3a3a3;
+        }
+        .thrinkle-outline-neutral-500{
+            outline-color: #737373;
+        }
+        .thrinkle-outline-neutral-600{
+            outline-color: #525252;
+        }
+        .thrinkle-outline-neutral-700{
+            outline-color: #404040;
+        }
+        .thrinkle-outline-neutral-800{
+            outline-color: #262626;
+        }
+        .thrinkle-outline-neutral-900{
+            outline-color: #171717;
+        }
+        .thrinkle-outline-neutral-950{
+            outline-color: #0a0a0a;
+        }
+    /** neutral outline colors */
+    /** neutral caret colors */
+        .thrinkle-caret-neutral-50{
+            caret-color: #fafafa;
+        }
+        .thrinkle-caret-neutral-100{
+            caret-color: #f5f5f5;
+        }
+        .thrinkle-caret-neutral-200{
+            caret-color: #e5e5e5;
+        }
+        .thrinkle-caret-neutral-300{
+            caret-color: #d4d4d4;
+        }
+        .thrinkle-caret-neutral-400{
+            caret-color: #a3a3a3;
+        }
+        .thrinkle-caret-neutral-500{
+            caret-color: #737373;
+        }
+        .thrinkle-caret-neutral-600{
+            caret-color: #525252;
+        }
+        .thrinkle-caret-neutral-700{
+            caret-color: #404040;
+        }
+        .thrinkle-caret-neutral-800{
+            caret-color: #262626;
+        }
+        .thrinkle-caret-neutral-900{
+            caret-color: #171717;
+        }
+        .thrinkle-caret-neutral-950{
+            caret-color: #0a0a0a;
+        }
+    /** neutral caret colors */
+    /** neutral text-decoration colors */
+        .thrinkle-text-decoration-neutral-50{
+            text-decoration-color: #fafafa;
+        }
+        .thrinkle-text-decoration-neutral-100{
+            text-decoration-color: #f5f5f5;
+        }
+        .thrinkle-text-decoration-neutral-200{
+            text-decoration-color: #e5e5e5;
+        }
+        .thrinkle-text-decoration-neutral-300{
+            text-decoration-color: #d4d4d4;
+        }
+        .thrinkle-text-decoration-neutral-400{
+            text-decoration-color: #a3a3a3;
+        }
+        .thrinkle-text-decoration-neutral-500{
+            text-decoration-color: #737373;
+        }
+        .thrinkle-text-decoration-neutral-600{
+            text-decoration-color: #525252;
+        }
+        .thrinkle-text-decoration-neutral-700{
+            text-decoration-color: #404040;
+        }
+        .thrinkle-text-decoration-neutral-800{
+            text-decoration-color: #262626;
+        }
+        .thrinkle-text-decoration-neutral-900{
+            text-decoration-color: #171717;
+        }
+        .thrinkle-text-decoration-neutral-950{
+            text-decoration-color: #0a0a0a;
+        }
+    /** neutral text-decoration colors */
+    /** neutral text-emphasis colors */
+        .thrinkle-text-emphasis-neutral-50{
+            text-emphasis-color: #fafafa;
+        }
+        .thrinkle-text-emphasis-neutral-100{
+            text-emphasis-color: #f5f5f5;
+        }
+        .thrinkle-text-emphasis-neutral-200{
+            text-emphasis-color: #e5e5e5;
+        }
+        .thrinkle-text-emphasis-neutral-300{
+            text-emphasis-color: #d4d4d4;
+        }
+        .thrinkle-text-emphasis-neutral-400{
+            text-emphasis-color: #a3a3a3;
+        }
+        .thrinkle-text-emphasis-neutral-500{
+            text-emphasis-color: #737373;
+        }
+        .thrinkle-text-emphasis-neutral-600{
+            text-emphasis-color: #525252;
+        }
+        .thrinkle-text-emphasis-neutral-700{
+            text-emphasis-color: #404040;
+        }
+        .thrinkle-text-emphasis-neutral-800{
+            text-emphasis-color: #262626;
+        }
+        .thrinkle-text-emphasis-neutral-900{
+            text-emphasis-color: #171717;
+        }
+        .thrinkle-text-emphasis-neutral-950{
+            text-emphasis-color: #0a0a0a;
+        }
+    /** neutral text-emphasis colors */
+    /** neutral column-rule colors */
+        .thrinkle-column-rule-neutral-50{
+            column-rule-color: #fafafa;
+        }
+        .thrinkle-column-rule-neutral-100{
+            column-rule-color: #f5f5f5;
+        }
+        .thrinkle-column-rule-neutral-200{
+            column-rule-color: #e5e5e5;
+        }
+        .thrinkle-column-rule-neutral-300{
+            column-rule-color: #d4d4d4;
+        }
+        .thrinkle-column-rule-neutral-400{
+            column-rule-color: #a3a3a3;
+        }
+        .thrinkle-column-rule-neutral-500{
+            column-rule-color: #737373;
+        }
+        .thrinkle-column-rule-neutral-600{
+            column-rule-color: #525252;
+        }
+        .thrinkle-column-rule-neutral-700{
+            column-rule-color: #404040;
+        }
+        .thrinkle-column-rule-neutral-800{
+            column-rule-color: #262626;
+        }
+        .thrinkle-column-rule-neutral-900{
+            column-rule-color: #171717;
+        }
+        .thrinkle-column-rule-neutral-950{
+            column-rule-color: #0a0a0a;
+        }
+    /** neutral column-rule colors */
+
+    /** stone background colors */
+        .thrinkle-bg-stone-50{
+            background-color: #fafaf9;
+        }
+        .thrinkle-bg-stone-100{
+            background-color: #f5f5f4;
+        }
+        .thrinkle-bg-stone-200{
+            background-color: #e7e5e4;
+        }
+        .thrinkle-bg-stone-300{
+            background-color: #d6d3d1;
+        }
+        .thrinkle-bg-stone-400{
+            background-color: #a8a29e;
+        }
+        .thrinkle-bg-stone-500{
+            background-color: #78716c;
+        }
+        .thrinkle-bg-stone-600{
+            background-color: #57534e;
+        }
+        .thrinkle-bg-stone-700{
+            background-color: #44403c;
+        }
+        .thrinkle-bg-stone-800{
+            background-color: #292524;
+        }
+        .thrinkle-bg-stone-900{
+            background-color: #1c1917;
+        }
+        .thrinkle-bg-stone-950{
+            background-color: #0c0a09;
+        }
+    /** stone background colors */
+    /** stone font colors */
+        .thrinkle-text-stone-50{
+            color: #fafaf9;
+        }
+        .thrinkle-text-stone-100{
+            color: #f5f5f4;
+        }
+        .thrinkle-text-stone-200{
+            color: #e7e5e4;
+        }
+        .thrinkle-text-stone-300{
+            color: #d6d3d1;
+        }
+        .thrinkle-text-stone-400{
+            color: #a8a29e;
+        }
+        .thrinkle-text-stone-500{
+            color: #78716c;
+        }
+        .thrinkle-text-stone-600{
+            color: #57534e;
+        }
+        .thrinkle-text-stone-700{
+            color: #44403c;
+        }
+        .thrinkle-text-stone-800{
+            color: #292524;
+        }
+        .thrinkle-text-stone-900{
+            color: #1c1917;
+        }
+        .thrinkle-text-stone-950{
+            color: #0c0a09;
+        }
+    /** stone font colors */
+    /** stone border colors */
+        .thrinkle-border-stone-50{
+            border-color: #fafaf9;
+        }
+        .thrinkle-border-stone-100{
+            border-color: #f5f5f4;
+        }
+        .thrinkle-border-stone-200{
+            border-color: #e7e5e4;
+        }
+        .thrinkle-border-stone-300{
+            border-color: #d6d3d1;
+        }
+        .thrinkle-border-stone-400{
+            border-color: #a8a29e;
+        }
+        .thrinkle-border-stone-500{
+            border-color: #78716c;
+        }
+        .thrinkle-border-stone-600{
+            border-color: #57534e;
+        }
+        .thrinkle-border-stone-700{
+            border-color: #44403c;
+        }
+        .thrinkle-border-stone-800{
+            border-color: #292524;
+        }
+        .thrinkle-border-stone-900{
+            border-color: #1c1917;
+        }
+        .thrinkle-border-stone-950{
+            border-color: #0c0a09;
+        }
+    /** stone border colors */
+    /** stone outline colors */
+        .thrinkle-outline-stone-50{
+            outline-color: #fafaf9;
+        }
+        .thrinkle-outline-stone-100{
+            outline-color: #f5f5f4;
+        }
+        .thrinkle-outline-stone-200{
+            outline-color: #e7e5e4;
+        }
+        .thrinkle-outline-stone-300{
+            outline-color: #d6d3d1;
+        }
+        .thrinkle-outline-stone-400{
+            outline-color: #a8a29e;
+        }
+        .thrinkle-outline-stone-500{
+            outline-color: #78716c;
+        }
+        .thrinkle-outline-stone-600{
+            outline-color: #57534e;
+        }
+        .thrinkle-outline-stone-700{
+            outline-color: #44403c;
+        }
+        .thrinkle-outline-stone-800{
+            outline-color: #292524;
+        }
+        .thrinkle-outline-stone-900{
+            outline-color: #1c1917;
+        }
+        .thrinkle-outline-stone-950{
+            outline-color: #0c0a09;
+        }
+    /** stone outline colors */
+    /** stone caret colors */
+        .thrinkle-caret-stone-50{
+            caret-color: #fafaf9;
+        }
+        .thrinkle-caret-stone-100{
+            caret-color: #f5f5f4;
+        }
+        .thrinkle-caret-stone-200{
+            caret-color: #e7e5e4;
+        }
+        .thrinkle-caret-stone-300{
+            caret-color: #d6d3d1;
+        }
+        .thrinkle-caret-stone-400{
+            caret-color: #a8a29e;
+        }
+        .thrinkle-caret-stone-500{
+            caret-color: #78716c;
+        }
+        .thrinkle-caret-stone-600{
+            caret-color: #57534e;
+        }
+        .thrinkle-caret-stone-700{
+            caret-color: #44403c;
+        }
+        .thrinkle-caret-stone-800{
+            caret-color: #292524;
+        }
+        .thrinkle-caret-stone-900{
+            caret-color: #1c1917;
+        }
+        .thrinkle-caret-stone-950{
+            caret-color: #0c0a09;
+        }
+    /** stone caret colors */
+    /** stone text-decoration colors */
+        .thrinkle-text-decoration-stone-50{
+            text-decoration-color: #fafaf9;
+        }
+        .thrinkle-text-decoration-stone-100{
+            text-decoration-color: #f5f5f4;
+        }
+        .thrinkle-text-decoration-stone-200{
+            text-decoration-color: #e7e5e4;
+        }
+        .thrinkle-text-decoration-stone-300{
+            text-decoration-color: #d6d3d1;
+        }
+        .thrinkle-text-decoration-stone-400{
+            text-decoration-color: #a8a29e;
+        }
+        .thrinkle-text-decoration-stone-500{
+            text-decoration-color: #78716c;
+        }
+        .thrinkle-text-decoration-stone-600{
+            text-decoration-color: #57534e;
+        }
+        .thrinkle-text-decoration-stone-700{
+            text-decoration-color: #44403c;
+        }
+        .thrinkle-text-decoration-stone-800{
+            text-decoration-color: #292524;
+        }
+        .thrinkle-text-decoration-stone-900{
+            text-decoration-color: #1c1917;
+        }
+        .thrinkle-text-decoration-stone-950{
+            text-decoration-color: #0c0a09;
+        }
+    /** stone text-decoration colors */
+    /** stone text-emphasis colors */
+        .thrinkle-text-emphasis-stone-50{
+            text-emphasis-color: #fafaf9;
+        }
+        .thrinkle-text-emphasis-stone-100{
+            text-emphasis-color: #f5f5f4;
+        }
+        .thrinkle-text-emphasis-stone-200{
+            text-emphasis-color: #e7e5e4;
+        }
+        .thrinkle-text-emphasis-stone-300{
+            text-emphasis-color: #d6d3d1;
+        }
+        .thrinkle-text-emphasis-stone-400{
+            text-emphasis-color: #a8a29e;
+        }
+        .thrinkle-text-emphasis-stone-500{
+            text-emphasis-color: #78716c;
+        }
+        .thrinkle-text-emphasis-stone-600{
+            text-emphasis-color: #57534e;
+        }
+        .thrinkle-text-emphasis-stone-700{
+            text-emphasis-color: #44403c;
+        }
+        .thrinkle-text-emphasis-stone-800{
+            text-emphasis-color: #292524;
+        }
+        .thrinkle-text-emphasis-stone-900{
+            text-emphasis-color: #1c1917;
+        }
+        .thrinkle-text-emphasis-stone-950{
+            text-emphasis-color: #0c0a09;
+        }
+    /** stone text-emphasis colors */
+    /** stone column-rule colors */
+        .thrinkle-column-rule-stone-50{
+            column-rule-color: #fafaf9;
+        }
+        .thrinkle-column-rule-stone-100{
+            column-rule-color: #f5f5f4;
+        }
+        .thrinkle-column-rule-stone-200{
+            column-rule-color: #e7e5e4;
+        }
+        .thrinkle-column-rule-stone-300{
+            column-rule-color: #d6d3d1;
+        }
+        .thrinkle-column-rule-stone-400{
+            column-rule-color: #a8a29e;
+        }
+        .thrinkle-column-rule-stone-500{
+            column-rule-color: #78716c;
+        }
+        .thrinkle-column-rule-stone-600{
+            column-rule-color: #57534e;
+        }
+        .thrinkle-column-rule-stone-700{
+            column-rule-color: #44403c;
+        }
+        .thrinkle-column-rule-stone-800{
+            column-rule-color: #292524;
+        }
+        .thrinkle-column-rule-stone-900{
+            column-rule-color: #1c1917;
+        }
+        .thrinkle-column-rule-stone-950{
+            column-rule-color: #0c0a09;
+        }
+    /** stone column-rule colors */
+
+    /** red background colors */
+        .thrinkle-bg-red-50{
+            background-color: #fef2f2;
+        }
+        .thrinkle-bg-red-100{
+            background-color: #fee2e2;
+        }
+        .thrinkle-bg-red-200{
+            background-color: #fecaca;
+        }
+        .thrinkle-bg-red-300{
+            background-color: #fca5a5;
+        }
+        .thrinkle-bg-red-400{
+            background-color: #f87171;
+        }
+        .thrinkle-bg-red-500{
+            background-color: #ef4444;
+        }
+        .thrinkle-bg-red-600{
+            background-color: #dc2626;
+        }
+        .thrinkle-bg-red-700{
+            background-color: #b91c1c;
+        }
+        .thrinkle-bg-red-800{
+            background-color: #991b1b;
+        }
+        .thrinkle-bg-red-900{
+            background-color: #7f1d1d;
+        }
+        .thrinkle-bg-red-950{
+            background-color: #450a0a;
+        }
+    /** red background colors */
+    /** red font colors */
+        .thrinkle-text-red-50{
+            color: #fef2f2;
+        }
+        .thrinkle-text-red-100{
+            color: #fee2e2;
+        }
+        .thrinkle-text-red-200{
+            color: #fecaca;
+        }
+        .thrinkle-text-red-300{
+            color: #fca5a5;
+        }
+        .thrinkle-text-red-400{
+            color: #f87171;
+        }
+        .thrinkle-text-red-500{
+            color: #ef4444;
+        }
+        .thrinkle-text-red-600{
+            color: #dc2626;
+        }
+        .thrinkle-text-red-700{
+            color: #b91c1c;
+        }
+        .thrinkle-text-red-800{
+            color: #991b1b;
+        }
+        .thrinkle-text-red-900{
+            color: #7f1d1d;
+        }
+        .thrinkle-text-gray-950{
+            color: #450a0a;
+        }
+    /** red font colors */
+    /** red border colors */
+        .thrinkle-border-red-50{
+            border-color: #fef2f2;
+        }
+        .thrinkle-border-red-100{
+            border-color: #fee2e2;
+        }
+        .thrinkle-border-red-200{
+            border-color: #fecaca;
+        }
+        .thrinkle-border-red-300{
+            border-color: #fca5a5;
+        }
+        .thrinkle-border-red-400{
+            border-color: #f87171;
+        }
+        .thrinkle-border-red-500{
+            border-color: #ef4444;
+        }
+        .thrinkle-border-red-600{
+            border-color: #dc2626;
+        }
+        .thrinkle-border-red-700{
+            border-color: #b91c1c;
+        }
+        .thrinkle-border-red-800{
+            border-color: #991b1b;
+        }
+        .thrinkle-border-red-900{
+            border-color: #7f1d1d;
+        }
+        .thrinkle-border-gray-950{
+            border-color: #450a0a;
+        }
+    /** red border colors */
+    /** red outline colors */
+        .thrinkle-outline-red-50{
+            outline-color: #fef2f2;
+        }
+        .thrinkle-outline-red-100{
+            outline-color: #fee2e2;
+        }
+        .thrinkle-outline-red-200{
+            outline-color: #fecaca;
+        }
+        .thrinkle-outline-red-300{
+            outline-color: #fca5a5;
+        }
+        .thrinkle-outline-red-400{
+            outline-color: #f87171;
+        }
+        .thrinkle-outline-red-500{
+            outline-color: #ef4444;
+        }
+        .thrinkle-outline-red-600{
+            outline-color: #dc2626;
+        }
+        .thrinkle-outline-red-700{
+            outline-color: #b91c1c;
+        }
+        .thrinkle-outline-red-800{
+            outline-color: #991b1b;
+        }
+        .thrinkle-outline-red-900{
+            outline-color: #7f1d1d;
+        }
+        .thrinkle-outline-gray-950{
+            outline-color: #450a0a;
+        }
+    /** red outline colors */
+    /** red caret colors */
+        .thrinkle-caret-red-50{
+            caret-color: #fef2f2;
+        }
+        .thrinkle-caret-red-100{
+            caret-color: #fee2e2;
+        }
+        .thrinkle-caret-red-200{
+            caret-color: #fecaca;
+        }
+        .thrinkle-caret-red-300{
+            caret-color: #fca5a5;
+        }
+        .thrinkle-caret-red-400{
+            caret-color: #f87171;
+        }
+        .thrinkle-caret-red-500{
+            caret-color: #ef4444;
+        }
+        .thrinkle-caret-red-600{
+            caret-color: #dc2626;
+        }
+        .thrinkle-caret-red-700{
+            caret-color: #b91c1c;
+        }
+        .thrinkle-caret-red-800{
+            caret-color: #991b1b;
+        }
+        .thrinkle-caret-red-900{
+            caret-color: #7f1d1d;
+        }
+        .thrinkle-caret-red-950{
+            caret-color: #450a0a;
+        }
+    /** red caret colors */
+    /** red text-decoration colors */
+        .thrinkle-text-decoration-red-50{
+            text-decoration-color: #fef2f2;
+        }
+        .thrinkle-text-decoration-red-100{
+            text-decoration-color: #fee2e2;
+        }
+        .thrinkle-text-decoration-red-200{
+            text-decoration-color: #fecaca;
+        }
+        .thrinkle-text-decoration-red-300{
+            text-decoration-color: #fca5a5;
+        }
+        .thrinkle-text-decoration-red-400{
+            text-decoration-color: #f87171;
+        }
+        .thrinkle-text-decoration-red-500{
+            text-decoration-color: #ef4444;
+        }
+        .thrinkle-text-decoration-red-600{
+            text-decoration-color: #dc2626;
+        }
+        .thrinkle-text-decoration-red-700{
+            text-decoration-color: #b91c1c;
+        }
+        .thrinkle-text-decoration-red-800{
+            text-decoration-color: #991b1b;
+        }
+        .thrinkle-text-decoration-red-900{
+            text-decoration-color: #7f1d1d;
+        }
+        .thrinkle-text-decoration-red-950{
+            text-decoration-color: #450a0a;
+        }
+    /** red text-decoration colors */
+    /** red text-emphasis colors */
+        .thrinkle-text-emphasis-red-50{
+            text-emphasis-color: #fef2f2;
+        }
+        .thrinkle-text-emphasis-red-100{
+            text-emphasis-color: #fee2e2;
+        }
+        .thrinkle-text-emphasis-red-200{
+            text-emphasis-color: #fecaca;
+        }
+        .thrinkle-text-emphasis-red-300{
+            text-emphasis-color: #fca5a5;
+        }
+        .thrinkle-text-emphasis-red-400{
+            text-emphasis-color: #f87171;
+        }
+        .thrinkle-text-emphasis-red-500{
+            text-emphasis-color: #ef4444;
+        }
+        .thrinkle-text-emphasis-red-600{
+            text-emphasis-color: #dc2626;
+        }
+        .thrinkle-text-emphasis-red-700{
+            text-emphasis-color: #b91c1c;
+        }
+        .thrinkle-text-emphasis-red-800{
+            text-emphasis-color: #991b1b;
+        }
+        .thrinkle-text-emphasis-red-900{
+            text-emphasis-color: #7f1d1d;
+        }
+        .thrinkle-text-emphasis-red-950{
+            text-emphasis-color: #450a0a;
+        }
+    /** red text-emphasis colors */
+    /** red column-rule colors */
+        .thrinkle-column-rule-red-50{
+            column-rule-color: #fef2f2;
+        }
+        .thrinkle-column-rule-red-100{
+            column-rule-color: #fee2e2;
+        }
+        .thrinkle-column-rule-red-200{
+            column-rule-color: #fecaca;
+        }
+        .thrinkle-column-rule-red-300{
+            column-rule-color: #fca5a5;
+        }
+        .thrinkle-column-rule-red-400{
+            column-rule-color: #f87171;
+        }
+        .thrinkle-column-rule-red-500{
+            column-rule-color: #ef4444;
+        }
+        .thrinkle-column-rule-red-600{
+            column-rule-color: #dc2626;
+        }
+        .thrinkle-column-rule-red-700{
+            column-rule-color: #b91c1c;
+        }
+        .thrinkle-column-rule-red-800{
+            column-rule-color: #991b1b;
+        }
+        .thrinkle-column-rule-red-900{
+            column-rule-color: #7f1d1d;
+        }
+        .thrinkle-column-rule-red-950{
+            column-rule-color: #450a0a;
+        }
+    /** red column-rule colors */
+
+    /** orange background colors */
+        .thrinkle-bg-orange-50{
+            background-color: #fff7ed;
+        }
+        .thrinkle-bg-orange-100{
+            background-color: #ffedd5;
+        }
+        .thrinkle-bg-orange-200{
+            background-color: #fed7aa;
+        }
+        .thrinkle-bg-orange-300{
+            background-color: #fdba74;
+        }
+        .thrinkle-bg-orange-400{
+            background-color: #fb923c;
+        }
+        .thrinkle-bg-orange-500{
+            background-color: #f97316;
+        }
+        .thrinkle-bg-orange-600{
+            background-color: #ea580c;
+        }
+        .thrinkle-bg-orange-700{
+            background-color: #c2410c;
+        }
+        .thrinkle-bg-orange-800{
+            background-color: #9a3412;
+        }
+        .thrinkle-bg-orange-900{
+            background-color: #7c2d12;
+        }
+        .thrinkle-bg-orange-950{
+            background-color: #431407;
+        }
+    /** orange background colors */
+    /** orange font colors */
+        .thrinkle-text-orange-50{
+            color: #fff7ed;
+        }
+        .thrinkle-text-orange-100{
+            color: #ffedd5;
+        }
+        .thrinkle-text-orange-200{
+            color: #fed7aa;
+        }
+        .thrinkle-text-orange-300{
+            color: #fdba74;
+        }
+        .thrinkle-text-orange-400{
+            color: #fb923c;
+        }
+        .thrinkle-text-orange-500{
+            color: #f97316;
+        }
+        .thrinkle-text-orange-600{
+            color: #ea580c;
+        }
+        .thrinkle-text-orange-700{
+            color: #c2410c;
+        }
+        .thrinkle-text-orange-800{
+            color: #9a3412;
+        }
+        .thrinkle-text-orange-900{
+            color: #7c2d12;
+        }
+        .thrinkle-text-orange-950{
+            color: #431407;
+        }
+    /** orange font colors */
+    /** orange border colors */
+        .thrinkle-border-orange-50{
+            border-color: #fff7ed;
+        }
+        .thrinkle-border-orange-100{
+            border-color: #ffedd5;
+        }
+        .thrinkle-border-orange-200{
+            border-color: #fed7aa;
+        }
+        .thrinkle-border-orange-300{
+            border-color: #fdba74;
+        }
+        .thrinkle-border-orange-400{
+            border-color: #fb923c;
+        }
+        .thrinkle-border-orange-500{
+            border-color: #f97316;
+        }
+        .thrinkle-border-orange-600{
+            border-color: #ea580c;
+        }
+        .thrinkle-border-orange-700{
+            border-color: #c2410c;
+        }
+        .thrinkle-border-orange-800{
+            border-color: #9a3412;
+        }
+        .thrinkle-border-orange-900{
+            border-color: #7c2d12;
+        }
+        .thrinkle-border-orange-950{
+            border-color: #431407;
+        }
+    /** orange border colors */
+    /** orange outline colors */
+        .thrinkle-outline-orange-50{
+            outline-color: #fff7ed;
+        }
+        .thrinkle-outline-orange-100{
+            outline-color: #ffedd5;
+        }
+        .thrinkle-outline-orange-200{
+            outline-color: #fed7aa;
+        }
+        .thrinkle-outline-orange-300{
+            outline-color: #fdba74;
+        }
+        .thrinkle-outline-orange-400{
+            outline-color: #fb923c;
+        }
+        .thrinkle-outline-orange-500{
+            outline-color: #f97316;
+        }
+        .thrinkle-outline-orange-600{
+            outline-color: #ea580c;
+        }
+        .thrinkle-outline-orange-700{
+            outline-color: #c2410c;
+        }
+        .thrinkle-outline-orange-800{
+            outline-color: #9a3412;
+        }
+        .thrinkle-outline-orange-900{
+            outline-color: #7c2d12;
+        }
+        .thrinkle-outline-orange-950{
+            outline-color: #431407;
+        }
+    /** orange outline colors */
+    /** orange caret colors */
+        .thrinkle-caret-orange-50{
+            caret-color: #fff7ed;
+        }
+        .thrinkle-caret-orange-100{
+            caret-color: #ffedd5;
+        }
+        .thrinkle-caret-orange-200{
+            caret-color: #fed7aa;
+        }
+        .thrinkle-caret-orange-300{
+            caret-color: #fdba74;
+        }
+        .thrinkle-caret-orange-400{
+            caret-color: #fb923c;
+        }
+        .thrinkle-caret-orange-500{
+            caret-color: #f97316;
+        }
+        .thrinkle-caret-orange-600{
+            caret-color: #ea580c;
+        }
+        .thrinkle-caret-orange-700{
+            caret-color: #c2410c;
+        }
+        .thrinkle-caret-orange-800{
+            caret-color: #9a3412;
+        }
+        .thrinkle-caret-orange-900{
+            caret-color: #7c2d12;
+        }
+        .thrinkle-caret-orange-950{
+            caret-color: #431407;
+        }
+    /** orange caret colors */
+    /** orange text-decoration colors */
+        .thrinkle-text-decoration-orange-50{
+            text-decoration-color: #fff7ed;
+        }
+        .thrinkle-text-decoration-orange-100{
+            text-decoration-color: #ffedd5;
+        }
+        .thrinkle-text-decoration-orange-200{
+            text-decoration-color: #fed7aa;
+        }
+        .thrinkle-text-decoration-orange-300{
+            text-decoration-color: #fdba74;
+        }
+        .thrinkle-text-decoration-orange-400{
+            text-decoration-color: #fb923c;
+        }
+        .thrinkle-text-decoration-orange-500{
+            text-decoration-color: #f97316;
+        }
+        .thrinkle-text-decoration-orange-600{
+            text-decoration-color: #ea580c;
+        }
+        .thrinkle-text-decoration-orange-700{
+            text-decoration-color: #c2410c;
+        }
+        .thrinkle-text-decoration-orange-800{
+            text-decoration-color: #9a3412;
+        }
+        .thrinkle-text-decoration-orange-900{
+            text-decoration-color: #7c2d12;
+        }
+        .thrinkle-text-decoration-orange-950{
+            text-decoration-color: #431407;
+        }
+    /** orange text-decoration colors */
+    /** orange text-emphasis colors */
+        .thrinkle-text-emphasis-orange-50{
+            text-emphasis-color: #fff7ed;
+        }
+        .thrinkle-text-emphasis-orange-100{
+            text-emphasis-color: #ffedd5;
+        }
+        .thrinkle-text-emphasis-orange-200{
+            text-emphasis-color: #fed7aa;
+        }
+        .thrinkle-text-emphasis-orange-300{
+            text-emphasis-color: #fdba74;
+        }
+        .thrinkle-text-emphasis-orange-400{
+            text-emphasis-color: #fb923c;
+        }
+        .thrinkle-text-emphasis-orange-500{
+            text-emphasis-color: #f97316;
+        }
+        .thrinkle-text-emphasis-orange-600{
+            text-emphasis-color: #ea580c;
+        }
+        .thrinkle-text-emphasis-orange-700{
+            text-emphasis-color: #c2410c;
+        }
+        .thrinkle-text-emphasis-orange-800{
+            text-emphasis-color: #9a3412;
+        }
+        .thrinkle-text-emphasis-orange-900{
+            text-emphasis-color: #7c2d12;
+        }
+        .thrinkle-text-emphasis-orange-950{
+            text-emphasis-color: #431407;
+        }
+    /** orange text-emphasis colors */
+    /** orange column-rule colors */
+        .thrinkle-column-rule-orange-50{
+            column-rule-color: #fff7ed;
+        }
+        .thrinkle-column-rule-orange-100{
+            column-rule-color: #ffedd5;
+        }
+        .thrinkle-column-rule-orange-200{
+            column-rule-color: #fed7aa;
+        }
+        .thrinkle-column-rule-orange-300{
+            column-rule-color: #fdba74;
+        }
+        .thrinkle-column-rule-orange-400{
+            column-rule-color: #fb923c;
+        }
+        .thrinkle-column-rule-orange-500{
+            column-rule-color: #f97316;
+        }
+        .thrinkle-column-rule-orange-600{
+            column-rule-color: #ea580c;
+        }
+        .thrinkle-column-rule-orange-700{
+            column-rule-color: #c2410c;
+        }
+        .thrinkle-column-rule-orange-800{
+            column-rule-color: #9a3412;
+        }
+        .thrinkle-column-rule-orange-900{
+            column-rule-color: #7c2d12;
+        }
+        .thrinkle-column-rule-orange-950{
+            column-rule-color: #431407;
+        }
+    /** orange column-rule colors */
+
+    /** amber background colors */
+        .thrinkle-bg-amber-50{
+            background-color: #fffbeb;
+        }
+        .thrinkle-bg-amber-100{
+            background-color: #fef3c7;
+        }
+        .thrinkle-bg-amber-200{
+            background-color: #fde68a;
+        }
+        .thrinkle-bg-amber-300{
+            background-color: #fcd34d;
+        }
+        .thrinkle-bg-amber-400{
+            background-color: #fbbf24;
+        }
+        .thrinkle-bg-amber-500{
+            background-color: #f59e0b;
+        }
+        .thrinkle-bg-amber-600{
+            background-color: #d97706;
+        }
+        .thrinkle-bg-amber-700{
+            background-color: #b45309;
+        }
+        .thrinkle-bg-amber-800{
+            background-color: #92400e;
+        }
+        .thrinkle-bg-amber-900{
+            background-color: #78350f;
+        }
+        .thrinkle-bg-amber-950{
+            background-color: #451a03;
+        }
+    /** amber background colors */
+    /** amber font colors */
+        .thrinkle-text-amber-50{
+            color: #fffbeb;
+        }
+        .thrinkle-text-amber-100{
+            color: #fef3c7;
+        }
+        .thrinkle-text-amber-200{
+            color: #fde68a;
+        }
+        .thrinkle-text-amber-300{
+            color: #fcd34d;
+        }
+        .thrinkle-text-amber-400{
+            color: #fbbf24;
+        }
+        .thrinkle-text-amber-500{
+            color: #f59e0b;
+        }
+        .thrinkle-text-amber-600{
+            color: #d97706;
+        }
+        .thrinkle-text-amber-700{
+            color: #b45309;
+        }
+        .thrinkle-text-amber-800{
+            color: #92400e;
+        }
+        .thrinkle-text-amber-900{
+            color: #78350f;
+        }
+        .thrinkle-text-amber-950{
+            color: #451a03;
+        }
+    /** amber font colors */
+    /** amber border colors */
+        .thrinkle-border-amber-50{
+            border-color: #fffbeb;
+        }
+        .thrinkle-border-amber-100{
+            border-color: #fef3c7;
+        }
+        .thrinkle-border-amber-200{
+            border-color: #fde68a;
+        }
+        .thrinkle-border-amber-300{
+            border-color: #fcd34d;
+        }
+        .thrinkle-border-amber-400{
+            border-color: #fbbf24;
+        }
+        .thrinkle-border-amber-500{
+            border-color: #f59e0b;
+        }
+        .thrinkle-border-amber-600{
+            border-color: #d97706;
+        }
+        .thrinkle-border-amber-700{
+            border-color: #b45309;
+        }
+        .thrinkle-border-amber-800{
+            border-color: #92400e;
+        }
+        .thrinkle-border-amber-900{
+            border-color: #78350f;
+        }
+        .thrinkle-border-amber-950{
+            border-color: #451a03;
+        }
+    /** amber border colors */
+    /** amber outline colors */
+        .thrinkle-outline-amber-50{
+            outline-color: #fffbeb;
+        }
+        .thrinkle-outline-amber-100{
+            outline-color: #fef3c7;
+        }
+        .thrinkle-outline-amber-200{
+            outline-color: #fde68a;
+        }
+        .thrinkle-outline-amber-300{
+            outline-color: #fcd34d;
+        }
+        .thrinkle-outline-amber-400{
+            outline-color: #fbbf24;
+        }
+        .thrinkle-outline-amber-500{
+            outline-color: #f59e0b;
+        }
+        .thrinkle-outline-amber-600{
+            outline-color: #d97706;
+        }
+        .thrinkle-outline-amber-700{
+            outline-color: #b45309;
+        }
+        .thrinkle-outline-amber-800{
+            outline-color: #92400e;
+        }
+        .thrinkle-outline-amber-900{
+            outline-color: #78350f;
+        }
+        .thrinkle-outline-amber-950{
+            outline-color: #451a03;
+        }
+    /** amber outline colors */
+    /** amber caret colors */
+        .thrinkle-caret-amber-50{
+            caret-color: #fffbeb;
+        }
+        .thrinkle-caret-amber-100{
+            caret-color: #fef3c7;
+        }
+        .thrinkle-caret-amber-200{
+            caret-color: #fde68a;
+        }
+        .thrinkle-caret-amber-300{
+            caret-color: #fcd34d;
+        }
+        .thrinkle-caret-amber-400{
+            caret-color: #fbbf24;
+        }
+        .thrinkle-caret-amber-500{
+            caret-color: #f59e0b;
+        }
+        .thrinkle-caret-amber-600{
+            caret-color: #d97706;
+        }
+        .thrinkle-caret-amber-700{
+            caret-color: #b45309;
+        }
+        .thrinkle-caret-amber-800{
+            caret-color: #92400e;
+        }
+        .thrinkle-caret-amber-900{
+            caret-color: #78350f;
+        }
+        .thrinkle-caret-amber-950{
+            caret-color: #451a03;
+        }
+    /** amber caret colors */
+    /** amber text-decoration colors */
+        .thrinkle-text-decoration-amber-50{
+            text-decoration-color: #fffbeb;
+        }
+        .thrinkle-text-decoration-amber-100{
+            text-decoration-color: #fef3c7;
+        }
+        .thrinkle-text-decoration-amber-200{
+            text-decoration-color: #fde68a;
+        }
+        .thrinkle-text-decoration-amber-300{
+            text-decoration-color: #fcd34d;
+        }
+        .thrinkle-text-decoration-amber-400{
+            text-decoration-color: #fbbf24;
+        }
+        .thrinkle-text-decoration-amber-500{
+            text-decoration-color: #f59e0b;
+        }
+        .thrinkle-text-decoration-amber-600{
+            text-decoration-color: #d97706;
+        }
+        .thrinkle-text-decoration-amber-700{
+            text-decoration-color: #b45309;
+        }
+        .thrinkle-text-decoration-amber-800{
+            text-decoration-color: #92400e;
+        }
+        .thrinkle-text-decoration-amber-900{
+            text-decoration-color: #78350f;
+        }
+        .thrinkle-text-decoration-amber-950{
+            text-decoration-color: #451a03;
+        }
+    /** amber text-decoration colors */
+    /** amber text-emphasis colors */
+        .thrinkle-text-emphasis-amber-50{
+            text-emphasis-color: #fffbeb;
+        }
+        .thrinkle-text-emphasis-amber-100{
+            text-emphasis-color: #fef3c7;
+        }
+        .thrinkle-text-emphasis-amber-200{
+            text-emphasis-color: #fde68a;
+        }
+        .thrinkle-text-emphasis-amber-300{
+            text-emphasis-color: #fcd34d;
+        }
+        .thrinkle-text-emphasis-amber-400{
+            text-emphasis-color: #fbbf24;
+        }
+        .thrinkle-text-emphasis-amber-500{
+            text-emphasis-color: #f59e0b;
+        }
+        .thrinkle-text-emphasis-amber-600{
+            text-emphasis-color: #d97706;
+        }
+        .thrinkle-text-emphasis-amber-700{
+            text-emphasis-color: #b45309;
+        }
+        .thrinkle-text-emphasis-amber-800{
+            text-emphasis-color: #92400e;
+        }
+        .thrinkle-text-emphasis-amber-900{
+            text-emphasis-color: #78350f;
+        }
+        .thrinkle-text-emphasis-amber-950{
+            text-emphasis-color: #451a03;
+        }
+    /** amber text-emphasis colors */
+    /** amber column-rule colors */
+        .thrinkle-column-rule-amber-50{
+            column-rule-color: #fffbeb;
+        }
+        .thrinkle-column-rule-amber-100{
+            column-rule-color: #fef3c7;
+        }
+        .thrinkle-column-rule-amber-200{
+            column-rule-color: #fde68a;
+        }
+        .thrinkle-column-rule-amber-300{
+            column-rule-color: #fcd34d;
+        }
+        .thrinkle-column-rule-amber-400{
+            column-rule-color: #fbbf24;
+        }
+        .thrinkle-column-rule-amber-500{
+            column-rule-color: #f59e0b;
+        }
+        .thrinkle-column-rule-amber-600{
+            column-rule-color: #d97706;
+        }
+        .thrinkle-column-rule-amber-700{
+            column-rule-color: #b45309;
+        }
+        .thrinkle-column-rule-amber-800{
+            column-rule-color: #92400e;
+        }
+        .thrinkle-column-rule-amber-900{
+            column-rule-color: #78350f;
+        }
+        .thrinkle-column-rule-amber-950{
+            column-rule-color: #451a03;
+        }
+    /** amber column-rule colors */
+
+    /** yellow background colors */
+        .thrinkle-bg-yellow-50{
+            background-color: #fefce8;
+        }
+        .thrinkle-bg-yellow-100{
+            background-color: #fef9c3;
+        }
+        .thrinkle-bg-yellow-200{
+            background-color: #fef08a;
+        }
+        .thrinkle-bg-yellow-300{
+            background-color: #fde047;
+        }
+        .thrinkle-bg-yellow-400{
+            background-color: #facc15;
+        }
+        .thrinkle-bg-yellow-500{
+            background-color: #eab308;
+        }
+        .thrinkle-bg-yellow-600{
+            background-color: #ca8a04;
+        }
+        .thrinkle-bg-yellow-700{
+            background-color: #a16207;
+        }
+        .thrinkle-bg-yellow-800{
+            background-color: #854d0e;
+        }
+        .thrinkle-bg-yellow-900{
+            background-color: #713f12;
+        }
+        .thrinkle-bg-yellow-950{
+            background-color: #422006;
+        }
+    /** yellow background colors */
+    /** yellow font colors */
+        .thrinkle-text-yellow-50{
+            color: #fefce8;
+        }
+        .thrinkle-text-yellow-100{
+            color: #fef9c3;
+        }
+        .thrinkle-text-yellow-200{
+            color: #fef08a;
+        }
+        .thrinkle-text-yellow-300{
+            color: #fde047;
+        }
+        .thrinkle-text-yellow-400{
+            color: #facc15;
+        }
+        .thrinkle-text-yellow-500{
+            color: #eab308;
+        }
+        .thrinkle-text-yellow-600{
+            color: #ca8a04;
+        }
+        .thrinkle-text-yellow-700{
+            color: #a16207;
+        }
+        .thrinkle-text-yellow-800{
+            color: #854d0e;
+        }
+        .thrinkle-text-yellow-900{
+            color: #713f12;
+        }
+        .thrinkle-text-yellow-950{
+            color: #422006;
+        }
+    /** yellow font colors */
+    /** yellow border colors */
+        .thrinkle-border-yellow-50{
+            border-color: #fefce8;
+        }
+        .thrinkle-border-yellow-100{
+            border-color: #fef9c3;
+        }
+        .thrinkle-border-yellow-200{
+            border-color: #fef08a;
+        }
+        .thrinkle-border-yellow-300{
+            border-color: #fde047;
+        }
+        .thrinkle-border-yellow-400{
+            border-color: #facc15;
+        }
+        .thrinkle-border-yellow-500{
+            border-color: #eab308;
+        }
+        .thrinkle-border-yellow-600{
+            border-color: #ca8a04;
+        }
+        .thrinkle-border-yellow-700{
+            border-color: #a16207;
+        }
+        .thrinkle-border-yellow-800{
+            border-color: #854d0e;
+        }
+        .thrinkle-border-yellow-900{
+            border-color: #713f12;
+        }
+        .thrinkle-border-yellow-950{
+            border-color: #422006;
+        }
+    /** yellow border colors */
+    /** yellow outline colors */
+        .thrinkle-outline-yellow-50{
+            outline-color: #fefce8;
+        }
+        .thrinkle-outline-yellow-100{
+            outline-color: #fef9c3;
+        }
+        .thrinkle-outline-yellow-200{
+            outline-color: #fef08a;
+        }
+        .thrinkle-outline-yellow-300{
+            outline-color: #fde047;
+        }
+        .thrinkle-outline-yellow-400{
+            outline-color: #facc15;
+        }
+        .thrinkle-outline-yellow-500{
+            outline-color: #eab308;
+        }
+        .thrinkle-outline-yellow-600{
+            outline-color: #ca8a04;
+        }
+        .thrinkle-outline-yellow-700{
+            outline-color: #a16207;
+        }
+        .thrinkle-outline-yellow-800{
+            outline-color: #854d0e;
+        }
+        .thrinkle-border-yellow-900{
+            border-color: #713f12;
+        }
+        .thrinkle-outline-yellow-950{
+            outline-color: #422006;
+        }
+    /** yellow outline colors */
+    /** yellow caret colors */
+        .thrinkle-caret-yellow-50{
+            caret-color: #fefce8;
+        }
+        .thrinkle-caret-yellow-100{
+            caret-color: #fef9c3;
+        }
+        .thrinkle-caret-yellow-200{
+            caret-color: #fef08a;
+        }
+        .thrinkle-caret-yellow-300{
+            caret-color: #fde047;
+        }
+        .thrinkle-caret-yellow-400{
+            caret-color: #facc15;
+        }
+        .thrinkle-caret-yellow-500{
+            caret-color: #eab308;
+        }
+        .thrinkle-caret-yellow-600{
+            caret-color: #ca8a04;
+        }
+        .thrinkle-caret-yellow-700{
+            caret-color: #a16207;
+        }
+        .thrinkle-caret-yellow-800{
+            caret-color: #854d0e;
+        }
+        .thrinkle-border-yellow-900{
+            border-color: #713f12;
+        }
+        .thrinkle-caret-yellow-950{
+            caret-color: #422006;
+        }
+    /** yellow caret colors */
+    /** yellow text-decoration colors */
+        .thrinkle-text-decoration-yellow-50{
+            text-decoration-color: #fefce8;
+        }
+        .thrinkle-text-decoration-yellow-100{
+            text-decoration-color: #fef9c3;
+        }
+        .thrinkle-text-decoration-yellow-200{
+            text-decoration-color: #fef08a;
+        }
+        .thrinkle-text-decoration-yellow-300{
+            text-decoration-color: #fde047;
+        }
+        .thrinkle-text-decoration-yellow-400{
+            text-decoration-color: #facc15;
+        }
+        .thrinkle-text-decoration-yellow-500{
+            text-decoration-color: #eab308;
+        }
+        .thrinkle-text-decoration-yellow-600{
+            text-decoration-color: #ca8a04;
+        }
+        .thrinkle-text-decoration-yellow-700{
+            text-decoration-color: #a16207;
+        }
+        .thrinkle-text-decoration-yellow-800{
+            text-decoration-color: #854d0e;
+        }
+        .thrinkle-text-decoration-yellow-900{
+            text-decoration-color: #713f12;
+        }
+        .thrinkle-text-decoration-yellow-950{
+            text-decoration-color: #422006;
+        }
+    /** yellow text-decoration colors */
+    /** yellow text-emphasis colors */
+        .thrinkle-text-emphasis-yellow-50{
+            text-emphasis-color: #fefce8;
+        }
+        .thrinkle-text-emphasis-yellow-100{
+            text-emphasis-color: #fef9c3;
+        }
+        .thrinkle-text-emphasis-yellow-200{
+            text-emphasis-color: #fef08a;
+        }
+        .thrinkle-text-emphasis-yellow-300{
+            text-emphasis-color: #fde047;
+        }
+        .thrinkle-text-emphasis-yellow-400{
+            text-emphasis-color: #facc15;
+        }
+        .thrinkle-text-emphasis-yellow-500{
+            text-emphasis-color: #eab308;
+        }
+        .thrinkle-text-emphasis-yellow-600{
+            text-emphasis-color: #ca8a04;
+        }
+        .thrinkle-text-emphasis-yellow-700{
+            text-emphasis-color: #a16207;
+        }
+        .thrinkle-text-emphasis-yellow-800{
+            text-emphasis-color: #854d0e;
+        }
+        .thrinkle-text-emphasis-yellow-900{
+            text-emphasis-color: #713f12;
+        }
+        .thrinkle-text-emphasis-yellow-950{
+            text-emphasis-color: #422006;
+        }
+    /** yellow text-emphasis colors */
+    /** yellow column-rule colors */
+        .thrinkle-column-rule-yellow-50{
+            column-rule-color: #fefce8;
+        }
+        .thrinkle-column-rule-yellow-100{
+            column-rule-color: #fef9c3;
+        }
+        .thrinkle-column-rule-yellow-200{
+            column-rule-color: #fef08a;
+        }
+        .thrinkle-column-rule-yellow-300{
+            column-rule-color: #fde047;
+        }
+        .thrinkle-column-rule-yellow-400{
+            column-rule-color: #facc15;
+        }
+        .thrinkle-column-rule-yellow-500{
+            column-rule-color: #eab308;
+        }
+        .thrinkle-column-rule-yellow-600{
+            column-rule-color: #ca8a04;
+        }
+        .thrinkle-column-rule-yellow-700{
+            column-rule-color: #a16207;
+        }
+        .thrinkle-column-rule-yellow-800{
+            column-rule-color: #854d0e;
+        }
+        .thrinkle-column-rule-yellow-900{
+            column-rule-color: #713f12;
+        }
+        .thrinkle-column-rule-yellow-950{
+            column-rule-color: #422006;
+        }
+    /** yellow column-rule colors */
+
+    /** lime background colors */
+        .thrinkle-bg-lime-50{
+            background-color: #f7fee7;
+        }
+        .thrinkle-bg-lime-100{
+            background-color: #ecfccb;
+        }
+        .thrinkle-bg-lime-200{
+            background-color: #d9f99d;
+        }
+        .thrinkle-bg-lime-300{
+            background-color: #bef264;
+        }
+        .thrinkle-bg-lime-400{
+            background-color: #a3e635;
+        }
+        .thrinkle-bg-lime-500{
+            background-color: #84cc16;
+        }
+        .thrinkle-bg-lime-600{
+            background-color: #65a30d;
+        }
+        .thrinkle-bg-lime-700{
+            background-color: #4d7c0f;
+        }
+        .thrinkle-bg-lime-800{
+            background-color: #3f6212;
+        }
+        .thrinkle-bg-lime-900{
+            background-color: #365314;
+        }
+        .thrinkle-bg-lime-950{
+            background-color: #1a2e05;
+        }
+    /** lime background colors */
+    /** lime font colors */
+        .thrinkle-text-lime-50{
+            color: #f7fee7;
+        }
+        .thrinkle-text-lime-100{
+            color: #ecfccb;
+        }
+        .thrinkle-text-lime-200{
+            color: #d9f99d;
+        }
+        .thrinkle-text-lime-300{
+            color: #bef264;
+        }
+        .thrinkle-text-lime-400{
+            color: #a3e635;
+        }
+        .thrinkle-text-lime-500{
+            color: #84cc16;
+        }
+        .thrinkle-text-lime-600{
+            color: #65a30d;
+        }
+        .thrinkle-text-lime-700{
+            color: #4d7c0f;
+        }
+        .thrinkle-text-lime-800{
+            color: #3f6212;
+        }
+        .thrinkle-text-lime-900{
+            color: #365314;
+        }
+        .thrinkle-text-lime-950{
+            color: #1a2e05;
+        }
+    /** lime font colors */
+    /** lime border colors */
+        .thrinkle-border-lime-50{
+            border-color: #f7fee7;
+        }
+        .thrinkle-border-lime-100{
+            border-color: #ecfccb;
+        }
+        .thrinkle-border-lime-200{
+            border-color: #d9f99d;
+        }
+        .thrinkle-border-lime-300{
+            border-color: #bef264;
+        }
+        .thrinkle-border-lime-400{
+            border-color: #a3e635;
+        }
+        .thrinkle-border-lime-500{
+            border-color: #84cc16;
+        }
+        .thrinkle-border-lime-600{
+            border-color: #65a30d;
+        }
+        .thrinkle-border-lime-700{
+            border-color: #4d7c0f;
+        }
+        .thrinkle-border-lime-800{
+            border-color: #3f6212;
+        }
+        .thrinkle-border-lime-900{
+            border-color: #365314;
+        }
+        .thrinkle-border-lime-950{
+            border-color: #1a2e05;
+        }
+    /** lime border colors */
+    /** lime outline colors */
+        .thrinkle-outline-lime-50{
+            outline-color: #f7fee7;
+        }
+        .thrinkle-outline-lime-100{
+            outline-color: #ecfccb;
+        }
+        .thrinkle-outline-lime-200{
+            outline-color: #d9f99d;
+        }
+        .thrinkle-outline-lime-300{
+            outline-color: #bef264;
+        }
+        .thrinkle-outline-lime-400{
+            outline-color: #a3e635;
+        }
+        .thrinkle-outline-lime-500{
+            outline-color: #84cc16;
+        }
+        .thrinkle-outline-lime-600{
+            outline-color: #65a30d;
+        }
+        .thrinkle-outline-lime-700{
+            outline-color: #4d7c0f;
+        }
+        .thrinkle-outline-lime-800{
+            outline-color: #3f6212;
+        }
+        .thrinkle-outline-lime-900{
+            outline-color: #365314;
+        }
+        .thrinkle-outline-lime-950{
+            outline-color: #1a2e05;
+        }
+    /** lime outline colors */
+    /** lime caret colors */
+        .thrinkle-caret-lime-50{
+            caret-color: #f7fee7;
+        }
+        .thrinkle-caret-lime-100{
+            caret-color: #ecfccb;
+        }
+        .thrinkle-caret-lime-200{
+            caret-color: #d9f99d;
+        }
+        .thrinkle-caret-lime-300{
+            caret-color: #bef264;
+        }
+        .thrinkle-caret-lime-400{
+            caret-color: #a3e635;
+        }
+        .thrinkle-caret-lime-500{
+            caret-color: #84cc16;
+        }
+        .thrinkle-caret-lime-600{
+            caret-color: #65a30d;
+        }
+        .thrinkle-caret-lime-700{
+            caret-color: #4d7c0f;
+        }
+        .thrinkle-caret-lime-800{
+            caret-color: #3f6212;
+        }
+        .thrinkle-caret-lime-900{
+            caret-color: #365314;
+        }
+        .thrinkle-caret-lime-950{
+            caret-color: #1a2e05;
+        }
+    /** lime caret colors */
+    /** lime text-decoration colors */
+        .thrinkle-text-decoration-lime-50{
+            text-decoration-color: #f7fee7;
+        }
+        .thrinkle-text-decoration-lime-100{
+            text-decoration-color: #ecfccb;
+        }
+        .thrinkle-text-decoration-lime-200{
+            text-decoration-color: #d9f99d;
+        }
+        .thrinkle-text-decoration-lime-300{
+            text-decoration-color: #bef264;
+        }
+        .thrinkle-text-decoration-lime-400{
+            text-decoration-color: #a3e635;
+        }
+        .thrinkle-text-decoration-lime-500{
+            text-decoration-color: #84cc16;
+        }
+        .thrinkle-text-decoration-lime-600{
+            text-decoration-color: #65a30d;
+        }
+        .thrinkle-text-decoration-lime-700{
+            text-decoration-color: #4d7c0f;
+        }
+        .thrinkle-text-decoration-lime-800{
+            text-decoration-color: #3f6212;
+        }
+        .thrinkle-text-decoration-lime-900{
+            text-decoration-color: #365314;
+        }
+        .thrinkle-text-decoration-lime-950{
+            text-decoration-color: #1a2e05;
+        }
+    /** lime text-decoration colors */
+    /** lime text-emphasis colors */
+        .thrinkle-text-emphasis-lime-50{
+            text-emphasis-color: #f7fee7;
+        }
+        .thrinkle-text-emphasis-lime-100{
+            text-emphasis-color: #ecfccb;
+        }
+        .thrinkle-text-emphasis-lime-200{
+            text-emphasis-color: #d9f99d;
+        }
+        .thrinkle-text-emphasis-lime-300{
+            text-emphasis-color: #bef264;
+        }
+        .thrinkle-text-emphasis-lime-400{
+            text-emphasis-color: #a3e635;
+        }
+        .thrinkle-text-emphasis-lime-500{
+            text-emphasis-color: #84cc16;
+        }
+        .thrinkle-text-emphasis-lime-600{
+            text-emphasis-color: #65a30d;
+        }
+        .thrinkle-text-emphasis-lime-700{
+            text-emphasis-color: #4d7c0f;
+        }
+        .thrinkle-text-emphasis-lime-800{
+            text-emphasis-color: #3f6212;
+        }
+        .thrinkle-text-emphasis-lime-900{
+            text-emphasis-color: #365314;
+        }
+        .thrinkle-text-emphasis-lime-950{
+            text-emphasis-color: #1a2e05;
+        }
+    /** lime text-emphasis colors */
+    /** lime column-rule colors */
+        .thrinkle-column-rule-lime-50{
+            column-rule-color: #f7fee7;
+        }
+        .thrinkle-column-rule-lime-100{
+            column-rule-color: #ecfccb;
+        }
+        .thrinkle-column-rule-lime-200{
+            column-rule-color: #d9f99d;
+        }
+        .thrinkle-column-rule-lime-300{
+            column-rule-color: #bef264;
+        }
+        .thrinkle-column-rule-lime-400{
+            column-rule-color: #a3e635;
+        }
+        .thrinkle-column-rule-lime-500{
+            column-rule-color: #84cc16;
+        }
+        .thrinkle-column-rule-lime-600{
+            column-rule-color: #65a30d;
+        }
+        .thrinkle-column-rule-lime-700{
+            column-rule-color: #4d7c0f;
+        }
+        .thrinkle-column-rule-lime-800{
+            column-rule-color: #3f6212;
+        }
+        .thrinkle-column-rule-lime-900{
+            column-rule-color: #365314;
+        }
+        .thrinkle-column-rule-lime-950{
+            column-rule-color: #1a2e05;
+        }
+    /** lime column-rule colors */
+
+    /** green background colors */
+        .thrinkle-bg-green-50{
+            background-color: #f0fdf4;
+        }
+        .thrinkle-bg-green-100{
+            background-color: #dcfce7;
+        }
+        .thrinkle-bg-green-200{
+            background-color: #bbf7d0;
+        }
+        .thrinkle-bg-green-300{
+            background-color: #86efac;
+        }
+        .thrinkle-bg-green-400{
+            background-color: #4ade80;
+        }
+        .thrinkle-bg-green-500{
+            background-color: #22c55e;
+        }
+        .thrinkle-bg-green-600{
+            background-color: #16a34a;
+        }
+        .thrinkle-bg-green-700{
+            background-color: #15803d;
+        }
+        .thrinkle-bg-green-800{
+            background-color: #166534;
+        }
+        .thrinkle-bg-green-900{
+            background-color: #14532d;
+        }
+        .thrinkle-bg-green-950{
+            background-color: #052e16;
+        }
+    /** green background colors */
+    /** green font colors */
+        .thrinkle-text-green-50{
+            color: #f0fdf4;
+        }
+        .thrinkle-text-green-100{
+            color: #dcfce7;
+        }
+        .thrinkle-text-green-200{
+            color: #bbf7d0;
+        }
+        .thrinkle-text-green-300{
+            color: #86efac;
+        }
+        .thrinkle-text-green-400{
+            color: #4ade80;
+        }
+        .thrinkle-text-green-500{
+            color: #22c55e;
+        }
+        .thrinkle-text-green-600{
+            color: #16a34a;
+        }
+        .thrinkle-text-green-700{
+            color: #15803d;
+        }
+        .thrinkle-text-green-800{
+            color: #166534;
+        }
+        .thrinkle-text-green-900{
+            color: #14532d;
+        }
+        .thrinkle-text-green-950{
+            color: #052e16;
+        }
+    /** green font colors */
+    /** green border colors */
+        .thrinkle-border-green-50{
+            border-color: #f0fdf4;
+        }
+        .thrinkle-border-green-100{
+            border-color: #dcfce7;
+        }
+        .thrinkle-border-green-200{
+            border-color: #bbf7d0;
+        }
+        .thrinkle-border-green-300{
+            border-color: #86efac;
+        }
+        .thrinkle-border-green-400{
+            border-color: #4ade80;
+        }
+        .thrinkle-border-green-500{
+            border-color: #22c55e;
+        }
+        .thrinkle-border-green-600{
+            border-color: #16a34a;
+        }
+        .thrinkle-border-green-700{
+            border-color: #15803d;
+        }
+        .thrinkle-border-green-800{
+            border-color: #166534;
+        }
+        .thrinkle-border-green-900{
+            border-color: #14532d;
+        }
+        .thrinkle-border-green-950{
+            border-color: #052e16;
+        }
+    /** green border colors */
+    /** green outline colors */
+        .thrinkle-outline-green-50{
+            outline-color: #f0fdf4;
+        }
+        .thrinkle-outline-green-100{
+            outline-color: #dcfce7;
+        }
+        .thrinkle-outline-green-200{
+            outline-color: #bbf7d0;
+        }
+        .thrinkle-outline-green-300{
+            outline-color: #86efac;
+        }
+        .thrinkle-outline-green-400{
+            outline-color: #4ade80;
+        }
+        .thrinkle-outline-green-500{
+            outline-color: #22c55e;
+        }
+        .thrinkle-outline-green-600{
+            outline-color: #16a34a;
+        }
+        .thrinkle-outline-green-700{
+            outline-color: #15803d;
+        }
+        .thrinkle-outline-green-800{
+            outline-color: #166534;
+        }
+        .thrinkle-outline-green-900{
+            outline-color: #14532d;
+        }
+        .thrinkle-outline-green-950{
+            outline-color: #052e16;
+        }
+    /** green outline colors */
+    /** green caret colors */
+        .thrinkle-caret-green-50{
+            caret-color: #f0fdf4;
+        }
+        .thrinkle-caret-green-100{
+            caret-color: #dcfce7;
+        }
+        .thrinkle-caret-green-200{
+            caret-color: #bbf7d0;
+        }
+        .thrinkle-caret-green-300{
+            caret-color: #86efac;
+        }
+        .thrinkle-caret-green-400{
+            caret-color: #4ade80;
+        }
+        .thrinkle-caret-green-500{
+            caret-color: #22c55e;
+        }
+        .thrinkle-caret-green-600{
+            caret-color: #16a34a;
+        }
+        .thrinkle-caret-green-700{
+            caret-color: #15803d;
+        }
+        .thrinkle-caret-green-800{
+            caret-color: #166534;
+        }
+        .thrinkle-caret-green-900{
+            caret-color: #14532d;
+        }
+        .thrinkle-caret-green-950{
+            caret-color: #052e16;
+        }
+    /** green caret colors */
+    /** green text-decoration colors */
+        .thrinkle-text-decoration-green-50{
+            text-decoration-color: #f0fdf4;
+        }
+        .thrinkle-text-decoration-green-100{
+            text-decoration-color: #dcfce7;
+        }
+        .thrinkle-text-decoration-green-200{
+            text-decoration-color: #bbf7d0;
+        }
+        .thrinkle-text-decoration-green-300{
+            text-decoration-color: #86efac;
+        }
+        .thrinkle-text-decoration-green-400{
+            text-decoration-color: #4ade80;
+        }
+        .thrinkle-text-decoration-green-500{
+            text-decoration-color: #22c55e;
+        }
+        .thrinkle-text-decoration-green-600{
+            text-decoration-color: #16a34a;
+        }
+        .thrinkle-text-decoration-green-700{
+            text-decoration-color: #15803d;
+        }
+        .thrinkle-text-decoration-green-800{
+            text-decoration-color: #166534;
+        }
+        .thrinkle-text-decoration-green-900{
+            text-decoration-color: #14532d;
+        }
+        .thrinkle-text-decoration-green-950{
+            text-decoration-color: #052e16;
+        }
+    /** green text-decoration colors */
+    /** green text-emphasis colors */
+        .thrinkle-text-emphasis-green-50{
+            text-emphasis-color: #f0fdf4;
+        }
+        .thrinkle-text-emphasis-green-100{
+            text-emphasis-color: #dcfce7;
+        }
+        .thrinkle-text-emphasis-green-200{
+            text-emphasis-color: #bbf7d0;
+        }
+        .thrinkle-text-emphasis-green-300{
+            text-emphasis-color: #86efac;
+        }
+        .thrinkle-text-emphasis-green-400{
+            text-emphasis-color: #4ade80;
+        }
+        .thrinkle-text-emphasis-green-500{
+            text-emphasis-color: #22c55e;
+        }
+        .thrinkle-text-emphasis-green-600{
+            text-emphasis-color: #16a34a;
+        }
+        .thrinkle-text-emphasis-green-700{
+            text-emphasis-color: #15803d;
+        }
+        .thrinkle-text-emphasis-green-800{
+            text-emphasis-color: #166534;
+        }
+        .thrinkle-text-emphasis-green-900{
+            text-emphasis-color: #14532d;
+        }
+        .thrinkle-text-emphasis-green-950{
+            text-emphasis-color: #052e16;
+        }
+    /** green text-emphasis colors */
+    /** green column-rule colors */
+        .thrinkle-column-rule-green-50{
+            column-rule-color: #f0fdf4;
+        }
+        .thrinkle-column-rule-green-100{
+            column-rule-color: #dcfce7;
+        }
+        .thrinkle-column-rule-green-200{
+            column-rule-color: #bbf7d0;
+        }
+        .thrinkle-column-rule-green-300{
+            column-rule-color: #86efac;
+        }
+        .thrinkle-column-rule-green-400{
+            column-rule-color: #4ade80;
+        }
+        .thrinkle-column-rule-green-500{
+            column-rule-color: #22c55e;
+        }
+        .thrinkle-column-rule-green-600{
+            column-rule-color: #16a34a;
+        }
+        .thrinkle-column-rule-green-700{
+            column-rule-color: #15803d;
+        }
+        .thrinkle-column-rule-green-800{
+            column-rule-color: #166534;
+        }
+        .thrinkle-column-rule-green-900{
+            column-rule-color: #14532d;
+        }
+        .thrinkle-column-rule-green-950{
+            column-rule-color: #052e16;
+        }
+    /** green column-rule colors */
+
+    /** emerald background colors */
+        .thrinkle-bg-emerald-50{
+            background-color: #ecfdf5;
+        }
+        .thrinkle-bg-emerald-100{
+            background-color: #d1fae5;
+        }
+        .thrinkle-bg-emerald-200{
+            background-color: #a7f3d0;
+        }
+        .thrinkle-bg-emerald-300{
+            background-color: #6ee7b7;
+        }
+        .thrinkle-bg-emerald-400{
+            background-color: #34d399;
+        }
+        .thrinkle-bg-emerald-500{
+            background-color: #10b981;
+        }
+        .thrinkle-bg-emerald-600{
+            background-color: #059669;
+        }
+        .thrinkle-bg-emerald-700{
+            background-color: #047857;
+        }
+        .thrinkle-bg-emerald-800{
+            background-color: #065f46;
+        }
+        .thrinkle-bg-emerald-900{
+            background-color: #064e3b;
+        }
+        .thrinkle-bg-emerald-950{
+            background-color: #022c22;
+        }
+    /** emerald background colors */
+    /** emerald font colors */
+        .thrinkle-text-emerald-50{
+            color: #ecfdf5;
+        }
+        .thrinkle-text-emerald-100{
+            color: #d1fae5;
+        }
+        .thrinkle-text-emerald-200{
+            color: #a7f3d0;
+        }
+        .thrinkle-text-emerald-300{
+            color: #6ee7b7;
+        }
+        .thrinkle-text-emerald-400{
+            color: #34d399;
+        }
+        .thrinkle-text-emerald-500{
+            color: #10b981;
+        }
+        .thrinkle-text-emerald-600{
+            color: #059669;
+        }
+        .thrinkle-text-emerald-700{
+            color: #047857;
+        }
+        .thrinkle-text-emerald-800{
+            color: #065f46;
+        }
+        .thrinkle-text-emerald-900{
+            color: #064e3b;
+        }
+        .thrinkle-text-emerald-950{
+            color: #022c22;
+        }
+    /** emerald font colors */
+    /** emerald border colors */
+        .thrinkle-border-emerald-50{
+            border-color: #ecfdf5;
+        }
+        .thrinkle-border-emerald-100{
+            border-color: #d1fae5;
+        }
+        .thrinkle-border-emerald-200{
+            border-color: #a7f3d0;
+        }
+        .thrinkle-border-emerald-300{
+            border-color: #6ee7b7;
+        }
+        .thrinkle-border-emerald-400{
+            border-color: #34d399;
+        }
+        .thrinkle-border-emerald-500{
+            border-color: #10b981;
+        }
+        .thrinkle-border-emerald-600{
+            border-color: #059669;
+        }
+        .thrinkle-border-emerald-700{
+            border-color: #047857;
+        }
+        .thrinkle-border-emerald-800{
+            border-color: #065f46;
+        }
+        .thrinkle-border-emerald-900{
+            border-color: #064e3b;
+        }
+        .thrinkle-border-emerald-950{
+            border-color: #022c22;
+        }
+    /** emerald border colors */
+    /** emerald outline colors */
+        .thrinkle-outline-emerald-50{
+            outline-color: #ecfdf5;
+        }
+        .thrinkle-outline-emerald-100{
+            outline-color: #d1fae5;
+        }
+        .thrinkle-outline-emerald-200{
+            outline-color: #a7f3d0;
+        }
+        .thrinkle-outline-emerald-300{
+            outline-color: #6ee7b7;
+        }
+        .thrinkle-outline-emerald-400{
+            outline-color: #34d399;
+        }
+        .thrinkle-outline-emerald-500{
+            outline-color: #10b981;
+        }
+        .thrinkle-outline-emerald-600{
+            outline-color: #059669;
+        }
+        .thrinkle-outline-emerald-700{
+            outline-color: #047857;
+        }
+        .thrinkle-outline-emerald-800{
+            outline-color: #065f46;
+        }
+        .thrinkle-outline-emerald-900{
+            outline-color: #064e3b;
+        }
+        .thrinkle-outline-emerald-950{
+            outline-color: #022c22;
+        }
+    /** emerald outline colors */
+    /** emerald caret colors */
+        .thrinkle-caret-emerald-50{
+            caret-color: #ecfdf5;
+        }
+        .thrinkle-caret-emerald-100{
+            caret-color: #d1fae5;
+        }
+        .thrinkle-caret-emerald-200{
+            caret-color: #a7f3d0;
+        }
+        .thrinkle-caret-emerald-300{
+            caret-color: #6ee7b7;
+        }
+        .thrinkle-caret-emerald-400{
+            caret-color: #34d399;
+        }
+        .thrinkle-caret-emerald-500{
+            caret-color: #10b981;
+        }
+        .thrinkle-caret-emerald-600{
+            caret-color: #059669;
+        }
+        .thrinkle-caret-emerald-700{
+            caret-color: #047857;
+        }
+        .thrinkle-caret-emerald-800{
+            caret-color: #065f46;
+        }
+        .thrinkle-caret-emerald-900{
+            caret-color: #064e3b;
+        }
+        .thrinkle-caret-emerald-950{
+            caret-color: #022c22;
+        }
+    /** emerald caret colors */
+    /** emerald text-decoration colors */
+        .thrinkle-text-decoration-emerald-50{
+            text-decoration-color: #ecfdf5;
+        }
+        .thrinkle-text-decoration-emerald-100{
+            text-decoration-color: #d1fae5;
+        }
+        .thrinkle-text-decoration-emerald-200{
+            text-decoration-color: #a7f3d0;
+        }
+        .thrinkle-text-decoration-emerald-300{
+            text-decoration-color: #6ee7b7;
+        }
+        .thrinkle-text-decoration-emerald-400{
+            text-decoration-color: #34d399;
+        }
+        .thrinkle-text-decoration-emerald-500{
+            text-decoration-color: #10b981;
+        }
+        .thrinkle-text-decoration-emerald-600{
+            text-decoration-color: #059669;
+        }
+        .thrinkle-text-decoration-emerald-700{
+            text-decoration-color: #047857;
+        }
+        .thrinkle-text-decoration-emerald-800{
+            text-decoration-color: #065f46;
+        }
+        .thrinkle-text-decoration-emerald-900{
+            text-decoration-color: #064e3b;
+        }
+        .thrinkle-text-decoration-emerald-950{
+            text-decoration-color: #022c22;
+        }
+    /** emerald text-decoration colors */
+    /** emerald text-emphasis colors */
+        .thrinkle-text-emphasis-emerald-50{
+            text-emphasis-color: #ecfdf5;
+        }
+        .thrinkle-text-emphasis-emerald-100{
+            text-emphasis-color: #d1fae5;
+        }
+        .thrinkle-text-emphasis-emerald-200{
+            text-emphasis-color: #a7f3d0;
+        }
+        .thrinkle-text-emphasis-emerald-300{
+            text-emphasis-color: #6ee7b7;
+        }
+        .thrinkle-text-emphasis-emerald-400{
+            text-emphasis-color: #34d399;
+        }
+        .thrinkle-text-emphasis-emerald-500{
+            text-emphasis-color: #10b981;
+        }
+        .thrinkle-text-emphasis-emerald-600{
+            text-emphasis-color: #059669;
+        }
+        .thrinkle-text-emphasis-emerald-700{
+            text-emphasis-color: #047857;
+        }
+        .thrinkle-text-emphasis-emerald-800{
+            text-emphasis-color: #065f46;
+        }
+        .thrinkle-text-emphasis-emerald-900{
+            text-emphasis-color: #064e3b;
+        }
+        .thrinkle-text-emphasis-emerald-950{
+            text-emphasis-color: #022c22;
+        }
+    /** emerald text-emphasis colors */
+    /** emerald column-rule colors */
+        .thrinkle-column-rule-emerald-50{
+            column-rule-color: #ecfdf5;
+        }
+        .thrinkle-column-rule-emerald-100{
+            column-rule-color: #d1fae5;
+        }
+        .thrinkle-column-rule-emerald-200{
+            column-rule-color: #a7f3d0;
+        }
+        .thrinkle-column-rule-emerald-300{
+            column-rule-color: #6ee7b7;
+        }
+        .thrinkle-column-rule-emerald-400{
+            column-rule-color: #34d399;
+        }
+        .thrinkle-column-rule-emerald-500{
+            column-rule-color: #10b981;
+        }
+        .thrinkle-column-rule-emerald-600{
+            column-rule-color: #059669;
+        }
+        .thrinkle-column-rule-emerald-700{
+            column-rule-color: #047857;
+        }
+        .thrinkle-column-rule-emerald-800{
+            column-rule-color: #065f46;
+        }
+        .thrinkle-column-rule-emerald-900{
+            column-rule-color: #064e3b;
+        }
+        .thrinkle-column-rule-emerald-950{
+            column-rule-color: #022c22;
+        }
+    /** emerald column-rule colors */
+
+    /** teal background colors */
+        .thrinkle-bg-teal-50{
+            background-color: #f0fdfa;
+        }
+        .thrinkle-bg-teal-100{
+            background-color: #ccfbf1;
+        }
+        .thrinkle-bg-teal-200{
+            background-color: #99f6e4;
+        }
+        .thrinkle-bg-teal-300{
+            background-color: #5eead4;
+        }
+        .thrinkle-bg-teal-400{
+            background-color: #2dd4bf;
+        }
+        .thrinkle-bg-teal-500{
+            background-color: #14b8a6;
+        }
+        .thrinkle-bg-teal-600{
+            background-color: #0d9488;
+        }
+        .thrinkle-bg-teal-700{
+            background-color: #0f766e;
+        }
+        .thrinkle-bg-teal-800{
+            background-color: #115e59;
+        }
+        .thrinkle-bg-teal-900{
+            background-color: #134e4a;
+        }
+        .thrinkle-bg-teal-950{
+            background-color: #042f2e;
+        }
+    /** teal background colors */
+    /** teal font colors */
+        .thrinkle-text-teal-50{
+            color: #f0fdfa;
+        }
+        .thrinkle-text-teal-100{
+            color: #ccfbf1;
+        }
+        .thrinkle-text-teal-200{
+            color: #99f6e4;
+        }
+        .thrinkle-text-teal-300{
+            color: #5eead4;
+        }
+        .thrinkle-text-teal-400{
+            color: #2dd4bf;
+        }
+        .thrinkle-text-teal-500{
+            color: #14b8a6;
+        }
+        .thrinkle-text-teal-600{
+            color: #0d9488;
+        }
+        .thrinkle-text-teal-700{
+            color: #0f766e;
+        }
+        .thrinkle-text-teal-800{
+            color: #115e59;
+        }
+        .thrinkle-text-teal-900{
+            color: #134e4a;
+        }
+        .thrinkle-text-teal-950{
+            color: #042f2e;
+        }
+    /** teal font colors */
+    /** teal border colors */
+        .thrinkle-border-teal-50{
+            border-color: #f0fdfa;
+        }
+        .thrinkle-border-teal-100{
+            border-color: #ccfbf1;
+        }
+        .thrinkle-border-teal-200{
+            border-color: #99f6e4;
+        }
+        .thrinkle-border-teal-300{
+            border-color: #5eead4;
+        }
+        .thrinkle-border-teal-400{
+            border-color: #2dd4bf;
+        }
+        .thrinkle-border-teal-500{
+            border-color: #14b8a6;
+        }
+        .thrinkle-border-teal-600{
+            border-color: #0d9488;
+        }
+        .thrinkle-border-teal-700{
+            border-color: #0f766e;
+        }
+        .thrinkle-border-teal-800{
+            border-color: #115e59;
+        }
+        .thrinkle-border-teal-900{
+            border-color: #134e4a;
+        }
+        .thrinkle-border-teal-950{
+            border-color: #042f2e;
+        }
+    /** teal border colors */
+    /** teal outline colors */
+        .thrinkle-outline-teal-50{
+            outline-color: #f0fdfa;
+        }
+        .thrinkle-outline-teal-100{
+            outline-color: #ccfbf1;
+        }
+        .thrinkle-outline-teal-200{
+            outline-color: #99f6e4;
+        }
+        .thrinkle-outline-teal-300{
+            outline-color: #5eead4;
+        }
+        .thrinkle-outline-teal-400{
+            outline-color: #2dd4bf;
+        }
+        .thrinkle-outline-teal-500{
+            outline-color: #14b8a6;
+        }
+        .thrinkle-outline-teal-600{
+            outline-color: #0d9488;
+        }
+        .thrinkle-outline-teal-700{
+            outline-color: #0f766e;
+        }
+        .thrinkle-outline-teal-800{
+            outline-color: #115e59;
+        }
+        .thrinkle-outline-teal-900{
+            outline-color: #134e4a;
+        }
+        .thrinkle-outline-teal-950{
+            outline-color: #042f2e;
+        }
+    /** teal outline colors */
+    /** teal caret colors */
+        .thrinkle-caret-teal-50{
+            caret-color: #f0fdfa;
+        }
+        .thrinkle-caret-teal-100{
+            caret-color: #ccfbf1;
+        }
+        .thrinkle-caret-teal-200{
+            caret-color: #99f6e4;
+        }
+        .thrinkle-caret-teal-300{
+            caret-color: #5eead4;
+        }
+        .thrinkle-caret-teal-400{
+            caret-color: #2dd4bf;
+        }
+        .thrinkle-caret-teal-500{
+            caret-color: #14b8a6;
+        }
+        .thrinkle-caret-teal-600{
+            caret-color: #0d9488;
+        }
+        .thrinkle-caret-teal-700{
+            caret-color: #0f766e;
+        }
+        .thrinkle-caret-teal-800{
+            caret-color: #115e59;
+        }
+        .thrinkle-caret-teal-900{
+            caret-color: #134e4a;
+        }
+        .thrinkle-caret-teal-950{
+            caret-color: #042f2e;
+        }
+    /** teal caret colors */
+    /** teal text-decoration colors */
+        .thrinkle-text-decoration-teal-50{
+            text-decoration-color: #f0fdfa;
+        }
+        .thrinkle-text-decoration-teal-100{
+            text-decoration-color: #ccfbf1;
+        }
+        .thrinkle-text-decoration-teal-200{
+            text-decoration-color: #99f6e4;
+        }
+        .thrinkle-text-decoration-teal-300{
+            text-decoration-color: #5eead4;
+        }
+        .thrinkle-text-decoration-teal-400{
+            text-decoration-color: #2dd4bf;
+        }
+        .thrinkle-text-decoration-teal-500{
+            text-decoration-color: #14b8a6;
+        }
+        .thrinkle-text-decoration-teal-600{
+            text-decoration-color: #0d9488;
+        }
+        .thrinkle-text-decoration-teal-700{
+            text-decoration-color: #0f766e;
+        }
+        .thrinkle-text-decoration-teal-800{
+            text-decoration-color: #115e59;
+        }
+        .thrinkle-text-decoration-teal-900{
+            text-decoration-color: #134e4a;
+        }
+        .thrinkle-text-decoration-teal-950{
+            text-decoration-color: #042f2e;
+        }
+    /** teal text-decoration colors */
+    /** teal text-emphasis colors */
+        .thrinkle-text-emphasis-teal-50{
+            text-emphasis-color: #f0fdfa;
+        }
+        .thrinkle-text-emphasis-teal-100{
+            text-emphasis-color: #ccfbf1;
+        }
+        .thrinkle-text-emphasis-teal-200{
+            text-emphasis-color: #99f6e4;
+        }
+        .thrinkle-text-emphasis-teal-300{
+            text-emphasis-color: #5eead4;
+        }
+        .thrinkle-text-emphasis-teal-400{
+            text-emphasis-color: #2dd4bf;
+        }
+        .thrinkle-text-emphasis-teal-500{
+            text-emphasis-color: #14b8a6;
+        }
+        .thrinkle-text-emphasis-teal-600{
+            text-emphasis-color: #0d9488;
+        }
+        .thrinkle-text-emphasis-teal-700{
+            text-emphasis-color: #0f766e;
+        }
+        .thrinkle-text-emphasis-teal-800{
+            text-emphasis-color: #115e59;
+        }
+        .thrinkle-text-emphasis-teal-900{
+            text-emphasis-color: #134e4a;
+        }
+        .thrinkle-text-emphasis-teal-950{
+            text-emphasis-color: #042f2e;
+        }
+    /** teal text-emphasis colors */
+    /** teal column-rule colors */
+        .thrinkle-column-rule-teal-50{
+            column-rule-color: #f0fdfa;
+        }
+        .thrinkle-column-rule-teal-100{
+            column-rule-color: #ccfbf1;
+        }
+        .thrinkle-column-rule-teal-200{
+            column-rule-color: #99f6e4;
+        }
+        .thrinkle-column-rule-teal-300{
+            column-rule-color: #5eead4;
+        }
+        .thrinkle-column-rule-teal-400{
+            column-rule-color: #2dd4bf;
+        }
+        .thrinkle-column-rule-teal-500{
+            column-rule-color: #14b8a6;
+        }
+        .thrinkle-column-rule-teal-600{
+            column-rule-color: #0d9488;
+        }
+        .thrinkle-column-rule-teal-700{
+            column-rule-color: #0f766e;
+        }
+        .thrinkle-column-rule-teal-800{
+            column-rule-color: #115e59;
+        }
+        .thrinkle-column-rule-teal-900{
+            column-rule-color: #134e4a;
+        }
+        .thrinkle-column-rule-teal-950{
+            column-rule-color: #042f2e;
+        }
+    /** teal column-rule colors */
+
+    /** cyan background colors */
+        .thrinkle-bg-cyan-50{
+            background-color: #ecfeff;
+        }
+        .thrinkle-bg-cyan-100{
+            background-color: #cffafe;
+        }
+        .thrinkle-bg-cyan-200{
+            background-color: #a5f3fc;
+        }
+        .thrinkle-bg-cyan-300{
+            background-color: #67e8f9;
+        }
+        .thrinkle-bg-cyan-400{
+            background-color: #22d3ee;
+        }
+        .thrinkle-bg-cyan-500{
+            background-color: #06b6d4;
+        }
+        .thrinkle-bg-cyan-600{
+            background-color: #0891b2;
+        }
+        .thrinkle-bg-cyan-700{
+            background-color: #0e7490;
+        }
+        .thrinkle-bg-cyan-800{
+            background-color: #155e75;
+        }
+        .thrinkle-bg-cyan-900{
+            background-color: #164e63;
+        }
+        .thrinkle-bg-cyan-950{
+            background-color: #083344;
+        }
+    /** cyan background colors */
+    /** cyan font colors */
+        .thrinkle-text-cyan-50{
+            color: #ecfeff;
+        }
+        .thrinkle-text-cyan-100{
+            color: #cffafe;
+        }
+        .thrinkle-text-cyan-200{
+            color: #a5f3fc;
+        }
+        .thrinkle-text-cyan-300{
+            color: #67e8f9;
+        }
+        .thrinkle-text-cyan-400{
+            color: #22d3ee;
+        }
+        .thrinkle-text-cyan-500{
+            color: #06b6d4;
+        }
+        .thrinkle-text-cyan-600{
+            color: #0891b2;
+        }
+        .thrinkle-text-cyan-700{
+            color: #0e7490;
+        }
+        .thrinkle-text-cyan-800{
+            color: #155e75;
+        }
+        .thrinkle-text-cyan-900{
+            color: #164e63;
+        }
+        .thrinkle-text-cyan-950{
+            color: #083344;
+        }
+    /** cyan font colors */
+    /** cyan border colors */
+        .thrinkle-border-cyan-50{
+            border-color: #ecfeff;
+        }
+        .thrinkle-border-cyan-100{
+            border-color: #cffafe;
+        }
+        .thrinkle-border-cyan-200{
+            border-color: #a5f3fc;
+        }
+        .thrinkle-border-cyan-300{
+            border-color: #67e8f9;
+        }
+        .thrinkle-border-cyan-400{
+            border-color: #22d3ee;
+        }
+        .thrinkle-border-cyan-500{
+            border-color: #06b6d4;
+        }
+        .thrinkle-border-cyan-600{
+            border-color: #0891b2;
+        }
+        .thrinkle-border-cyan-700{
+            border-color: #0e7490;
+        }
+        .thrinkle-border-cyan-800{
+            border-color: #155e75;
+        }
+        .thrinkle-border-cyan-900{
+            border-color: #164e63;
+        }
+        .thrinkle-border-cyan-950{
+            border-color: #083344;
+        }
+    /** cyan border colors */
+    /** cyan outline colors */
+        .thrinkle-outline-cyan-50{
+            outline-color: #ecfeff;
+        }
+        .thrinkle-outline-cyan-100{
+            outline-color: #cffafe;
+        }
+        .thrinkle-outline-cyan-200{
+            outline-color: #a5f3fc;
+        }
+        .thrinkle-outline-cyan-300{
+            outline-color: #67e8f9;
+        }
+        .thrinkle-outline-cyan-400{
+            outline-color: #22d3ee;
+        }
+        .thrinkle-outline-cyan-500{
+            outline-color: #06b6d4;
+        }
+        .thrinkle-outline-cyan-600{
+            outline-color: #0891b2;
+        }
+        .thrinkle-outline-cyan-700{
+            outline-color: #0e7490;
+        }
+        .thrinkle-outline-cyan-800{
+            outline-color: #155e75;
+        }
+        .thrinkle-outline-cyan-900{
+            outline-color: #164e63;
+        }
+        .thrinkle-outline-cyan-950{
+            outline-color: #083344;
+        }
+    /** cyan outline colors */
+    /** cyan caret colors */
+        .thrinkle-caret-cyan-50{
+            caret-color: #ecfeff;
+        }
+        .thrinkle-caret-cyan-100{
+            caret-color: #cffafe;
+        }
+        .thrinkle-caret-cyan-200{
+            caret-color: #a5f3fc;
+        }
+        .thrinkle-caret-cyan-300{
+            caret-color: #67e8f9;
+        }
+        .thrinkle-caret-cyan-400{
+            caret-color: #22d3ee;
+        }
+        .thrinkle-caret-cyan-500{
+            caret-color: #06b6d4;
+        }
+        .thrinkle-caret-cyan-600{
+            caret-color: #0891b2;
+        }
+        .thrinkle-caret-cyan-700{
+            caret-color: #0e7490;
+        }
+        .thrinkle-caret-cyan-800{
+            caret-color: #155e75;
+        }
+        .thrinkle-caret-cyan-900{
+            caret-color: #164e63;
+        }
+        .thrinkle-caret-cyan-950{
+            caret-color: #083344;
+        }
+    /** cyan caret colors */
+    /** cyan text-decoration colors */
+        .thrinkle-text-decoration-cyan-50{
+            text-decoration-color: #ecfeff;
+        }
+        .thrinkle-text-decoration-cyan-100{
+            text-decoration-color: #cffafe;
+        }
+        .thrinkle-text-decoration-cyan-200{
+            text-decoration-color: #a5f3fc;
+        }
+        .thrinkle-text-decoration-cyan-300{
+            text-decoration-color: #67e8f9;
+        }
+        .thrinkle-text-decoration-cyan-400{
+            text-decoration-color: #22d3ee;
+        }
+        .thrinkle-text-decoration-cyan-500{
+            text-decoration-color: #06b6d4;
+        }
+        .thrinkle-text-decoration-cyan-600{
+            text-decoration-color: #0891b2;
+        }
+        .thrinkle-text-decoration-cyan-700{
+            text-decoration-color: #0e7490;
+        }
+        .thrinkle-text-decoration-cyan-800{
+            text-decoration-color: #155e75;
+        }
+        .thrinkle-text-decoration-cyan-900{
+            text-decoration-color: #164e63;
+        }
+        .thrinkle-text-decoration-cyan-950{
+            text-decoration-color: #083344;
+        }
+    /** cyan text-decoration colors */
+    /** cyan text-emphasis colors */
+        .thrinkle-text-emphasis-cyan-50{
+            text-emphasis-color: #ecfeff;
+        }
+        .thrinkle-text-emphasis-cyan-100{
+            text-emphasis-color: #cffafe;
+        }
+        .thrinkle-text-emphasis-cyan-200{
+            text-emphasis-color: #a5f3fc;
+        }
+        .thrinkle-text-emphasis-cyan-300{
+            text-emphasis-color: #67e8f9;
+        }
+        .thrinkle-text-emphasis-cyan-400{
+            text-emphasis-color: #22d3ee;
+        }
+        .thrinkle-text-emphasis-cyan-500{
+            text-emphasis-color: #06b6d4;
+        }
+        .thrinkle-text-emphasis-cyan-600{
+            text-emphasis-color: #0891b2;
+        }
+        .thrinkle-text-emphasis-cyan-700{
+            text-emphasis-color: #0e7490;
+        }
+        .thrinkle-text-emphasis-cyan-800{
+            text-emphasis-color: #155e75;
+        }
+        .thrinkle-text-emphasis-cyan-900{
+            text-emphasis-color: #164e63;
+        }
+        .thrinkle-text-emphasis-cyan-950{
+            text-emphasis-color: #083344;
+        }
+    /** cyan text-emphasis colors */
+    /** cyan column-rule colors */
+        .thrinkle-column-rule-cyan-50{
+            column-rule-color: #ecfeff;
+        }
+        .thrinkle-column-rule-cyan-100{
+            column-rule-color: #cffafe;
+        }
+        .thrinkle-column-rule-cyan-200{
+            column-rule-color: #a5f3fc;
+        }
+        .thrinkle-column-rule-cyan-300{
+            column-rule-color: #67e8f9;
+        }
+        .thrinkle-column-rule-cyan-400{
+            column-rule-color: #22d3ee;
+        }
+        .thrinkle-column-rule-cyan-500{
+            column-rule-color: #06b6d4;
+        }
+        .thrinkle-column-rule-cyan-600{
+            column-rule-color: #0891b2;
+        }
+        .thrinkle-column-rule-cyan-700{
+            column-rule-color: #0e7490;
+        }
+        .thrinkle-column-rule-cyan-800{
+            column-rule-color: #155e75;
+        }
+        .thrinkle-column-rule-cyan-900{
+            column-rule-color: #164e63;
+        }
+        .thrinkle-column-rule-cyan-950{
+            column-rule-color: #083344;
+        }
+    /** cyan column-rule colors */
+
+    /** sky background colors */
+        .thrinkle-bg-sky-50{
+            background-color: #f0f9ff;
+        }
+        .thrinkle-bg-sky-100{
+            background-color: #e0f2fe;
+        }
+        .thrinkle-bg-sky-200{
+            background-color: #bae6fd;
+        }
+        .thrinkle-bg-sky-300{
+            background-color: #7dd3fc;
+        }
+        .thrinkle-bg-sky-400{
+            background-color: #38bdf8;
+        }
+        .thrinkle-bg-sky-500{
+            background-color: #0ea5e9;
+        }
+        .thrinkle-bg-sky-600{
+            background-color: #0284c7;
+        }
+        .thrinkle-bg-sky-700{
+            background-color: #0369a1;
+        }
+        .thrinkle-bg-sky-800{
+            background-color: #075985;
+        }
+        .thrinkle-bg-sky-900{
+            background-color: #0c4a6e;
+        }
+        .thrinkle-bg-sky-950{
+            background-color: #082f49;
+        }
+    /** sky background colors */
+    /** sky font colors */
+        .thrinkle-text-sky-50{
+            color: #f0f9ff;
+        }
+        .thrinkle-text-sky-100{
+            color: #e0f2fe;
+        }
+        .thrinkle-text-sky-200{
+            color: #bae6fd;
+        }
+        .thrinkle-text-sky-300{
+            color: #7dd3fc;
+        }
+        .thrinkle-text-sky-400{
+            color: #38bdf8;
+        }
+        .thrinkle-text-sky-500{
+            color: #0ea5e9;
+        }
+        .thrinkle-text-sky-600{
+            color: #0284c7;
+        }
+        .thrinkle-text-sky-700{
+            color: #0369a1;
+        }
+        .thrinkle-text-sky-800{
+            color: #075985;
+        }
+        .thrinkle-text-sky-900{
+            color: #0c4a6e;
+        }
+        .thrinkle-text-sky-950{
+            color: #082f49;
+        }
+    /** sky font colors */
+    /** sky border colors */
+        .thrinkle-border-sky-50{
+            border-color: #f0f9ff;
+        }
+        .thrinkle-border-sky-100{
+            border-color: #e0f2fe;
+        }
+        .thrinkle-border-sky-200{
+            border-color: #bae6fd;
+        }
+        .thrinkle-border-sky-300{
+            border-color: #7dd3fc;
+        }
+        .thrinkle-border-sky-400{
+            border-color: #38bdf8;
+        }
+        .thrinkle-border-sky-500{
+            border-color: #0ea5e9;
+        }
+        .thrinkle-border-sky-600{
+            border-color: #0284c7;
+        }
+        .thrinkle-border-sky-700{
+            border-color: #0369a1;
+        }
+        .thrinkle-border-sky-800{
+            border-color: #075985;
+        }
+        .thrinkle-border-sky-900{
+            border-color: #0c4a6e;
+        }
+        .thrinkle-border-sky-950{
+            border-color: #082f49;
+        }
+    /** sky border colors */
+    /** sky outline colors */
+        .thrinkle-outline-sky-50{
+            outline-color: #f0f9ff;
+        }
+        .thrinkle-outline-sky-100{
+            outline-color: #e0f2fe;
+        }
+        .thrinkle-outline-sky-200{
+            outline-color: #bae6fd;
+        }
+        .thrinkle-outline-sky-300{
+            outline-color: #7dd3fc;
+        }
+        .thrinkle-outline-sky-400{
+            outline-color: #38bdf8;
+        }
+        .thrinkle-outline-sky-500{
+            outline-color: #0ea5e9;
+        }
+        .thrinkle-outline-sky-600{
+            outline-color: #0284c7;
+        }
+        .thrinkle-outline-sky-700{
+            outline-color: #0369a1;
+        }
+        .thrinkle-outline-sky-800{
+            outline-color: #075985;
+        }
+        .thrinkle-outline-sky-900{
+            outline-color: #0c4a6e;
+        }
+        .thrinkle-outline-sky-950{
+            outline-color: #082f49;
+        }
+    /** sky outline colors */
+    /** sky caret colors */
+        .thrinkle-caret-sky-50{
+            caret-color: #f0f9ff;
+        }
+        .thrinkle-caret-sky-100{
+            caret-color: #e0f2fe;
+        }
+        .thrinkle-caret-sky-200{
+            caret-color: #bae6fd;
+        }
+        .thrinkle-caret-sky-300{
+            caret-color: #7dd3fc;
+        }
+        .thrinkle-caret-sky-400{
+            caret-color: #38bdf8;
+        }
+        .thrinkle-caret-sky-500{
+            caret-color: #0ea5e9;
+        }
+        .thrinkle-caret-sky-600{
+            caret-color: #0284c7;
+        }
+        .thrinkle-caret-sky-700{
+            caret-color: #0369a1;
+        }
+        .thrinkle-caret-sky-800{
+            caret-color: #075985;
+        }
+        .thrinkle-caret-sky-900{
+            caret-color: #0c4a6e;
+        }
+        .thrinkle-caret-sky-950{
+            caret-color: #082f49;
+        }
+    /** sky caret colors */
+    /** sky text-decoration colors */
+        .thrinkle-text-decoration-sky-50{
+            text-decoration-color: #f0f9ff;
+        }
+        .thrinkle-text-decoration-sky-100{
+            text-decoration-color: #e0f2fe;
+        }
+        .thrinkle-text-decoration-sky-200{
+            text-decoration-color: #bae6fd;
+        }
+        .thrinkle-text-decoration-sky-300{
+            text-decoration-color: #7dd3fc;
+        }
+        .thrinkle-text-decoration-sky-400{
+            text-decoration-color: #38bdf8;
+        }
+        .thrinkle-text-decoration-sky-500{
+            text-decoration-color: #0ea5e9;
+        }
+        .thrinkle-text-decoration-sky-600{
+            text-decoration-color: #0284c7;
+        }
+        .thrinkle-text-decoration-sky-700{
+            text-decoration-color: #0369a1;
+        }
+        .thrinkle-text-decoration-sky-800{
+            text-decoration-color: #075985;
+        }
+        .thrinkle-text-decoration-sky-900{
+            text-decoration-color: #0c4a6e;
+        }
+        .thrinkle-text-decoration-sky-950{
+            text-decoration-color: #082f49;
+        }
+    /** sky text-decoration colors */
+    /** sky text-emphasis colors */
+        .thrinkle-text-emphasis-sky-50{
+            text-emphasis-color: #f0f9ff;
+        }
+        .thrinkle-text-emphasis-sky-100{
+            text-emphasis-color: #e0f2fe;
+        }
+        .thrinkle-text-emphasis-sky-200{
+            text-emphasis-color: #bae6fd;
+        }
+        .thrinkle-text-emphasis-sky-300{
+            text-emphasis-color: #7dd3fc;
+        }
+        .thrinkle-text-emphasis-sky-400{
+            text-emphasis-color: #38bdf8;
+        }
+        .thrinkle-text-emphasis-sky-500{
+            text-emphasis-color: #0ea5e9;
+        }
+        .thrinkle-text-emphasis-sky-600{
+            text-emphasis-color: #0284c7;
+        }
+        .thrinkle-text-emphasis-sky-700{
+            text-emphasis-color: #0369a1;
+        }
+        .thrinkle-text-emphasis-sky-800{
+            text-emphasis-color: #075985;
+        }
+        .thrinkle-text-emphasis-sky-900{
+            text-emphasis-color: #0c4a6e;
+        }
+        .thrinkle-text-emphasis-sky-950{
+            text-emphasis-color: #082f49;
+        }
+    /** sky text-emphasis colors */
+    /** sky column-rule colors */
+        .thrinkle-column-rule-sky-50{
+            column-rule-color: #f0f9ff;
+        }
+        .thrinkle-column-rule-sky-100{
+            column-rule-color: #e0f2fe;
+        }
+        .thrinkle-column-rule-sky-200{
+            column-rule-color: #bae6fd;
+        }
+        .thrinkle-column-rule-sky-300{
+            column-rule-color: #7dd3fc;
+        }
+        .thrinkle-column-rule-sky-400{
+            column-rule-color: #38bdf8;
+        }
+        .thrinkle-column-rule-sky-500{
+            column-rule-color: #0ea5e9;
+        }
+        .thrinkle-column-rule-sky-600{
+            column-rule-color: #0284c7;
+        }
+        .thrinkle-column-rule-sky-700{
+            column-rule-color: #0369a1;
+        }
+        .thrinkle-column-rule-sky-800{
+            column-rule-color: #075985;
+        }
+        .thrinkle-column-rule-sky-900{
+            column-rule-color: #0c4a6e;
+        }
+        .thrinkle-column-rule-sky-950{
+            column-rule-color: #082f49;
+        }
+    /** sky column-rule colors */
+
+    /** blue background colors */
+        .thrinkle-bg-blue-50{
+            background-color: #eff6ff;
+        }
+        .thrinkle-bg-blue-100{
+            background-color: #dbeafe;
+        }
+        .thrinkle-bg-blue-200{
+            background-color: #bfdbfe;
+        }
+        .thrinkle-bg-blue-300{
+            background-color: #93c5fd;
+        }
+        .thrinkle-bg-blue-400{
+            background-color: #60a5fa;
+        }
+        .thrinkle-bg-blue-500{
+            background-color: #3b82f6;
+        }
+        .thrinkle-bg-blue-600{
+            background-color: #2563eb;
+        }
+        .thrinkle-bg-blue-700{
+            background-color: #1d4ed8;
+        }
+        .thrinkle-bg-blue-800{
+            background-color: #1e40af;
+        }
+        .thrinkle-bg-blue-900{
+            background-color: #1e3a8a;
+        }
+        .thrinkle-bg-blue-950{
+            background-color: #172554;
+        }
+    /** blue background colors */
+    /** blue font colors */
+        .thrinkle-text-blue-50{
+            color: #eff6ff;
+        }
+        .thrinkle-text-blue-100{
+            color: #dbeafe;
+        }
+        .thrinkle-text-blue-200{
+            color: #bfdbfe;
+        }
+        .thrinkle-text-blue-300{
+            color: #93c5fd;
+        }
+        .thrinkle-text-blue-400{
+            color: #60a5fa;
+        }
+        .thrinkle-text-blue-500{
+            color: #3b82f6;
+        }
+        .thrinkle-text-blue-600{
+            color: #2563eb;
+        }
+        .thrinkle-text-blue-700{
+            color: #1d4ed8;
+        }
+        .thrinkle-text-blue-800{
+            color: #1e40af;
+        }
+        .thrinkle-text-blue-900{
+            color: #1e3a8a;
+        }
+        .thrinkle-text-blue-950{
+            color: #172554;
+        }
+    /** blue font colors */
+    /** blue border colors */
+        .thrinkle-border-blue-50{
+            border-color: #eff6ff;
+        }
+        .thrinkle-border-blue-100{
+            border-color: #dbeafe;
+        }
+        .thrinkle-border-blue-200{
+            border-color: #bfdbfe;
+        }
+        .thrinkle-border-blue-300{
+            border-color: #93c5fd;
+        }
+        .thrinkle-border-blue-400{
+            border-color: #60a5fa;
+        }
+        .thrinkle-border-blue-500{
+            border-color: #3b82f6;
+        }
+        .thrinkle-border-blue-600{
+            border-color: #2563eb;
+        }
+        .thrinkle-border-blue-700{
+            border-color: #1d4ed8;
+        }
+        .thrinkle-border-blue-800{
+            border-color: #1e40af;
+        }
+        .thrinkle-border-blue-900{
+            border-color: #1e3a8a;
+        }
+        .thrinkle-border-blue-950{
+            border-color: #172554;
+        }
+    /** blue border colors */
+    /** blue outline colors */
+        .thrinkle-outline-blue-50{
+            outline-color: #eff6ff;
+        }
+        .thrinkle-outline-blue-100{
+            outline-color: #dbeafe;
+        }
+        .thrinkle-outline-blue-200{
+            outline-color: #bfdbfe;
+        }
+        .thrinkle-outline-blue-300{
+            outline-color: #93c5fd;
+        }
+        .thrinkle-outline-blue-400{
+            outline-color: #60a5fa;
+        }
+        .thrinkle-outline-blue-500{
+            outline-color: #3b82f6;
+        }
+        .thrinkle-outline-blue-600{
+            outline-color: #2563eb;
+        }
+        .thrinkle-outline-blue-700{
+            outline-color: #1d4ed8;
+        }
+        .thrinkle-outline-blue-800{
+            outline-color: #1e40af;
+        }
+        .thrinkle-outline-blue-900{
+            outline-color: #1e3a8a;
+        }
+        .thrinkle-outline-blue-950{
+            outline-color: #172554;
+        }
+    /** blue outline colors */
+    /** blue caret colors */
+        .thrinkle-caret-blue-50{
+            caret-color: #eff6ff;
+        }
+        .thrinkle-caret-blue-100{
+            caret-color: #dbeafe;
+        }
+        .thrinkle-caret-blue-200{
+            caret-color: #bfdbfe;
+        }
+        .thrinkle-caret-blue-300{
+            caret-color: #93c5fd;
+        }
+        .thrinkle-caret-blue-400{
+            caret-color: #60a5fa;
+        }
+        .thrinkle-caret-blue-500{
+            caret-color: #3b82f6;
+        }
+        .thrinkle-caret-blue-600{
+            caret-color: #2563eb;
+        }
+        .thrinkle-caret-blue-700{
+            caret-color: #1d4ed8;
+        }
+        .thrinkle-caret-blue-800{
+            caret-color: #1e40af;
+        }
+        .thrinkle-caret-blue-900{
+            caret-color: #1e3a8a;
+        }
+        .thrinkle-caret-blue-950{
+            caret-color: #172554;
+        }
+    /** blue caret colors */
+    /** blue text-decoration colors */
+        .thrinkle-text-decoration-blue-50{
+            text-decoration-color: #eff6ff;
+        }
+        .thrinkle-text-decoration-blue-100{
+            text-decoration-color: #dbeafe;
+        }
+        .thrinkle-text-decoration-blue-200{
+            text-decoration-color: #bfdbfe;
+        }
+        .thrinkle-text-decoration-blue-300{
+            text-decoration-color: #93c5fd;
+        }
+        .thrinkle-text-decoration-blue-400{
+            text-decoration-color: #60a5fa;
+        }
+        .thrinkle-text-decoration-blue-500{
+            text-decoration-color: #3b82f6;
+        }
+        .thrinkle-text-decoration-blue-600{
+            text-decoration-color: #2563eb;
+        }
+        .thrinkle-text-decoration-blue-700{
+            text-decoration-color: #1d4ed8;
+        }
+        .thrinkle-text-decoration-blue-800{
+            text-decoration-color: #1e40af;
+        }
+        .thrinkle-text-decoration-blue-900{
+            text-decoration-color: #1e3a8a;
+        }
+        .thrinkle-text-decoration-blue-950{
+            text-decoration-color: #172554;
+        }
+    /** blue text-decoration colors */
+    /** blue text-emphasis colors */
+        .thrinkle-text-emphasis-blue-50{
+            text-emphasis-color: #eff6ff;
+        }
+        .thrinkle-text-emphasis-blue-100{
+            text-emphasis-color: #dbeafe;
+        }
+        .thrinkle-text-emphasis-blue-200{
+            text-emphasis-color: #bfdbfe;
+        }
+        .thrinkle-text-emphasis-blue-300{
+            text-emphasis-color: #93c5fd;
+        }
+        .thrinkle-text-emphasis-blue-400{
+            text-emphasis-color: #60a5fa;
+        }
+        .thrinkle-text-emphasis-blue-500{
+            text-emphasis-color: #3b82f6;
+        }
+        .thrinkle-text-emphasis-blue-600{
+            text-emphasis-color: #2563eb;
+        }
+        .thrinkle-text-emphasis-blue-700{
+            text-emphasis-color: #1d4ed8;
+        }
+        .thrinkle-text-emphasis-blue-800{
+            text-emphasis-color: #1e40af;
+        }
+        .thrinkle-text-emphasis-blue-900{
+            text-emphasis-color: #1e3a8a;
+        }
+        .thrinkle-text-emphasis-blue-950{
+            text-emphasis-color: #172554;
+        }
+    /** blue text-emphasis colors */
+    /** blue column-rule colors */
+        .thrinkle-column-rule-blue-50{
+            column-rule-color: #eff6ff;
+        }
+        .thrinkle-column-rule-blue-100{
+            column-rule-color: #dbeafe;
+        }
+        .thrinkle-column-rule-blue-200{
+            column-rule-color: #bfdbfe;
+        }
+        .thrinkle-column-rule-blue-300{
+            column-rule-color: #93c5fd;
+        }
+        .thrinkle-column-rule-blue-400{
+            column-rule-color: #60a5fa;
+        }
+        .thrinkle-column-rule-blue-500{
+            column-rule-color: #3b82f6;
+        }
+        .thrinkle-column-rule-blue-600{
+            column-rule-color: #2563eb;
+        }
+        .thrinkle-column-rule-blue-700{
+            column-rule-color: #1d4ed8;
+        }
+        .thrinkle-column-rule-blue-800{
+            column-rule-color: #1e40af;
+        }
+        .thrinkle-column-rule-blue-900{
+            column-rule-color: #1e3a8a;
+        }
+        .thrinkle-column-rule-blue-950{
+            column-rule-color: #172554;
+        }
+    /** blue column-rule colors */
+
+    /** indigo background colors */
+        .thrinkle-bg-indigo-50{
+            background-color: #eef2ff;
+        }
+        .thrinkle-bg-indigo-100{
+            background-color: #e0e7ff;
+        }
+        .thrinkle-bg-indigo-200{
+            background-color: #c7d2fe;
+        }
+        .thrinkle-bg-indigo-300{
+            background-color: #a5b4fc;
+        }
+        .thrinkle-bg-indigo-400{
+            background-color: #818cf8;
+        }
+        .thrinkle-bg-indigo-500{
+            background-color: #6366f1;
+        }
+        .thrinkle-bg-indigo-600{
+            background-color: #4f46e5;
+        }
+        .thrinkle-bg-indigo-700{
+            background-color: #4338ca;
+        }
+        .thrinkle-bg-indigo-800{
+            background-color: #3730a3;
+        }
+        .thrinkle-bg-indigo-900{
+            background-color: #312e81;
+        }
+        .thrinkle-bg-indigo-950{
+            background-color: #1e1b4b;
+        }
+    /** indigo background colors */
+    /** indigo font colors */
+        .thrinkle-text-indigo-50{
+            color: #eef2ff;
+        }
+        .thrinkle-text-indigo-100{
+            color: #e0e7ff;
+        }
+        .thrinkle-text-indigo-200{
+            color: #c7d2fe;
+        }
+        .thrinkle-text-indigo-300{
+            color: #a5b4fc;
+        }
+        .thrinkle-text-indigo-400{
+            color: #818cf8;
+        }
+        .thrinkle-text-indigo-500{
+            color: #6366f1;
+        }
+        .thrinkle-text-indigo-600{
+            color: #4f46e5;
+        }
+        .thrinkle-text-indigo-700{
+            color: #4338ca;
+        }
+        .thrinkle-text-indigo-800{
+            color: #3730a3;
+        }
+        .thrinkle-text-indigo-900{
+            color: #312e81;
+        }
+        .thrinkle-text-indigo-950{
+            color: #1e1b4b;
+        }
+    /** indigo font colors */
+    /** indigo border colors */
+        .thrinkle-border-indigo-50{
+            border-color: #eef2ff;
+        }
+        .thrinkle-border-indigo-100{
+            border-color: #e0e7ff;
+        }
+        .thrinkle-border-indigo-200{
+            border-color: #c7d2fe;
+        }
+        .thrinkle-border-indigo-300{
+            border-color: #a5b4fc;
+        }
+        .thrinkle-border-indigo-400{
+            border-color: #818cf8;
+        }
+        .thrinkle-border-indigo-500{
+            border-color: #6366f1;
+        }
+        .thrinkle-border-indigo-600{
+            border-color: #4f46e5;
+        }
+        .thrinkle-border-indigo-700{
+            border-color: #4338ca;
+        }
+        .thrinkle-border-indigo-800{
+            border-color: #3730a3;
+        }
+        .thrinkle-border-indigo-900{
+            border-color: #312e81;
+        }
+        .thrinkle-border-indigo-950{
+            border-color: #1e1b4b;
+        }
+    /** indigo border colors */
+    /** indigo outline colors */
+        .thrinkle-outline-indigo-50{
+            outline-color: #eef2ff;
+        }
+        .thrinkle-outline-indigo-100{
+            outline-color: #e0e7ff;
+        }
+        .thrinkle-outline-indigo-200{
+            outline-color: #c7d2fe;
+        }
+        .thrinkle-outline-indigo-300{
+            outline-color: #a5b4fc;
+        }
+        .thrinkle-outline-indigo-400{
+            outline-color: #818cf8;
+        }
+        .thrinkle-outline-indigo-500{
+            outline-color: #6366f1;
+        }
+        .thrinkle-outline-indigo-600{
+            outline-color: #4f46e5;
+        }
+        .thrinkle-outline-indigo-700{
+            outline-color: #4338ca;
+        }
+        .thrinkle-outline-indigo-800{
+            outline-color: #3730a3;
+        }
+        .thrinkle-outline-indigo-900{
+            outline-color: #312e81;
+        }
+        .thrinkle-outline-indigo-950{
+            outline-color: #1e1b4b;
+        }
+    /** indigo outline colors */
+    /** indigo caret colors */
+        .thrinkle-caret-indigo-50{
+            caret-color: #eef2ff;
+        }
+        .thrinkle-caret-indigo-100{
+            caret-color: #e0e7ff;
+        }
+        .thrinkle-caret-indigo-200{
+            caret-color: #c7d2fe;
+        }
+        .thrinkle-caret-indigo-300{
+            caret-color: #a5b4fc;
+        }
+        .thrinkle-caret-indigo-400{
+            caret-color: #818cf8;
+        }
+        .thrinkle-caret-indigo-500{
+            caret-color: #6366f1;
+        }
+        .thrinkle-caret-indigo-600{
+            caret-color: #4f46e5;
+        }
+        .thrinkle-caret-indigo-700{
+            caret-color: #4338ca;
+        }
+        .thrinkle-caret-indigo-800{
+            caret-color: #3730a3;
+        }
+        .thrinkle-caret-indigo-900{
+            caret-color: #312e81;
+        }
+        .thrinkle-caret-indigo-950{
+            caret-color: #1e1b4b;
+        }
+    /** indigo caret colors */
+    /** indigo text-decoration colors */
+        .thrinkle-text-decoration-indigo-50{
+            text-decoration-color: #eef2ff;
+        }
+        .thrinkle-text-decoration-indigo-100{
+            text-decoration-color: #e0e7ff;
+        }
+        .thrinkle-text-decoration-indigo-200{
+            text-decoration-color: #c7d2fe;
+        }
+        .thrinkle-text-decoration-indigo-300{
+            text-decoration-color: #a5b4fc;
+        }
+        .thrinkle-text-decoration-indigo-400{
+            text-decoration-color: #818cf8;
+        }
+        .thrinkle-text-decoration-indigo-500{
+            text-decoration-color: #6366f1;
+        }
+        .thrinkle-text-decoration-indigo-600{
+            text-decoration-color: #4f46e5;
+        }
+        .thrinkle-text-decoration-indigo-700{
+            text-decoration-color: #4338ca;
+        }
+        .thrinkle-text-decoration-indigo-800{
+            text-decoration-color: #3730a3;
+        }
+        .thrinkle-text-decoration-indigo-900{
+            text-decoration-color: #312e81;
+        }
+        .thrinkle-text-decoration-indigo-950{
+            text-decoration-color: #1e1b4b;
+        }
+    /** indigo text-decoration colors */
+    /** indigo text-emphasis colors */
+        .thrinkle-text-emphasis-indigo-50{
+            text-emphasis-color: #eef2ff;
+        }
+        .thrinkle-text-emphasis-indigo-100{
+            text-emphasis-color: #e0e7ff;
+        }
+        .thrinkle-text-emphasis-indigo-200{
+            text-emphasis-color: #c7d2fe;
+        }
+        .thrinkle-text-emphasis-indigo-300{
+            text-emphasis-color: #a5b4fc;
+        }
+        .thrinkle-text-emphasis-indigo-400{
+            text-emphasis-color: #818cf8;
+        }
+        .thrinkle-text-emphasis-indigo-500{
+            text-emphasis-color: #6366f1;
+        }
+        .thrinkle-text-emphasis-indigo-600{
+            text-emphasis-color: #4f46e5;
+        }
+        .thrinkle-text-emphasis-indigo-700{
+            text-emphasis-color: #4338ca;
+        }
+        .thrinkle-text-emphasis-indigo-800{
+            text-emphasis-color: #3730a3;
+        }
+        .thrinkle-text-emphasis-indigo-900{
+            text-emphasis-color: #312e81;
+        }
+        .thrinkle-text-emphasis-indigo-950{
+            text-emphasis-color: #1e1b4b;
+        }
+    /** indigo text-emphasis colors */
+    /** indigo column-rule colors */
+        .thrinkle-column-rule-indigo-50{
+            column-rule-color: #eef2ff;
+        }
+        .thrinkle-column-rule-indigo-100{
+            column-rule-color: #e0e7ff;
+        }
+        .thrinkle-column-rule-indigo-200{
+            column-rule-color: #c7d2fe;
+        }
+        .thrinkle-column-rule-indigo-300{
+            column-rule-color: #a5b4fc;
+        }
+        .thrinkle-column-rule-indigo-400{
+            column-rule-color: #818cf8;
+        }
+        .thrinkle-column-rule-indigo-500{
+            column-rule-color: #6366f1;
+        }
+        .thrinkle-column-rule-indigo-600{
+            column-rule-color: #4f46e5;
+        }
+        .thrinkle-column-rule-indigo-700{
+            column-rule-color: #4338ca;
+        }
+        .thrinkle-column-rule-indigo-800{
+            column-rule-color: #3730a3;
+        }
+        .thrinkle-column-rule-indigo-900{
+            column-rule-color: #312e81;
+        }
+        .thrinkle-column-rule-indigo-950{
+            column-rule-color: #1e1b4b;
+        }
+    /** indigo column-rule colors */
+
+    /** violet background colors */
+        .thrinkle-bg-violet-50{
+            background-color: #f5f3ff;
+        }
+        .thrinkle-bg-violet-100{
+            background-color: #ede9fe;
+        }
+        .thrinkle-bg-violet-200{
+            background-color: #ddd6fe;
+        }
+        .thrinkle-bg-violet-300{
+            background-color: #c4b5fd;
+        }
+        .thrinkle-bg-violet-400{
+            background-color: #a78bfa;
+        }
+        .thrinkle-bg-violet-500{
+            background-color: #8b5cf6;
+        }
+        .thrinkle-bg-violet-600{
+            background-color: #7c3aed;
+        }
+        .thrinkle-bg-violet-700{
+            background-color: #6d28d9;
+        }
+        .thrinkle-bg-violet-800{
+            background-color: #5b21b6;
+        }
+        .thrinkle-bg-violet-900{
+            background-color: #4c1d95;
+        }
+        .thrinkle-bg-violet-950{
+            background-color: #2e1065;
+        }
+    /** violet background colors */
+    /** violet font colors */
+        .thrinkle-text-violet-50{
+            color: #f5f3ff;
+        }
+        .thrinkle-text-violet-100{
+            color: #ede9fe;
+        }
+        .thrinkle-text-violet-200{
+            color: #ddd6fe;
+        }
+        .thrinkle-text-violet-300{
+            color: #c4b5fd;
+        }
+        .thrinkle-text-violet-400{
+            color: #a78bfa;
+        }
+        .thrinkle-text-violet-500{
+            color: #8b5cf6;
+        }
+        .thrinkle-text-violet-600{
+            color: #7c3aed;
+        }
+        .thrinkle-text-violet-700{
+            color: #6d28d9;
+        }
+        .thrinkle-text-violet-800{
+            color: #5b21b6;
+        }
+        .thrinkle-text-violet-900{
+            color: #4c1d95;
+        }
+        .thrinkle-text-violet-950{
+            color: #2e1065;
+        }
+    /** violet font colors */
+    /** violet border colors */
+        .thrinkle-border-violet-50{
+            color: #f5f3ff;
+        }
+        .thrinkle-border-violet-100{
+            border-color: #ede9fe;
+        }
+        .thrinkle-border-violet-200{
+            border-color: #ddd6fe;
+        }
+        .thrinkle-border-violet-300{
+            border-color: #c4b5fd;
+        }
+        .thrinkle-border-violet-400{
+            border-color: #a78bfa;
+        }
+        .thrinkle-border-violet-500{
+            border-color: #8b5cf6;
+        }
+        .thrinkle-border-violet-600{
+            border-color: #7c3aed;
+        }
+        .thrinkle-border-violet-700{
+            border-color: #6d28d9;
+        }
+        .thrinkle-border-violet-800{
+            border-color: #5b21b6;
+        }
+        .thrinkle-border-violet-900{
+            border-color: #4c1d95;
+        }
+        .thrinkle-border-violet-950{
+            border-color: #2e1065;
+        }
+    /** violet border colors */
+    /** violet outline colors */
+        .thrinkle-outline-violet-50{
+            color: #f5f3ff;
+        }
+        .thrinkle-outline-violet-100{
+            outline-color: #ede9fe;
+        }
+        .thrinkle-outline-violet-200{
+            outline-color: #ddd6fe;
+        }
+        .thrinkle-outline-violet-300{
+            outline-color: #c4b5fd;
+        }
+        .thrinkle-outline-violet-400{
+            outline-color: #a78bfa;
+        }
+        .thrinkle-outline-violet-500{
+            outline-color: #8b5cf6;
+        }
+        .thrinkle-outline-violet-600{
+            outline-color: #7c3aed;
+        }
+        .thrinkle-outline-violet-700{
+            outline-color: #6d28d9;
+        }
+        .thrinkle-outline-violet-800{
+            outline-color: #5b21b6;
+        }
+        .thrinkle-outline-violet-900{
+            outline-color: #4c1d95;
+        }
+        .thrinkle-outline-violet-950{
+            outline-color: #2e1065;
+        }
+    /** violet outline colors */
+    /** violet caret colors */
+        .thrinkle-caret-violet-50{
+            caret-color: #f5f3ff;
+        }
+        .thrinkle-caret-violet-100{
+            caret-color: #ede9fe;
+        }
+        .thrinkle-caret-violet-200{
+            caret-color: #ddd6fe;
+        }
+        .thrinkle-caret-violet-300{
+            caret-color: #c4b5fd;
+        }
+        .thrinkle-caret-violet-400{
+            caret-color: #a78bfa;
+        }
+        .thrinkle-caret-violet-500{
+            caret-color: #8b5cf6;
+        }
+        .thrinkle-caret-violet-600{
+            caret-color: #7c3aed;
+        }
+        .thrinkle-caret-violet-700{
+            caret-color: #6d28d9;
+        }
+        .thrinkle-caret-violet-800{
+            caret-color: #5b21b6;
+        }
+        .thrinkle-caret-violet-900{
+            caret-color: #4c1d95;
+        }
+        .thrinkle-caret-violet-950{
+            caret-color: #2e1065;
+        }
+    /** violet caret colors */
+    /** violet text-decoration colors */
+        .thrinkle-text-decoration-violet-50{
+            text-decoration-color: #f5f3ff;
+        }
+        .thrinkle-text-decoration-violet-100{
+            text-decoration-color: #ede9fe;
+        }
+        .thrinkle-text-decoration-violet-200{
+            text-decoration-color: #ddd6fe;
+        }
+        .thrinkle-text-decoration-violet-300{
+            text-decoration-color: #c4b5fd;
+        }
+        .thrinkle-text-decoration-violet-400{
+            text-decoration-color: #a78bfa;
+        }
+        .thrinkle-text-decoration-violet-500{
+            text-decoration-color: #8b5cf6;
+        }
+        .thrinkle-text-decoration-violet-600{
+            text-decoration-color: #7c3aed;
+        }
+        .thrinkle-text-decoration-violet-700{
+            text-decoration-color: #6d28d9;
+        }
+        .thrinkle-text-decoration-violet-800{
+            text-decoration-color: #5b21b6;
+        }
+        .thrinkle-text-decoration-violet-900{
+            text-decoration-color: #4c1d95;
+        }
+        .thrinkle-text-decoration-violet-950{
+            text-decoration-color: #2e1065;
+        }
+    /** violet text-decoration colors */
+    /** violet text-emphasis colors */
+        .thrinkle-text-emphasis-violet-50{
+            text-emphasis-color: #f5f3ff;
+        }
+        .thrinkle-text-emphasis-violet-100{
+            text-emphasis-color: #ede9fe;
+        }
+        .thrinkle-text-emphasis-violet-200{
+            text-emphasis-color: #ddd6fe;
+        }
+        .thrinkle-text-emphasis-violet-300{
+            text-emphasis-color: #c4b5fd;
+        }
+        .thrinkle-text-emphasis-violet-400{
+            text-emphasis-color: #a78bfa;
+        }
+        .thrinkle-text-emphasis-violet-500{
+            text-emphasis-color: #8b5cf6;
+        }
+        .thrinkle-text-emphasis-violet-600{
+            text-emphasis-color: #7c3aed;
+        }
+        .thrinkle-text-emphasis-violet-700{
+            text-emphasis-color: #6d28d9;
+        }
+        .thrinkle-text-emphasis-violet-800{
+            text-emphasis-color: #5b21b6;
+        }
+        .thrinkle-text-emphasis-violet-900{
+            text-emphasis-color: #4c1d95;
+        }
+        .thrinkle-text-emphasis-violet-950{
+            text-emphasis-color: #2e1065;
+        }
+    /** violet text-emphasis colors */
+    /** violet column-rule colors */
+        .thrinkle-column-rule-violet-50{
+            column-rule-color: #f5f3ff;
+        }
+        .thrinkle-column-rule-violet-100{
+            column-rule-color: #ede9fe;
+        }
+        .thrinkle-column-rule-violet-200{
+            column-rule-color: #ddd6fe;
+        }
+        .thrinkle-column-rule-violet-300{
+            column-rule-color: #c4b5fd;
+        }
+        .thrinkle-column-rule-violet-400{
+            column-rule-color: #a78bfa;
+        }
+        .thrinkle-column-rule-violet-500{
+            column-rule-color: #8b5cf6;
+        }
+        .thrinkle-column-rule-violet-600{
+            column-rule-color: #7c3aed;
+        }
+        .thrinkle-column-rule-violet-700{
+            column-rule-color: #6d28d9;
+        }
+        .thrinkle-column-rule-violet-800{
+            column-rule-color: #5b21b6;
+        }
+        .thrinkle-column-rule-violet-900{
+            column-rule-color: #4c1d95;
+        }
+        .thrinkle-column-rule-violet-950{
+            column-rule-color: #2e1065;
+        }
+    /** violet column-rule colors */
+
+    /** purple background colors */
+        .thrinkle-bg-purple-50{
+            background-color: #faf5ff;
+        }
+        .thrinkle-bg-purple-100{
+            background-color: #f3e8ff;
+        }
+        .thrinkle-bg-purple-200{
+            background-color: #e9d5ff;
+        }
+        .thrinkle-bg-purple-300{
+            background-color: #d8b4fe;
+        }
+        .thrinkle-bg-purple-400{
+            background-color: #c084fc;
+        }
+        .thrinkle-bg-purple-500{
+            background-color: #a855f7;
+        }
+        .thrinkle-bg-purple-600{
+            background-color: #9333ea;
+        }
+        .thrinkle-bg-purple-700{
+            background-color: #7e22ce;
+        }
+        .thrinkle-bg-purple-800{
+            background-color: #6b21a8;
+        }
+        .thrinkle-bg-purple-900{
+            background-color: #581c87;
+        }
+        .thrinkle-bg-purple-950{
+            background-color: #3b0764;
+        }
+    /** purple background colors */
+    /** purple font colors */
+        .thrinkle-text-purple-50{
+            color: #faf5ff;
+        }
+        .thrinkle-text-purple-100{
+            color: #f3e8ff;
+        }
+        .thrinkle-text-purple-200{
+            color: #e9d5ff;
+        }
+        .thrinkle-text-purple-300{
+            color: #d8b4fe;
+        }
+        .thrinkle-text-purple-400{
+            color: #c084fc;
+        }
+        .thrinkle-text-purple-500{
+            color: #a855f7;
+        }
+        .thrinkle-text-purple-600{
+            color: #9333ea;
+        }
+        .thrinkle-text-purple-700{
+            color: #7e22ce;
+        }
+        .thrinkle-text-purple-800{
+            color: #6b21a8;
+        }
+        .thrinkle-text-purple-900{
+            color: #581c87;
+        }
+        .thrinkle-text-purple-950{
+            color: #3b0764;
+        }
+    /** purple font colors */
+    /** purple border colors */
+        .thrinkle-border-purple-50{
+            border-color: #faf5ff;
+        }
+        .thrinkle-border-purple-100{
+            border-color: #f3e8ff;
+        }
+        .thrinkle-border-purple-200{
+            border-color: #e9d5ff;
+        }
+        .thrinkle-border-purple-300{
+            border-color: #d8b4fe;
+        }
+        .thrinkle-border-purple-400{
+            border-color: #c084fc;
+        }
+        .thrinkle-border-purple-500{
+            border-color: #a855f7;
+        }
+        .thrinkle-border-purple-600{
+            border-color: #9333ea;
+        }
+        .thrinkle-border-purple-700{
+            border-color: #7e22ce;
+        }
+        .thrinkle-border-purple-800{
+            border-color: #6b21a8;
+        }
+        .thrinkle-border-purple-900{
+            border-color: #581c87;
+        }
+        .thrinkle-border-purple-950{
+            border-color: #3b0764;
+        }
+    /** purple border colors */
+    /** purple outline colors */
+        .thrinkle-outline-purple-50{
+            outline-color: #faf5ff;
+        }
+        .thrinkle-outline-purple-100{
+            outline-color: #f3e8ff;
+        }
+        .thrinkle-outline-purple-200{
+            outline-color: #e9d5ff;
+        }
+        .thrinkle-outline-purple-300{
+            outline-color: #d8b4fe;
+        }
+        .thrinkle-outline-purple-400{
+            outline-color: #c084fc;
+        }
+        .thrinkle-outline-purple-500{
+            outline-color: #a855f7;
+        }
+        .thrinkle-outline-purple-600{
+            outline-color: #9333ea;
+        }
+        .thrinkle-outline-purple-700{
+            outline-color: #7e22ce;
+        }
+        .thrinkle-outline-purple-800{
+            outline-color: #6b21a8;
+        }
+        .thrinkle-outline-purple-900{
+            outline-color: #581c87;
+        }
+        .thrinkle-outline-purple-950{
+            outline-color: #3b0764;
+        }
+    /** purple outline colors */
+    /** purple caret colors */
+        .thrinkle-caret-purple-50{
+            caret-color: #faf5ff;
+        }
+        .thrinkle-caret-purple-100{
+            caret-color: #f3e8ff;
+        }
+        .thrinkle-caret-purple-200{
+            caret-color: #e9d5ff;
+        }
+        .thrinkle-caret-purple-300{
+            caret-color: #d8b4fe;
+        }
+        .thrinkle-caret-purple-400{
+            caret-color: #c084fc;
+        }
+        .thrinkle-caret-purple-500{
+            caret-color: #a855f7;
+        }
+        .thrinkle-caret-purple-600{
+            caret-color: #9333ea;
+        }
+        .thrinkle-caret-purple-700{
+            caret-color: #7e22ce;
+        }
+        .thrinkle-caret-purple-800{
+            caret-color: #6b21a8;
+        }
+        .thrinkle-caret-purple-900{
+            caret-color: #581c87;
+        }
+        .thrinkle-caret-purple-950{
+            caret-color: #3b0764;
+        }
+    /** purple caret colors */
+    /** purple text-decoration colors */
+        .thrinkle-text-decoration-purple-50{
+            text-decoration-color: #faf5ff;
+        }
+        .thrinkle-text-decoration-purple-100{
+            text-decoration-color: #f3e8ff;
+        }
+        .thrinkle-text-decoration-purple-200{
+            text-decoration-color: #e9d5ff;
+        }
+        .thrinkle-text-decoration-purple-300{
+            text-decoration-color: #d8b4fe;
+        }
+        .thrinkle-text-decoration-purple-400{
+            text-decoration-color: #c084fc;
+        }
+        .thrinkle-text-decoration-purple-500{
+            text-decoration-color: #a855f7;
+        }
+        .thrinkle-text-decoration-purple-600{
+            text-decoration-color: #9333ea;
+        }
+        .thrinkle-text-decoration-purple-700{
+            text-decoration-color: #7e22ce;
+        }
+        .thrinkle-text-decoration-purple-800{
+            text-decoration-color: #6b21a8;
+        }
+        .thrinkle-text-decoration-purple-900{
+            text-decoration-color: #581c87;
+        }
+        .thrinkle-text-decoration-purple-950{
+            text-decoration-color: #3b0764;
+        }
+    /** purple text-decoration colors */
+    /** purple text-emphasis colors */
+        .thrinkle-text-emphasis-purple-50{
+            text-emphasis-color: #faf5ff;
+        }
+        .thrinkle-text-emphasis-purple-100{
+            text-emphasis-color: #f3e8ff;
+        }
+        .thrinkle-text-emphasis-purple-200{
+            text-emphasis-color: #e9d5ff;
+        }
+        .thrinkle-text-emphasis-purple-300{
+            text-emphasis-color: #d8b4fe;
+        }
+        .thrinkle-text-emphasis-purple-400{
+            text-emphasis-color: #c084fc;
+        }
+        .thrinkle-text-emphasis-purple-500{
+            text-emphasis-color: #a855f7;
+        }
+        .thrinkle-text-emphasis-purple-600{
+            text-emphasis-color: #9333ea;
+        }
+        .thrinkle-text-emphasis-purple-700{
+            text-emphasis-color: #7e22ce;
+        }
+        .thrinkle-text-emphasis-purple-800{
+            text-emphasis-color: #6b21a8;
+        }
+        .thrinkle-text-emphasis-purple-900{
+            text-emphasis-color: #581c87;
+        }
+        .thrinkle-text-emphasis-purple-950{
+            text-emphasis-color: #3b0764;
+        }
+    /** purple text-emphasis colors */
+    /** purple column-rule colors */
+        .thrinkle-column-rule-purple-50{
+            column-rule-color: #faf5ff;
+        }
+        .thrinkle-column-rule-purple-100{
+            column-rule-color: #f3e8ff;
+        }
+        .thrinkle-column-rule-purple-200{
+            column-rule-color: #e9d5ff;
+        }
+        .thrinkle-column-rule-purple-300{
+            column-rule-color: #d8b4fe;
+        }
+        .thrinkle-column-rule-purple-400{
+            column-rule-color: #c084fc;
+        }
+        .thrinkle-column-rule-purple-500{
+            column-rule-color: #a855f7;
+        }
+        .thrinkle-column-rule-purple-600{
+            column-rule-color: #9333ea;
+        }
+        .thrinkle-column-rule-purple-700{
+            column-rule-color: #7e22ce;
+        }
+        .thrinkle-column-rule-purple-800{
+            column-rule-color: #6b21a8;
+        }
+        .thrinkle-column-rule-purple-900{
+            column-rule-color: #581c87;
+        }
+        .thrinkle-column-rule-purple-950{
+            column-rule-color: #3b0764;
+        }
+    /** purple column-rule colors */
+
+    /** fuchsia background colors */
+        .thrinkle-bg-fuchsia-50{
+            background-color: #fdf4ff;
+        }
+        .thrinkle-bg-fuchsia-100{
+            background-color: #fae8ff;
+        }
+        .thrinkle-bg-fuchsia-200{
+            background-color: #f5d0fe;
+        }
+        .thrinkle-bg-fuchsia-300{
+            background-color: #f0abfc;
+        }
+        .thrinkle-bg-fuchsia-400{
+            background-color: #e879f9;
+        }
+        .thrinkle-bg-fuchsia-500{
+            background-color: #d946ef;
+        }
+        .thrinkle-bg-fuchsia-600{
+            background-color: #c026d3;
+        }
+        .thrinkle-bg-fuchsia-700{
+            background-color: #a21caf;
+        }
+        .thrinkle-bg-fuchsia-800{
+            background-color: #86198f;
+        }
+        .thrinkle-bg-fuchsia-900{
+            background-color: #701a75;
+        }
+        .thrinkle-bg-gray-950{
+            background-color: #4a044e;
+        }
+    /** fuchsia background colors */
+    /** fuchsia font colors */
+        .thrinkle-text-fuchsia-50{
+            color: #fdf4ff;
+        }
+        .thrinkle-text-fuchsia-100{
+            color: #fae8ff;
+        }
+        .thrinkle-text-fuchsia-200{
+            color: #f5d0fe;
+        }
+        .thrinkle-text-fuchsia-300{
+            color: #f0abfc;
+        }
+        .thrinkle-text-fuchsia-400{
+            color: #e879f9;
+        }
+        .thrinkle-text-fuchsia-500{
+            color: #d946ef;
+        }
+        .thrinkle-text-fuchsia-600{
+            color: #c026d3;
+        }
+        .thrinkle-text-fuchsia-700{
+            color: #a21caf;
+        }
+        .thrinkle-text-fuchsia-800{
+            color: #86198f;
+        }
+        .thrinkle-text-fuchsia-900{
+            color: #701a75;
+        }
+        .thrinkle-text-fuchsia-950{
+            color: #4a044e;
+        }
+    /** fuchsia font colors */		
+    /** fuchsia border colors */
+        .thrinkle-border-fuchsia-50{
+            border-color: #fdf4ff;
+        }
+        .thrinkle-border-fuchsia-100{
+            border-color: #fae8ff;
+        }
+        .thrinkle-border-fuchsia-200{
+            border-color: #f5d0fe;
+        }
+        .thrinkle-border-fuchsia-300{
+            border-color: #f0abfc;
+        }
+        .thrinkle-border-fuchsia-400{
+            border-color: #e879f9;
+        }
+        .thrinkle-border-fuchsia-500{
+            border-color: #d946ef;
+        }
+        .thrinkle-border-fuchsia-600{
+            border-color: #c026d3;
+        }
+        .thrinkle-border-fuchsia-700{
+            border-color: #a21caf;
+        }
+        .thrinkle-border-fuchsia-800{
+            border-color: #86198f;
+        }
+        .thrinkle-border-fuchsia-900{
+            border-color: #701a75;
+        }
+        .thrinkle-border-fuchsia-950{
+            border-color: #4a044e;
+        }
+    /** fuchsia border colors */
+    /** fuchsia outline colors */
+        .thrinkle-outline-fuchsia-50{
+            outline-color: #fdf4ff;
+        }
+        .thrinkle-outline-fuchsia-100{
+            outline-color: #fae8ff;
+        }
+        .thrinkle-outline-fuchsia-200{
+            outline-color: #f5d0fe;
+        }
+        .thrinkle-outline-fuchsia-300{
+            outline-color: #f0abfc;
+        }
+        .thrinkle-outline-fuchsia-400{
+            outline-color: #e879f9;
+        }
+        .thrinkle-outline-fuchsia-500{
+            outline-color: #d946ef;
+        }
+        .thrinkle-outline-fuchsia-600{
+            outline-color: #c026d3;
+        }
+        .thrinkle-outline-fuchsia-700{
+            outline-color: #a21caf;
+        }
+        .thrinkle-outline-fuchsia-800{
+            outline-color: #86198f;
+        }
+        .thrinkle-outline-fuchsia-900{
+            outline-color: #701a75;
+        }
+        .thrinkle-outline-fuchsia-950{
+            outline-color: #4a044e;
+        }
+    /** fuchsia outline colors */
+    /** fuchsia caret colors */
+        .thrinkle-caret-fuchsia-50{
+            caret-color: #fdf4ff;
+        }
+        .thrinkle-caret-fuchsia-100{
+            caret-color: #fae8ff;
+        }
+        .thrinkle-caret-fuchsia-200{
+            caret-color: #f5d0fe;
+        }
+        .thrinkle-caret-fuchsia-300{
+            caret-color: #f0abfc;
+        }
+        .thrinkle-caret-fuchsia-400{
+            caret-color: #e879f9;
+        }
+        .thrinkle-caret-fuchsia-500{
+            caret-color: #d946ef;
+        }
+        .thrinkle-caret-fuchsia-600{
+            caret-color: #c026d3;
+        }
+        .thrinkle-caret-fuchsia-700{
+            caret-color: #a21caf;
+        }
+        .thrinkle-caret-fuchsia-800{
+            caret-color: #86198f;
+        }
+        .thrinkle-caret-fuchsia-900{
+            caret-color: #701a75;
+        }
+        .thrinkle-caret-fuchsia-950{
+            caret-color: #4a044e;
+        }
+    /** fuchsia caret colors */
+    /** fuchsia text-decoration colors */
+        .thrinkle-text-decoration-fuchsia-50{
+            text-decoration-color: #fdf4ff;
+        }
+        .thrinkle-text-decoration-fuchsia-100{
+            text-decoration-color: #fae8ff;
+        }
+        .thrinkle-text-decoration-fuchsia-200{
+            text-decoration-color: #f5d0fe;
+        }
+        .thrinkle-text-decoration-fuchsia-300{
+            text-decoration-color: #f0abfc;
+        }
+        .thrinkle-text-decoration-fuchsia-400{
+            text-decoration-color: #e879f9;
+        }
+        .thrinkle-text-decoration-fuchsia-500{
+            text-decoration-color: #d946ef;
+        }
+        .thrinkle-text-decoration-fuchsia-600{
+            text-decoration-color: #c026d3;
+        }
+        .thrinkle-text-decoration-fuchsia-700{
+            text-decoration-color: #a21caf;
+        }
+        .thrinkle-text-decoration-fuchsia-800{
+            text-decoration-color: #86198f;
+        }
+        .thrinkle-text-decoration-fuchsia-900{
+            text-decoration-color: #701a75;
+        }
+        .thrinkle-text-decoration-fuchsia-950{
+            text-decoration-color: #4a044e;
+        }
+    /** fuchsia text-decoration colors */
+    /** fuchsia text-emphasis colors */
+        .thrinkle-text-emphasis-fuchsia-50{
+            text-emphasis-color: #fdf4ff;
+        }
+        .thrinkle-text-emphasis-fuchsia-100{
+            text-emphasis-color: #fae8ff;
+        }
+        .thrinkle-text-emphasis-fuchsia-200{
+            text-emphasis-color: #f5d0fe;
+        }
+        .thrinkle-text-emphasis-fuchsia-300{
+            text-emphasis-color: #f0abfc;
+        }
+        .thrinkle-text-emphasis-fuchsia-400{
+            text-emphasis-color: #e879f9;
+        }
+        .thrinkle-text-emphasis-fuchsia-500{
+            text-emphasis-color: #d946ef;
+        }
+        .thrinkle-text-emphasis-fuchsia-600{
+            text-emphasis-color: #c026d3;
+        }
+        .thrinkle-text-emphasis-fuchsia-700{
+            text-emphasis-color: #a21caf;
+        }
+        .thrinkle-text-emphasis-fuchsia-800{
+            text-emphasis-color: #86198f;
+        }
+        .thrinkle-text-emphasis-fuchsia-900{
+            text-emphasis-color: #701a75;
+        }
+        .thrinkle-text-emphasis-fuchsia-950{
+            text-emphasis-color: #4a044e;
+        }
+    /** fuchsia text-emphasis colors */
+    /** fuchsia column-rule colors */
+        .thrinkle-column-rule-fuchsia-50{
+            column-rule-color: #fdf4ff;
+        }
+        .thrinkle-column-rule-fuchsia-100{
+            column-rule-color: #fae8ff;
+        }
+        .thrinkle-column-rule-fuchsia-200{
+            column-rule-color: #f5d0fe;
+        }
+        .thrinkle-column-rule-fuchsia-300{
+            column-rule-color: #f0abfc;
+        }
+        .thrinkle-column-rule-fuchsia-400{
+            column-rule-color: #e879f9;
+        }
+        .thrinkle-column-rule-fuchsia-500{
+            column-rule-color: #d946ef;
+        }
+        .thrinkle-column-rule-fuchsia-600{
+            column-rule-color: #c026d3;
+        }
+        .thrinkle-column-rule-fuchsia-700{
+            column-rule-color: #a21caf;
+        }
+        .thrinkle-column-rule-fuchsia-800{
+            column-rule-color: #86198f;
+        }
+        .thrinkle-column-rule-fuchsia-900{
+            column-rule-color: #701a75;
+        }
+        .thrinkle-column-rule-fuchsia-950{
+            column-rule-color: #4a044e;
+        }
+    /** fuchsia column-rule colors */
+
+    /** pink background colors */
+        .thrinkle-bg-pink-50{
+            background-color: #fdf2f8;
+        }
+        .thrinkle-bg-pink-100{
+            background-color: #fce7f3;
+        }
+        .thrinkle-bg-pink-200{
+            background-color: #fbcfe8;
+        }
+        .thrinkle-bg-pink-300{
+            background-color: #f9a8d4;
+        }
+        .thrinkle-bg-pink-400{
+            background-color: #f472b6;
+        }
+        .thrinkle-bg-pink-500{
+            background-color: #ec4899;
+        }
+        .thrinkle-bg-pink-600{
+            background-color: #db2777;
+        }
+        .thrinkle-bg-pink-700{
+            background-color: #be185d;
+        }
+        .thrinkle-bg-pink-800{
+            background-color: #9d174d;
+        }
+        .thrinkle-bg-pink-900{
+            background-color: #831843;
+        }
+        .thrinkle-bg-pink-950{
+            background-color: #500724;
+        }
+    /** pink background colors */
+    /** pink font colors */
+        .thrinkle-text-pink-50{
+            color: #fdf2f8;
+        }
+        .thrinkle-text-pink-100{
+            color: #fce7f3;
+        }
+        .thrinkle-text-pink-200{
+            color: #fbcfe8;
+        }
+        .thrinkle-text-pink-300{
+            color: #f9a8d4;
+        }
+        .thrinkle-text-pink-400{
+            color: #f472b6;
+        }
+        .thrinkle-text-pink-500{
+            color: #ec4899;
+        }
+        .thrinkle-text-pink-600{
+            color: #db2777;
+        }
+        .thrinkle-text-pink-700{
+            color: #be185d;
+        }
+        .thrinkle-text-pink-800{
+            color: #9d174d;
+        }
+        .thrinkle-text-pink-900{
+            color: #831843;
+        }
+        .thrinkle-text-pink-950{
+            color: #500724;
+        }
+    /** pink font colors */
+    /** pink border colors */
+        .thrinkle-border-pink-50{
+            border-color: #fdf2f8;
+        }
+        .thrinkle-border-pink-100{
+            border-color: #fce7f3;
+        }
+        .thrinkle-border-pink-200{
+            border-color: #fbcfe8;
+        }
+        .thrinkle-border-pink-300{
+            border-color: #f9a8d4;
+        }
+        .thrinkle-border-pink-400{
+            border-color: #f472b6;
+        }
+        .thrinkle-border-pink-500{
+            border-color: #ec4899;
+        }
+        .thrinkle-border-pink-600{
+            border-color: #db2777;
+        }
+        .thrinkle-border-pink-700{
+            border-color: #be185d;
+        }
+        .thrinkle-border-pink-800{
+            border-color: #9d174d;
+        }
+        .thrinkle-border-pink-900{
+            border-color: #831843;
+        }
+        .thrinkle-border-pink-950{
+            border-color: #500724;
+        }
+    /** pink border colors */
+    /** pink outline colors */
+        .thrinkle-outline-pink-50{
+            outline-color: #fdf2f8;
+        }
+        .thrinkle-outline-pink-100{
+            outline-color: #fce7f3;
+        }
+        .thrinkle-outline-pink-200{
+            outline-color: #fbcfe8;
+        }
+        .thrinkle-outline-pink-300{
+            outline-color: #f9a8d4;
+        }
+        .thrinkle-outline-pink-400{
+            outline-color: #f472b6;
+        }
+        .thrinkle-outline-pink-500{
+            outline-color: #ec4899;
+        }
+        .thrinkle-outline-pink-600{
+            outline-color: #db2777;
+        }
+        .thrinkle-outline-pink-700{
+            outline-color: #be185d;
+        }
+        .thrinkle-outline-pink-800{
+            outline-color: #9d174d;
+        }
+        .thrinkle-outline-pink-900{
+            outline-color: #831843;
+        }
+        .thrinkle-outline-pink-950{
+            outline-color: #500724;
+        }
+    /** pink outline colors */
+    /** pink caret colors */
+        .thrinkle-caret-pink-50{
+            caret-color: #fdf2f8;
+        }
+        .thrinkle-caret-pink-100{
+            caret-color: #fce7f3;
+        }
+        .thrinkle-caret-pink-200{
+            caret-color: #fbcfe8;
+        }
+        .thrinkle-caret-pink-300{
+            caret-color: #f9a8d4;
+        }
+        .thrinkle-caret-pink-400{
+            caret-color: #f472b6;
+        }
+        .thrinkle-caret-pink-500{
+            caret-color: #ec4899;
+        }
+        .thrinkle-caret-pink-600{
+            caret-color: #db2777;
+        }
+        .thrinkle-caret-pink-700{
+            caret-color: #be185d;
+        }
+        .thrinkle-caret-pink-800{
+            caret-color: #9d174d;
+        }
+        .thrinkle-caret-pink-900{
+            caret-color: #831843;
+        }
+        .thrinkle-caret-pink-950{
+            caret-color: #500724;
+        }
+    /** pink caret colors */
+    /** pink text-decoration colors */
+        .thrinkle-text-decoration-pink-50{
+            text-decoration-color: #fdf2f8;
+        }
+        .thrinkle-text-decoration-pink-100{
+            text-decoration-color: #fce7f3;
+        }
+        .thrinkle-text-decoration-pink-200{
+            text-decoration-color: #fbcfe8;
+        }
+        .thrinkle-text-decoration-pink-300{
+            text-decoration-color: #f9a8d4;
+        }
+        .thrinkle-text-decoration-pink-400{
+            text-decoration-color: #f472b6;
+        }
+        .thrinkle-text-decoration-pink-500{
+            text-decoration-color: #ec4899;
+        }
+        .thrinkle-text-decoration-pink-600{
+            text-decoration-color: #db2777;
+        }
+        .thrinkle-text-decoration-pink-700{
+            text-decoration-color: #be185d;
+        }
+        .thrinkle-text-decoration-pink-800{
+            text-decoration-color: #9d174d;
+        }
+        .thrinkle-text-decoration-pink-900{
+            text-decoration-color: #831843;
+        }
+        .thrinkle-text-decoration-pink-950{
+            text-decoration-color: #500724;
+        }
+    /** pink text-decoration colors */
+    /** pink text-emphasis colors */
+        .thrinkle-text-emphasis-pink-50{
+            text-emphasis-color: #fdf2f8;
+        }
+        .thrinkle-text-emphasis-pink-100{
+            text-emphasis-color: #fce7f3;
+        }
+        .thrinkle-text-emphasis-pink-200{
+            text-emphasis-color: #fbcfe8;
+        }
+        .thrinkle-text-emphasis-pink-300{
+            text-emphasis-color: #f9a8d4;
+        }
+        .thrinkle-text-emphasis-pink-400{
+            text-emphasis-color: #f472b6;
+        }
+        .thrinkle-text-emphasis-pink-500{
+            text-emphasis-color: #ec4899;
+        }
+        .thrinkle-text-emphasis-pink-600{
+            text-emphasis-color: #db2777;
+        }
+        .thrinkle-text-emphasis-pink-700{
+            text-emphasis-color: #be185d;
+        }
+        .thrinkle-text-emphasis-pink-800{
+            text-emphasis-color: #9d174d;
+        }
+        .thrinkle-text-emphasis-pink-900{
+            text-emphasis-color: #831843;
+        }
+        .thrinkle-text-emphasis-pink-950{
+            text-emphasis-color: #500724;
+        }
+    /** pink text-emphasis colors */
+    /** pink column-rule colors */
+        .thrinkle-column-rule-pink-50{
+            column-rule-color: #fdf2f8;
+        }
+        .thrinkle-column-rule-pink-100{
+            column-rule-color: #fce7f3;
+        }
+        .thrinkle-column-rule-pink-200{
+            column-rule-color: #fbcfe8;
+        }
+        .thrinkle-column-rule-pink-300{
+            column-rule-color: #f9a8d4;
+        }
+        .thrinkle-column-rule-pink-400{
+            column-rule-color: #f472b6;
+        }
+        .thrinkle-column-rule-pink-500{
+            column-rule-color: #ec4899;
+        }
+        .thrinkle-column-rule-pink-600{
+            column-rule-color: #db2777;
+        }
+        .thrinkle-column-rule-pink-700{
+            column-rule-color: #be185d;
+        }
+        .thrinkle-column-rule-pink-800{
+            column-rule-color: #9d174d;
+        }
+        .thrinkle-column-rule-pink-900{
+            column-rule-color: #831843;
+        }
+        .thrinkle-column-rule-pink-950{
+            column-rule-color: #500724;
+        }
+    /** pink column-rule colors */
+
+    /** rose background colors */
+        .thrinkle-bg-rose-50{
+            background-color: #fff1f2;
+        }
+        .thrinkle-bg-rose-100{
+            background-color: #ffe4e6;
+        }
+        .thrinkle-bg-rose-200{
+            background-color: #fecdd3;
+        }
+        .thrinkle-bg-rose-300{
+            background-color: #fda4af;
+        }
+        .thrinkle-bg-rose-400{
+            background-color: #fb7185;
+        }
+        .thrinkle-bg-rose-500{
+            background-color: #f43f5e;
+        }
+        .thrinkle-bg-rose-600{
+            background-color: #e11d48;
+        }
+        .thrinkle-bg-rose-700{
+            background-color: #be123c;
+        }
+        .thrinkle-bg-rose-800{
+            background-color: #9f1239;
+        }
+        .thrinkle-bg-rose-900{
+            background-color: #881337;
+        }
+        .thrinkle-bg-rose-950{
+            background-color: #4c0519;
+        }
+    /** rose background colors */
+    /** rose font colors */
+        .thrinkle-text-rose-50{
+            color: #fff1f2;
+        }
+        .thrinkle-text-rose-100{
+            color: #ffe4e6;
+        }
+        .thrinkle-text-rose-200{
+            color: #fecdd3;
+        }
+        .thrinkle-text-rose-300{
+            color: #fda4af;
+        }
+        .thrinkle-text-rose-400{
+            color: #fb7185;
+        }
+        .thrinkle-text-rose-500{
+            color: #f43f5e;
+        }
+        .thrinkle-text-rose-600{
+            color: #e11d48;
+        }
+        .thrinkle-text-rose-700{
+            color: #be123c;
+        }
+        .thrinkle-text-rose-800{
+            color: #9f1239;
+        }
+        .thrinkle-text-rose-900{
+            color: #881337;
+        }
+        .thrinkle-text-rose-950{
+            color: #4c0519;
+        }
+    /** rose font colors */
+    /** rose border colors */
+        .thrinkle-border-rose-50{
+            border-color: #fff1f2;
+        }
+        .thrinkle-border-rose-100{
+            border-color: #ffe4e6;
+        }
+        .thrinkle-border-rose-200{
+            border-color: #fecdd3;
+        }
+        .thrinkle-border-rose-300{
+            border-color: #fda4af;
+        }
+        .thrinkle-border-rose-400{
+            border-color: #fb7185;
+        }
+        .thrinkle-border-rose-500{
+            border-color: #f43f5e;
+        }
+        .thrinkle-border-rose-600{
+            border-color: #e11d48;
+        }
+        .thrinkle-border-rose-700{
+            border-color: #be123c;
+        }
+        .thrinkle-border-rose-800{
+            border-color: #9f1239;
+        }
+        .thrinkle-border-rose-900{
+            border-color: #881337;
+        }
+        .thrinkle-border-rose-950{
+            border-color: #4c0519;
+        }
+    /** rose border colors */
+    /** rose outline colors */
+        .thrinkle-outline-rose-50{
+            outline-color: #fff1f2;
+        }
+        .thrinkle-outline-rose-100{
+            outline-color: #ffe4e6;
+        }
+        .thrinkle-outline-rose-200{
+            outline-color: #fecdd3;
+        }
+        .thrinkle-outline-rose-300{
+            outline-color: #fda4af;
+        }
+        .thrinkle-outline-rose-400{
+            outline-color: #fb7185;
+        }
+        .thrinkle-outline-rose-500{
+            outline-color: #f43f5e;
+        }
+        .thrinkle-outline-rose-600{
+            outline-color: #e11d48;
+        }
+        .thrinkle-outline-rose-700{
+            outline-color: #be123c;
+        }
+        .thrinkle-outline-rose-800{
+            outline-color: #9f1239;
+        }
+        .thrinkle-outline-rose-900{
+            outline-color: #881337;
+        }
+        .thrinkle-outline-rose-950{
+            outline-color: #4c0519;
+        }
+    /** rose outline colors */
+    /** rose caret colors */
+        .thrinkle-caret-rose-50{
+            caret-color: #fff1f2;
+        }
+        .thrinkle-caret-rose-100{
+            caret-color: #ffe4e6;
+        }
+        .thrinkle-caret-rose-200{
+            caret-color: #fecdd3;
+        }
+        .thrinkle-caret-rose-300{
+            caret-color: #fda4af;
+        }
+        .thrinkle-caret-rose-400{
+            caret-color: #fb7185;
+        }
+        .thrinkle-caret-rose-500{
+            caret-color: #f43f5e;
+        }
+        .thrinkle-caret-rose-600{
+            caret-color: #e11d48;
+        }
+        .thrinkle-caret-rose-700{
+            caret-color: #be123c;
+        }
+        .thrinkle-caret-rose-800{
+            caret-color: #9f1239;
+        }
+        .thrinkle-caret-rose-900{
+            caret-color: #881337;
+        }
+        .thrinkle-caret-rose-950{
+            caret-color: #4c0519;
+        }
+    /** rose caret colors */
+    /** rose text-decoration colors */
+        .thrinkle-text-decoration-rose-50{
+            text-decoration-color: #fff1f2;
+        }
+        .thrinkle-text-decoration-rose-100{
+            text-decoration-color: #ffe4e6;
+        }
+        .thrinkle-text-decoration-rose-200{
+            text-decoration-color: #fecdd3;
+        }
+        .thrinkle-text-decoration-rose-300{
+            text-decoration-color: #fda4af;
+        }
+        .thrinkle-text-decoration-rose-400{
+            text-decoration-color: #fb7185;
+        }
+        .thrinkle-text-decoration-rose-500{
+            text-decoration-color: #f43f5e;
+        }
+        .thrinkle-text-decoration-rose-600{
+            text-decoration-color: #e11d48;
+        }
+        .thrinkle-text-decoration-rose-700{
+            text-decoration-color: #be123c;
+        }
+        .thrinkle-text-decoration-rose-800{
+            text-decoration-color: #9f1239;
+        }
+        .thrinkle-text-decoration-rose-900{
+            text-decoration-color: #881337;
+        }
+        .thrinkle-text-decoration-rose-950{
+            text-decoration-color: #4c0519;
+        }
+    /** rose text-decoration colors */
+    /** rose text-emphasis colors */
+        .thrinkle-text-emphasis-rose-50{
+            text-emphasis-color: #fff1f2;
+        }
+        .thrinkle-text-emphasis-rose-100{
+            text-emphasis-color: #ffe4e6;
+        }
+        .thrinkle-text-emphasis-rose-200{
+            text-emphasis-color: #fecdd3;
+        }
+        .thrinkle-text-emphasis-rose-300{
+            text-emphasis-color: #fda4af;
+        }
+        .thrinkle-text-emphasis-rose-400{
+            text-emphasis-color: #fb7185;
+        }
+        .thrinkle-text-emphasis-rose-500{
+            text-emphasis-color: #f43f5e;
+        }
+        .thrinkle-text-emphasis-rose-600{
+            text-emphasis-color: #e11d48;
+        }
+        .thrinkle-text-emphasis-rose-700{
+            text-emphasis-color: #be123c;
+        }
+        .thrinkle-text-emphasis-rose-800{
+            text-emphasis-color: #9f1239;
+        }
+        .thrinkle-text-emphasis-rose-900{
+            text-emphasis-color: #881337;
+        }
+        .thrinkle-text-emphasis-rose-950{
+            text-emphasis-color: #4c0519;
+        }
+    /** rose text-emphasis colors */
+    /** rose column-rule colors */
+        .thrinkle-column-rule-rose-50{
+            column-rule-color: #fff1f2;
+        }
+        .thrinkle-column-rule-rose-100{
+            column-rule-color: #ffe4e6;
+        }
+        .thrinkle-column-rule-rose-200{
+            column-rule-color: #fecdd3;
+        }
+        .thrinkle-column-rule-rose-300{
+            column-rule-color: #fda4af;
+        }
+        .thrinkle-column-rule-rose-400{
+            column-rule-color: #fb7185;
+        }
+        .thrinkle-column-rule-rose-500{
+            column-rule-color: #f43f5e;
+        }
+        .thrinkle-column-rule-rose-600{
+            column-rule-color: #e11d48;
+        }
+        .thrinkle-column-rule-rose-700{
+            column-rule-color: #be123c;
+        }
+        .thrinkle-column-rule-rose-800{
+            column-rule-color: #9f1239;
+        }
+        .thrinkle-column-rule-rose-900{
+            column-rule-color: #881337;
+        }
+        .thrinkle-column-rule-rose-950{
+            column-rule-color: #4c0519;
+        }
+    /** rose column-rule colors */
+
+            
+        
+</style> 
+</body>
+</html>
