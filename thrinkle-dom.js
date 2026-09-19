@@ -1,14 +1,22 @@
 import ThrinkleSwitch from './ThrinkleSwitch.js';
-import ThrinkleContainer from './ThrinkleContainer.js';
-import ThrinkleColumn from './ThrinkleColumn.js';
+import ThrinkleContainer from './layout/ThrinkleContainer.js';
+import ThrinkleColumn from './layout/ThrinkleColumn.js';
 import ThrinkleAlert from './ThrinkleAlert.js';
+import { getCssVariable, setCssVariable } from './function.js';
+import ThrinkleLayout from './layout/ThrinkleLayout.js';
 
 // 1. Register Web Components
 window.customElements.define('thrinkle-switch', ThrinkleSwitch);
 window.customElements.define('thrinkle-container', ThrinkleContainer);
 window.customElements.define('thrinkle-column', ThrinkleColumn);
 window.customElements.define('thrinkle-alert', ThrinkleAlert);
-
+window.customElements.define('thrinkle-layout',ThrinkleLayout);
+window.addEventListener('thrinkle-styles-loaded', function(e) {
+  setCssVariable('--thrinkle-disabled',getCssVariable('--thrinkle-gray-300'));
+  setCssVariable('--thrinkle-focus',getCssVariable('--thrinkle-gray-200'));
+  setCssVariable('--thrinkle-focus-style',getCssVariable('--thrinkle-border-solid'));
+  setCssVariable('--thrinkle-focus-border-width','1px');
+})
 // 2. Function to load style.css asynchronously
 function initStyles() {
   return new Promise((resolve, reject) => {

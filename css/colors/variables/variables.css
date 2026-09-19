@@ -1,0 +1,6 @@
+:root{
+    --thrinkle-disabled: var('--thrinkle-gray-500');
+    --thrinkle-focus: var('--thrinkle-gray-200');
+    --thrinkle-switch-on: var('--thrinkle-green-500');
+    --thrinkle-switch-off: var('--thrinkle-red-500');
+}

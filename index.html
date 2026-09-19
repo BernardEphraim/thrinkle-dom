@@ -4,28 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+     
+    
 </head>
 <body>
+<thrinkle-layout
+    iconsize="16"
+    title="Dashboard"
+>
     <thrinkle-container type="fluid" break="sm">
 		<thrinkle-column size='3' offset='6' break="sm">
-			<div style="height: 58px; background-color:tomato;">rty</div>
-			<div style="height: 58px; background-color:orange">rty</div>
+			<div style="height: 508px; background-color:tomato;">rty</div>
+			<div style="height: 508px; background-color:orange; word-wrap: break-word;">rty</div>
             <thrinkle-alert 
-            animationname="rotate-diagonal-tl-animation"
+            animate
+            animationname="bounce-animation"
+            exitanimationname="bounce-exit-animation"
             animationdirection="forwards"
             animationfillmode="both"    
             animationduration="1s"
             animationtimingfunction="ease-in-out"
             animationiterationcount="1"
-            type="warning" 
-            size="12"
-            iconsize="16"
+            type="success" 
+            size="4"
+            iconsize="24"
             alignment="right"
             displaycaption
             caption="Success"
             aligncaption="center"
             closable="true"
-            borderline="bottom"
+            borderline="all"
             >
             Lorem, ipsum dolor sit amet 
             consectetur adipisicing elit. Obcaecati, 
@@ -35,9 +43,69 @@
             a iste ipsum culpa dolore?
             </thrinkle-alert>
 		</thrinkle-column>
-		<thrinkle-column size='3'>44</thrinkle-column>
+		<thrinkle-column size='3'>
+            <thrinkle-alert 
+            animate
+            animationname="fade-animation"
+            exitanimationname="fade-exit-animation"
+            animationdirection="forwards"
+            animationfillmode="both"    
+            animationduration="1s"
+            animationtimingfunction="ease-in-out"
+            animationiterationcount="1"
+            type="danger" 
+            size="4"
+            iconsize="24"
+            alignment="right"
+            displaycaption
+            caption="Success"
+            aligncaption="center"
+            closable="true"
+            borderline="all"
+            position="top-right"
+            >
+            Lorem, ipsum dolor sit amet 
+            consectetur adipisicing elit. Obcaecati, 
+            perspiciatis neque omnis et minus, tenetur 
+            aspernatur fugiat nesciunt delectus nemo 
+            aliquam deleniti eius voluptatem blanditiis, 
+            a iste ipsum culpa dolore?
+            </thrinkle-alert>
+            <thrinkle-switch 
+                name="switch1"
+                id="switch1"
+                onclick="setSystemState" 
+                onstatelabel="Server" 
+                offstatelabel="Reciever" 
+                onstatevalue="1" 
+                offstatevalue="0"
+                value="0"
+                oncolor="blue"
+                offcolor="#aaad00"
+            ></thrinkle-switch>
+            
+            <thrinkle-switch 
+                name="switch2"
+                id="switch2"
+                onclick="alert(this.value)" 
+                onstatelabel="Name" 
+                offstatelabel="File" 
+                onstatevalue="1" 
+                offstatevalue="0"
+                value="0"
+                oncolor="skyblue"
+                offcolor="maroon"
+                borderwidth="1px"
+            ></thrinkle-switch>
+        </thrinkle-column>
 	</thrinkle-container>
+</thrinkle-layout>
+    
 </body>
-
-<script type="module" src="./thrinkle-dom.js"></script>
+<script>
+    function setSystemState(e){
+        alert(e)
+    }
+</script>
+<script type="module" src="./thrinkle-dom.js" defer></script>
 </html>

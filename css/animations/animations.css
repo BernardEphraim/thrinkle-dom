@@ -3,7 +3,7 @@
 @import url('./exit.css');
 /* Class applied only when component is completely prepared */
 .animate-enter {
-    visibility: visible;
+    /* visibility: visible; */
     animation-name: var(--thrinkle-animation-name,'slide-in-spring');
     animation-duration: var(--thrinkle-animation-duration,'450ms');
     animation-timing-function: var(--thrinkle-animation-timing-function,'cubic-bezier(0.34, 1.56, 0.64, 1)');

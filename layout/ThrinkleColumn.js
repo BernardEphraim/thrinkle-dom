@@ -4,7 +4,7 @@
  * creating a column grid which can be flexed at break points defined on their parent containers
  * Declared form:
  *  <thrinkle-container break="lg">
-		<thrinkle-column size='3' offset='6'>
+		<thrinkle-column size='3' offset='6' break="lg">
 			<div style="height: 58px; background-color:tomato">rty</div>
 			<div style="height: 58px; background-color:orange">rty</div>
 		</thrinkle-column>
@@ -12,22 +12,27 @@
 	</thrinkle-container>
  *  the snippet above describes the html structure of the thrinkle container implementation
  * 	@method onclick (optional) - takes the reference to an event handler (note arguments should not be passed)
- *	@property size (optional) - takes values between 1 and 12 indicates the fraction of parent's internal space to occupy
- *  @property offset (optional) - takes values between 1 and 11 indicates the fraction of parent's internal space to use as left margin
- *	@property styleclass (optional) - accepts a valid css class for styling the swtich's outermost container. Note: when provided, it overrides the default style
- *	@property replacestyle - can either be true or false, indicates whether the user provided css classes should replace the default css class. true replaces, false appends
+ *	@attr {size} (optional) - takes values between 1 and 12 indicates the fraction of parent's internal space to occupy
+ *  @attr {offset} (optional) - takes values between 1 and 11 indicates the fraction of parent's internal space to use as left margin
+ *	@attr {styleclass} (optional) - accepts a valid css class for styling the swtich's outermost container. Note: when provided, it overrides the default style
+ *	@attr {replacestyle} - can either be true or false, indicates whether the user provided css classes should replace the default css class. true replaces, false appends
+ *  @attr {style} (optional) - accepts standard css properties definitions
+ *  @attr {break} (optional) - indicates the breakpoint
 */
 import {
     getCssVariable,
     removeClassesStartingWith
-} from './function.js'
+} from '../function.js'
 export default class ThrinkleColumn extends HTMLElement {
     static observedAttributes = ["size","offset"];
     constructor() {
         super();
         /*set up this custom element attributes*/    
         // Your custom element initialization logic here            
-        this.classList.add('thrinkle-column');                  
+        this.classList.add('thrinkle-column');  
+        // keep this element invisible till css is fully loaded
+        this.setAttribute('data-thrinkle-loading', ''); 
+        this.id=this.hasAttribute('id') ? this.getAttribute('id') : `thrinkle-column-${Math.floor(Math.random() * 1000000)}`                
         //bind to external handlers if provided
         if(this.hasAttribute('onclick')){
             // Convert the string to a function reference
@@ -73,15 +78,7 @@ export default class ThrinkleColumn extends HTMLElement {
             }else{
                 this.style.cssText += `; ${this.getAttribute('style')}`;
             }
-        }                       
-        // if(this.hasAttribute('size')){
-        //     this.classList.add(`thrinkle-col-${this.getAttribute('size')}`)
-        // }else{
-        //     this.classList.add('thrinkle-col-4')
-        // }   
-        // if(this.hasAttribute('offset')){
-        //     this.classList.add(`thrinkle-offset-${this.getAttribute('offset')}`)
-        // }
+        } 
         if(this.hasAttribute('break')){
             this.break = this.getAttribute('break')
         }else{
@@ -93,9 +90,14 @@ export default class ThrinkleColumn extends HTMLElement {
         this.css = `
         /* Style for the column */
         .thrinkle-column{
+            height: max-content;
 			padding: 0.3em;
 			margin: 0px;				
 		}
+        /* Hide the alert when the data-thrinkle-loading attribute is present */
+        .thrinkle-column[data-thrinkle-loading] {
+            display: none;
+        }
         `;
         style.textContent = this.css;
         if(!document.head.querySelector("style#thrinkle_column")){
@@ -134,10 +136,12 @@ export default class ThrinkleColumn extends HTMLElement {
             const t=getCssVariable(`--thrinkle-br-${this.break}`)
             this.handleBreakpoint = (e) => {
                 if (e.matches) {
+                    // make full width
                     removeClassesStartingWith('thrinkle-col-', this);
                     this.classList.add(`thrinkle-col-12`);
                     removeClassesStartingWith('thrinkle-offset-', this);
                 } else {
+                    // set to the specified column width
                     if(this.hasAttribute('size')){
                         this.classList.add(`thrinkle-col-${this.getAttribute('size')}`)
                     }else{
@@ -152,10 +156,13 @@ export default class ThrinkleColumn extends HTMLElement {
             this.mediaQuery.addEventListener('change', this.handleBreakpoint);
             // Initial check
             this.handleBreakpoint(this.mediaQuery);
+            this.dispatchEvent(new CustomEvent('thrinkle-column-connected', { detail: { alert: this } }));
+            // remove the loading attribute to show the alert
+            this.removeAttribute('data-thrinkle-loading');
         }.bind(this), true);
     }	
     disconnectedCallback() {
-        this.mediaQuery.removeEventListener('change', this.handleBreakpoint);
+        this.mediaQuery?.removeEventListener('change', this.handleBreakpoint);
     }	
     adoptedCallback() {
         

@@ -1,0 +1,10 @@
+:root{
+   --thrinkle-border-solid: solid;
+   --thrinkle-border-dashed: dashed;
+   --thrinkle-border-dotted: dotted;
+   --thrinkle-border-double: double;
+   --thrinkle-border-groove: groove;
+   --thrinkle-border-hidden: hidden;
+   --thrinkle-border-outset: outset;
+   --thrinkle-border-inset: inset;
+}

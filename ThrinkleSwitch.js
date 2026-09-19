@@ -1,3 +1,5 @@
+import { getCssVariable, setCssVariable } from "./function.js";
+
 /**
  * working thrinkle switch class written on the 19/10/2023 by Bernard Ephraim
  * ThrinkleSwitch element is a toggle switch that can be used as a normal toggle switch within and outside
@@ -12,7 +14,10 @@
         onstatevalue="1" 
         offstatevalue="0"
         value="0"
-        state=
+        state="off"
+        oncolor="skyblue"
+        offcolor="maroon"
+        borderwidth="1px"
     ></thrinkle-switch>
  *  Internal structure:
     <div class="thrinkle-switch-container">
@@ -24,22 +29,24 @@
  *   
  *   the snippet above describes the html structure of the thrinkle toggle switch implementation
  * 	@method onclick (optional) - takes the reference to an event handler (note arguments should not be passed)
-	@property onstatelabel (optional) - label for the switch's on state
-	@property offstatelabel (optional) - label for the switch's off state 
-	@property onstatevalue (optional) - the value of the switch's on state
-	@property offstatevalue (optional) - the value of the switch's off state
-	@property value (optional) - the value of the current state of the switch. If switch is in the on state, this takes on the data-onstatevalue
-	@property oldvalue (optional) - the value of the previous state of the switch. This is useful when there is a change in state and there is need to revert back to the previous state
-	@property state (optional) - can either be on or off, indicates the current state of the switch. Null values evaluate to the off state
-	@property buttonstyle (optional) - accepts a valid css class for styling the swtich button. Note: when provided, it overrides the default style
-	@property buttoncontainerstyle (optional) - accepts a valid css class for styling the swtich button container. Note: when provided, it overrides the default style
-	@property switchlabelstyle (optional) - accepts a valid css class for styling the swtich label. Note: when provided, it overrides the default style
-	@property switchcontainerstyle (optional) - accepts a valid css class for styling the swtich's outermost container. Note: when provided, it overrides the default style
-	@property replacestyle - can either be true or false, indicates whether the user provided css classes should replace the default css class. true replaces, false appends
-    @method getValue(el) - function- takes one argument el which can be any member of the switch tree: gets the current value of the switch
-	@method getOldValue(el) - function- takes one argument el which can be any member of the switch tree: gets the previous value of the switch before the change of state
-	@method setValue(el,val) - function- takes two arguments el which can be any member of the switch tree and val the value: sets the current value of the switch
-	@method setOldValue(el,val) function- takes two arguments el which can be any member of the switch tree and val the value: sets the previous value of the switch
+ *	@attr {onstatelabel} (optional) - label for the switch's on state
+ *	@attr {offstatelabel} (optional) - label for the switch's off state 
+ *	@attr {onstatevalue} (optional) - the value of the switch's on state
+ *	@attr {offstatevalue} (optional) - the value of the switch's off state
+ *	@attr {value} (optional) - the value of the current state of the switch. If switch is in the on state, this takes on the data-onstatevalue
+ *	@attr {oldvalue} (optional) - the value of the previous state of the switch. This is useful when there is a change in state and there is need to revert back to the previous state
+ *	@attr {state} (optional) - can either be on or off, indicates the current state of the switch. Null values evaluate to the off state
+ *	@attr {buttonstyle} (optional) - accepts a valid css class for styling the swtich button. Note: when provided, it overrides the default style
+ *	@attr {buttoncontainerstyle} (optional) - accepts a valid css class for styling the swtich button container. Note: when provided, it overrides the default style
+ *	@attr {switchlabelstyle} (optional) - accepts a valid css class for styling the swtich label. Note: when provided, it overrides the default style
+ *	@attr {switchcontainerstyle} (optional) - accepts a valid css class for styling the swtich's outermost container. Note: when provided, it overrides the default style
+ *	@attr {replacestyle} - can either be true or false, indicates whether the user provided css classes should replace the default css class. true replaces, false appends
+ *  @attr {oncolor} (optional) - takes on any hexadecimal or named color for the on state of the switch
+ *  @attr {offcolor} (optional) - takes on any hexadecimal or named color for the off state of the switch
+ * @method getValue(el) - function- takes one argument el which can be any member of the switch tree: gets the current value of the switch
+ *	@method getOldValue(el) - function- takes one argument el which can be any member of the switch tree: gets the previous value of the switch before the change of state
+ *	@method setValue(el,val) - function- takes two arguments el which can be any member of the switch tree and val the value: sets the current value of the switch
+ *	@method setOldValue(el,val) function- takes two arguments el which can be any member of the switch tree and val the value: sets the previous value of the switch
  */
 export default class ThrinkleSwitch extends HTMLElement {
     static formAssociated = true;//needed for form elements
@@ -51,6 +58,8 @@ export default class ThrinkleSwitch extends HTMLElement {
         this._internals.role = 'switch';
 
         // Your custom element initialization logic here
+        // keep this element invisible till css is fully loaded
+        this.setAttribute('data-thrinkle-loading', '');
 		this.setAttribute("role","switch");
         this.setAttribute("tabIndex","0");
         if(this.hasAttribute('disabled')){
@@ -205,15 +214,13 @@ export default class ThrinkleSwitch extends HTMLElement {
 				width: fit-content;
                 border-top-left-radius: 12px;
                 border-bottom-left-radius: 12px;
+                border-top-right-radius: 12px;
+                border-bottom-right-radius: 12px;
 				margin: 5px;
 				cursor: pointer;
 			}
 			.thrinkle-switch-container:focus{
 				outline: transparent;
-                border: 1px solid grey;
-			}
-			.thrinkle-switch-container:focus div.thrinkle-toggle-handle{
-				/*border: 2px solid grey;*/
 			}
             
 			.thrinkle-toggle-container {
@@ -222,7 +229,6 @@ export default class ThrinkleSwitch extends HTMLElement {
 				width: 40px;
 				height: 20px;
 				border-radius: 10px;
-				background-color: #ed0909;
 			}
 			.thrinkle-toggle-handle {
 				display:inline-block;
@@ -238,7 +244,7 @@ export default class ThrinkleSwitch extends HTMLElement {
 				display: inline-block;
 				position: relative;
 				padding-left:5px;
-				color: #ed0909;
+                color: var(--thrinkle-switch-off);
 				font-weight: bold;
 				font-size: 1em;
 				width: fit-content;
@@ -251,24 +257,20 @@ export default class ThrinkleSwitch extends HTMLElement {
 			.thrinkle-off{
 				transform: translateX(6px);
 			}
-			.thrinkle-red{								
-				background-color: #ed0909;
-			}							
-			.thrinkle-green{								
-				background-color: #5cb95c;
-			}
-			.thrinkle-green-font{
-				color:#5cb95c;
-			}
+			
             /*disabled state*/
             
             .thrinkle-switch-container:disabled .thrinkle-red,
             .thrinkle-switch-container:disabled .thrinkle-green{
-                background-color: #d5d5d5;
+                background-color: var(--thrinkle-disabled);
             }
             .thrinkle-switch-container:disabled .thrinkle-green-font,
             .thrinkle-switch-container:disabled .thrinkle-switch-label{
-                color: #d5d5d5;
+                color: var(--thrinkle-disabled);
+            }
+            /* Hide the alert when the data-thrinkle-loading attribute is present */
+            .thrinkle-alert[data-thrinkle-loading] {
+                display: none;
             }
 		`;
 		style.textContent = this.css;
@@ -360,11 +362,16 @@ export default class ThrinkleSwitch extends HTMLElement {
 		}
 	}
     toggleSwitchOffFunction({container,button,switchLabel}){
+        const color = this.hasAttribute('offcolor') ? 
+                this.getAttribute('offcolor') :
+                getCssVariable('--thrinkle-red-400')
 		button.classList.remove("thrinkle-on");
 		button.classList.add('thrinkle-off');
 		container.classList.remove("thrinkle-green");
 		container.classList.add('thrinkle-red');
+        container.style.backgroundColor = color;
 		switchLabel.classList.remove("thrinkle-green-font");
+		switchLabel.style.color=color;
 		//set the label of the switch
 		switchLabel.innerText=this.getAttribute('offstatelabel');
 		//set the state of switch to off
@@ -373,11 +380,16 @@ export default class ThrinkleSwitch extends HTMLElement {
         this._internals.ariaChecked = 'false';	
 	}
 	toggleSwitchOnFunction({container,button,switchLabel}){
+        const color = this.hasAttribute('oncolor') ? 
+                this.getAttribute('oncolor') :
+                getCssVariable('--thrinkle-green-400')
 		button.classList.add("thrinkle-on");
 		button.classList.remove('thrinkle-off');
 		container.classList.add("thrinkle-green");
-		container.classList.remove('thrinkle-red');
+		container.classList.remove('thrinkle-red');        
+        container.style.backgroundColor = color;
 		switchLabel.classList.add("thrinkle-green-font");
+		switchLabel.style.color=color;
 		//set the label of the switch
 		switchLabel.innerText=this.getAttribute('onstatelabel');						
 		//set the state of the switch to on
@@ -386,24 +398,48 @@ export default class ThrinkleSwitch extends HTMLElement {
         this._internals.ariaChecked = 'true';
 	}
 	connectedCallback() {
-		//set the value (based on the state where needed) of the custom element as 
-        //soon as custom element is mounted
-		if(this.hasAttribute('value')){
-            //if the data-value was provided return the data-value
-            this.setAttribute('value',this.getAttribute('value'));
-        }else if(this.hasAttribute('state')){
-            //if data-value was not provide but data-state was provided use it to infer the data-value from the on and off state values
-            if(this.getAttribute('state').trim()===''){
-                //if data-state is provided but its value is blank that default to the off state 
-                this.setAttribute('value',this.getAttribute('offstatevalue'));
+		window.addEventListener('thrinkle-styles-loaded', function(e) {
+            //set the value (based on the state where needed) of the custom element as 
+            //soon as custom element is mounted
+            if(this.hasAttribute('value')){
+                //if the data-value was provided return the data-value
+                this.setAttribute('value',this.getAttribute('value'));
+            }else if(this.hasAttribute('state')){
+                //if data-value was not provide but data-state was provided use it to infer the data-value from the on and off state values
+                if(this.getAttribute('state').trim()===''){
+                    //if data-state is provided but its value is blank that default to the off state 
+                    this.setAttribute('value',this.getAttribute('offstatevalue'));
+                }else{
+                    //if the data-state value was provided then use it to infer the data-value from the on and off state values
+                    this.setAttribute('value',this.getAttribute('state').trim()==='on'? this.getAttribute('onstatevalue') : this.getAttribute('offstatevalue'));
+                }
             }else{
-                //if the data-state value was provided then use it to infer the data-value from the on and off state values
-                this.setAttribute('value',this.getAttribute('state').trim()==='on'? this.getAttribute('onstatevalue') : this.getAttribute('offstatevalue'));
+                //default to the off state since neither the data-value nor data-state was provided
+                this.setAttribute('value',this.getAttribute('offstatevalue'));
             }
-        }else{
-            //default to the off state since neither the data-value nor data-state was provided
-            this.setAttribute('value',this.getAttribute('offstatevalue'));
-        }
+            
+            // set border on focus
+            this.addEventListener('focus', (e) => {
+                this.style.borderColor = this.hasAttribute('bordercolor') ? 
+                this.getAttribute('bordercolor') :
+                getCssVariable('--thrinkle-focus')
+                this.style.borderWidth = this.hasAttribute('borderwidth') ? 
+                this.getAttribute('borderwidth') :
+                getCssVariable('--thrinkle-focus-border-width')
+                this.style.borderStyle = this.hasAttribute('borderstyle') ? 
+                this.getAttribute('borderstyle') :
+                getCssVariable('--thrinkle-focus-style')
+                 
+            });
+            // unset border on blur
+            this.addEventListener('blur', (e) => {
+                this.style.borderColor = 'transparent'
+                this.style.borderWidth = 0
+                this.style.borderStyle = 'none'
+            });
+            // remove the loading attribute to show the alert
+            this.removeAttribute('data-thrinkle-loading');
+        }.bind(this), true);
 	}	
 	disconnectedCallback() {
 		console.log("Custom element removed from page.");

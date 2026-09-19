@@ -3,3 +3,55 @@
     margin: 0px;
     box-sizing: border-box;
 }
+.top-right {
+    position: absolute;
+    z-index: 9999;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+.top-left {
+    position: absolute;
+    z-index: 9999;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+.bottom-right {
+    position: absolute;
+    z-index: 9999;
+    bottom: 0.5rem;
+    right: 0.5rem;
+}
+.bottom-left {
+    position: absolute;
+    z-index: 9999;
+    bottom: 0.5rem;
+    left: 0.5rem;
+}
+.left{
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-50%);
+}
+.right{
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    right: 0.5rem;
+    transform: translateY(-50%);
+}
+.top{
+    position: absolute;
+    z-index: 9999;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.bottom{
+    position: absolute;
+    z-index: 9999;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}

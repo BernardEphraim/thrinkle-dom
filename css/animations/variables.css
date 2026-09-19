@@ -1,6 +1,7 @@
  :root{
     /** breakpoints */
-    --thrinkle-animation-name: 'slide-in-spring';
+    --thrinkle-animation-name: 'slide-right-animation';
+    --thrinkle-animation-name-exit: 'slide-right-exit-animation';
     --thrinkle-animation-direction: 'forwards';
     --thrinkle-animation-fill-mode:'both';
     --thrinkle-animation-duration: 450ms;

@@ -3,10 +3,6 @@
   0%, 100% { opacity: 1; transform: translateY(0); }
   50% { opacity: 1; transform: translateY(-30px); }
 }
-@keyframes bounce-animation-reverse {
-  0%, 100% { opacity: 1; transform: translateY(0); }
-  50% { opacity: 1; transform: translateY(30px); }
-}
 /* Bounce Animation */
 
 /* fade in Animation */
