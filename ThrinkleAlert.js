@@ -61,7 +61,8 @@ import {
     toTitleCase, 
     getCssVariable,
     generateContrastedDarkerColor, 
-    generateContrastedLighterColor
+    generateContrastedLighterColor,
+    setupAnimation
 } from "./function.js";
 export default class ThrinkleAlert extends HTMLElement {
     // static observedAttributes = ["size","offset"];
@@ -437,7 +438,8 @@ export default class ThrinkleAlert extends HTMLElement {
                     const parentElement = this.parentElement.parentElement
                     // set exit animation
                     if(parentElement.hasAttribute('animate')){
-                        parentElement.setupAnimation({
+                        setupAnimation({
+                            element: parentElement,
                             animationName: parentElement.hasAttribute('exitanimationname') ? 
                                 parentElement.getAttribute('exitanimationname') : 
                                 getCssVariable('--thrinkle-animation-name-exit')
@@ -471,7 +473,6 @@ export default class ThrinkleAlert extends HTMLElement {
                         break;
                 }
             }
-            this.dispatchEvent(new CustomEvent('thrinkle-alert-connected', { detail: { alert: this } }));
             this.addEventListener('animationend', (event) => {
                 // remove animation class when done to allow for further animation
                 // this.classList.remove('animate-enter');
@@ -487,7 +488,8 @@ export default class ThrinkleAlert extends HTMLElement {
             ); 
             // set entrance animation
             if(this.hasAttribute('animate')){
-                this.setupAnimation({
+                setupAnimation({
+                    element: this,
                     animationName: this.hasAttribute('animationname') ? 
                         this.getAttribute('animationname') : getCssVariable('--thrinkle-animation-name') 
                 })
@@ -499,6 +501,7 @@ export default class ThrinkleAlert extends HTMLElement {
             this.handleMediaQueryMatch(this,this.mediaQuery)
             // remove the loading attribute to show the alert
             this.removeAttribute('data-thrinkle-loading');
+            this.dispatchEvent(new CustomEvent('thrinkle-alert-connected', { detail: { alert: this } }));
         }.bind(this), true);
     }	
     disconnectedCallback() {
@@ -516,23 +519,5 @@ export default class ThrinkleAlert extends HTMLElement {
             this.classList.remove('thrinkle-alert-desktop')
         }
     }
-    setupAnimation({animationName}){ 
-        // Trigger animation strictly AFTER styles/theme are painted
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                // // this.classList.add('animate-enter');
-                this.style.animationName=animationName;
-                this.style.animationDirection=this.hasAttribute('animationdirection') ? this.getAttribute('animationdirection') : 'forwards';
-                this.style.animationFillMode=this.hasAttribute('animationfillmode') ? this.getAttribute('animationfillmode') : 'both';
-                this.style.animationDuration=this.hasAttribute('animationduration') ? this.getAttribute('animationduration') : '1s';
-                this.style.animationTimingFunction=this.hasAttribute('animationtimingfunction') ? this.getAttribute('animationtimingfunction') : 'cubic-bezier(0.34, 1.56, 0.64, 1)'; 
-                this.style.animationIterationCount=this.hasAttribute('animationiterationcount') ? this.getAttribute('animationiterationcount') : '1';
-                this.style.animationDelay=this.hasAttribute('animationdelay') ? this.getAttribute('animationdelay') : '0ms';
-                this.style.animationPlayState=this.hasAttribute('animationplaystate') ? this.getAttribute('animationplaystate') : 'running';
-                this.style.animationTimeline=this.hasAttribute('animationtimeline') ? this.getAttribute('animationtimeline') : 'running';
-                this.style.animationRotationAngle=this.hasAttribute('animationrotationangle') ? this.getAttribute('animationrotationangle') : '360deg';
-                
-            });
-        });
-    }
+    
 }

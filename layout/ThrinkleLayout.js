@@ -1,4 +1,4 @@
-import { getCssVariable } from "../function.js";
+import { getCssVariable, setupAnimation } from "../function.js";
 
 /**
  * working thrinkle container class written on the 9/11/2023 by Bernard Ephraim
@@ -57,14 +57,22 @@ import { getCssVariable } from "../function.js";
             this.appendChild(this.sidebarContainer)  
             this.appendChild(this.contentContainer)
             
-            
-
+            this.sidebarMenuContainer = document.createElement('div')
+            this.sidebarMenuContainer.classList.add('thrinkle-sidebar-menu-container')
+            this.sidebarContainer.appendChild(this.sidebarMenuContainer)
+            this.sidebarMenuPad = document.createElement('div')
+            this.sidebarMenuPad.classList.add('thrinkle-sidebar-menu-pad-layout-mobile')
+            this.sidebarContainer.appendChild(this.sidebarMenuPad)
 
             // organize the content of the head container
             // add sidebar control icon
             this.sidebarCloseIconContainer = document.createElement('div')
             this.sidebarCloseIconContainer.classList.add('thrinkle-sidebar-close-icon-container')
-            this.sidebarCloseIconContainer.setAttribute("shrink","false")
+            if(window.innerWidth>=667){
+                this.sidebarCloseIconContainer.setAttribute("shrink","false")
+            }else{
+                this.sidebarCloseIconContainer.setAttribute("shrink","true")
+            }
             this.headContainer.appendChild(this.sidebarCloseIconContainer)
             this.iconSize = this.hasAttribute('iconsize') ? this.getAttribute('iconsize') : '24' 
             this.setAttribute('iconsize',this.iconSize)
@@ -144,8 +152,14 @@ import { getCssVariable } from "../function.js";
                 /*border:2px solid green;*/
 
                 
-            }		
+            }	
+            /* Hide the alert when the data-thrinkle-loading attribute is present */
+            .thrinkle-layout[data-thrinkle-loading] {
+                display: none;
+            }	
             .thrinkle-sidebar-container{
+                display: flex;
+                flex-direction: row;
                 transition: width 0.5s ease;
                 background-color: blue;
             }
@@ -172,18 +186,54 @@ import { getCssVariable } from "../function.js";
             }
 
             .thrinkle-sidebar-container-layout-mobile-shrink{
-                width: 100vw;
-                height: 100vh;
-                background-color: rgba(255,0,255,0.5);
-                position:fixed;
-                z-index: 99999;
-            }
-            .thrinkle-sidebar-container-layout-mobile-expand{
                 width: 0px;
                 background-color: teal;
             }
+            .thrinkle-sidebar-container-layout-mobile-expand{
+                width: 100vw;
+                height: 100vh;
+                background-color: transparent;
+                position:fixed;
+                z-index: 99999;
+                
+            }
 
-
+            /* sidebar menu container*/
+            .thrinkle-sidebar-menu-container{
+                height: 100%;
+                background-color: white;
+            }
+            .thrinkle-sidebar-menu-container-layout-mobile{
+                transition: width 0.5s ease;
+                width: 0px;
+                padding: 0px;
+            }
+            .thrinkle-sidebar-menu-container-layout-desktop{
+                width: 100%;
+                padding: 0px;
+            }
+            .thrinkle-sidebar-menu-container-layout-desktop-shrink{
+                width: 100%;
+            }
+            .thrinkle-sidebar-menu-container-layout-desktop-expand{
+                width: 100%;
+            }
+            .thrinkle-sidebar-menu-container-layout-mobile-shrink{
+                width: 0px;
+            }
+            .thrinkle-sidebar-menu-container-layout-mobile-expand{
+                width: max(200px, 80%);
+            }
+            .thrinkle-sidebar-menu-pad-layout-desktop{
+                display: none;
+            }
+            .thrinkle-sidebar-menu-pad-layout-mobile{
+                display: flex;
+                flex-grow: 1;
+                background-color: rgba(0,0,0,0.5);
+            }
+            /* sidebar menu container */
+            
 
             .thrinkle-content-container{
                 box-sizing: border-box;
@@ -192,7 +242,7 @@ import { getCssVariable } from "../function.js";
                  
             }
             .thrinkle-content-container-layout-mobile{
-                width:100vw;
+                width: 100vw;
             
             }
             .thrinkle-content-container-layout-desktop{
@@ -290,45 +340,27 @@ import { getCssVariable } from "../function.js";
         set type(val) { this.setAttribute('type',val) }
 
         attributeChangedCallback(name, oldValue, newValue) {
-            //responds to changes in attribute
-            switch (name) {
-                case 'break':
-                    /** remove old break class */
-                    this.classList.remove(`thrinkle-br-${oldValue}`)
-                    /** add new break class */
-                    this.classList.add(`thrinkle-br-${newValue}`)   
-                    break ;
-                case 'type':               
-                    /** remove old type class */
-                    if(oldValue==='padded'){
-                        this.classList.remove('thrinkle-container');
-                    }else if (oldValue==='unpadded'){
-                        this.classList.remove('thrinkle-container-unpadded');
-                    }else{
-                        this.classList.remove('thrinkle-container-fluid');
-                    }
-                    /** remove new type class */ 
-                    if(newValue==='padded'){
-                        this.classList.add('thrinkle-container');
-                    }else if (newValue==='unpadded'){
-                        this.classList.add('thrinkle-container-unpadded');
-                    }else{
-                        this.classList.add('thrinkle-container-fluid');
-                    }              
-            }
+            
         }
         connectedCallback() {
             window.addEventListener('thrinkle-styles-loaded', function(e) {
                 this.sidebarCloseIconContainer.innerHTML= this.getSidebarIcon()
                 this.sidebarCloseIconContainer.addEventListener('click',(e)=>{
                     e.preventDefault()
+                    console.log('shrink',this.sidebarCloseIconContainer.getAttribute('shrink'))
                     this.sidebarCloseIconContainer.innerHTML= this.getSidebarIcon()
                 })
-                this.sidebarContainer.addEventListener('click',(e)=>{
+                this.sidebarMenuPad.addEventListener('click',(e)=>{
                     e.preventDefault()
-                    this.sidebarContainer.classList.add('thrinkle-sidebar-container-layout-mobile-expand')
-                    this.sidebarCloseIconContainer.setAttribute("shrink","true")
+                    console.log('shrink',this.sidebarCloseIconContainer.getAttribute('shrink'))
+                    this.sidebarContainer.classList.add('thrinkle-sidebar-container-layout-mobile-shrink')
+                    this.sidebarMenuContainer.classList.add('thrinkle-sidebar-menu-container-layout-mobile-shrink')
+                    this.sidebarContainer.classList.remove('thrinkle-sidebar-container-layout-mobile-expand')
+                    this.sidebarMenuContainer.classList.remove('thrinkle-sidebar-menu-container-layout-mobile-expand')
+                    
+                    // this.sidebarCloseIconContainer.setAttribute("shrink","true")
                     // this.switchDeviceModes()
+                    this.sidebarCloseIconContainer.innerHTML= this.getSidebarIcon()
                 })
 
                 // Create media query matcher
@@ -346,6 +378,7 @@ import { getCssVariable } from "../function.js";
         adoptedCallback() {
             
         }
+        
         handleMediaQueryMatch(element,query){
             if(query.matches){
                 this.sidebarContainer.classList.add('thrinkle-sidebar-container-layout-desktop')
@@ -354,6 +387,14 @@ import { getCssVariable } from "../function.js";
                         // 'thrinkle-sidebar-container-layout-desktop-shrink',
                         'thrinkle-sidebar-container-layout-mobile-expand',
                         'thrinkle-sidebar-container-layout-mobile-shrink'
+                    )
+                
+                
+                this.sidebarMenuContainer.classList.remove('thrinkle-sidebar-menu-container-layout-mobile')
+                this.sidebarMenuContainer.classList.remove(
+                        // 'thrinkle-sidebar-menu-container-layout-desktop-shrink',
+                        'thrinkle-sidebar-menu-container-layout-mobile-expand',
+                        'thrinkle-sidebar-menu-container-layout-mobile-shrink'
                     )
 
 
@@ -364,11 +405,15 @@ import { getCssVariable } from "../function.js";
             }else{                        
                 this.sidebarContainer.classList.add('thrinkle-sidebar-container-layout-mobile')
                 this.sidebarContainer.classList.remove('thrinkle-sidebar-container-layout-desktop')
-
                 this.sidebarContainer.classList.remove(
-                        // 'thrinkle-sidebar-container-layout-mobile-shrink',
                         'thrinkle-sidebar-container-layout-desktop-expand',
                         'thrinkle-sidebar-container-layout-desktop-shrink'
+                    )
+
+                this.sidebarMenuContainer.classList.remove('thrinkle-sidebar-menu-container-layout-desktop')
+                this.sidebarMenuContainer.classList.remove(
+                        'thrinkle-sidebar-menu-container-layout-desktop-expand',
+                        'thrinkle-sidebar-menu-container-layout-desktop-shrink'
                     )
 
                 this.contentContainer.classList.add('thrinkle-content-container-layout-mobile')
@@ -382,30 +427,48 @@ import { getCssVariable } from "../function.js";
                 this.sidebarCloseIconContainer.setAttribute("shrink","true")
                 if(window.innerWidth>=667){
                     this.sidebarContainer.classList.add('thrinkle-sidebar-container-layout-desktop-expand')
-                    // this.sidebarContainer.classList.remove('thrinkle-sidebar-container-layout-desktop-shrink')
                     this.sidebarContainer.classList.remove(
                         'thrinkle-sidebar-container-layout-desktop-shrink',
                         'thrinkle-sidebar-container-layout-mobile-expand',
                         'thrinkle-sidebar-container-layout-mobile-shrink'
                     )
+
+                    this.sidebarMenuContainer.classList.add('thrinkle-sidebar-menu-container-layout-desktop-expand')
+                    this.sidebarMenuContainer.classList.remove(
+                        'thrinkle-sidebar-menu-container-layout-desktop-shrink',
+                        'thrinkle-sidebar-menu-container-layout-mobile-expand',
+                        'thrinkle-sidebar-menu-container-layout-mobile-shrink'
+                    )
                 }else{
                     this.sidebarContainer.classList.add('thrinkle-sidebar-container-layout-mobile-expand')
-                    // this.sidebarContainer.classList.remove('thrinkle-sidebar-container-layout-mobile-shrink')
                     this.sidebarContainer.classList.remove(
                         'thrinkle-sidebar-container-layout-mobile-shrink',
                         'thrinkle-sidebar-container-layout-desktop-expand',
                         'thrinkle-sidebar-container-layout-desktop-shrink'
+                    )
+
+                    this.sidebarMenuContainer.classList.add('thrinkle-sidebar-menu-container-layout-mobile-expand')
+                    this.sidebarMenuContainer.classList.remove(
+                        'thrinkle-sidebar-menu-container-layout-mobile-shrink',
+                        'thrinkle-sidebar-menu-container-layout-desktop-expand',
+                        'thrinkle-sidebar-menu-container-layout-desktop-shrink'
                     )
                 }
             }else{
                 this.sidebarCloseIconContainer.setAttribute("shrink","false")
                 if(window.innerWidth>=667){   
                     this.sidebarContainer.classList.add('thrinkle-sidebar-container-layout-desktop-shrink')           
-                    // this.sidebarContainer.classList.remove('thrinkle-sidebar-container-layout-desktop-expand')
                     this.sidebarContainer.classList.remove(
                         'thrinkle-sidebar-container-layout-desktop-expand',
                         'thrinkle-sidebar-container-layout-mobile-expand',
                         'thrinkle-sidebar-container-layout-mobile-shrink'
+                    )
+
+                    this.sidebarMenuContainer.classList.add('thrinkle-sidebar-menu-container-layout-desktop-shrink')           
+                    this.sidebarMenuContainer.classList.remove(
+                        'thrinkle-sidebar-menu-container-layout-desktop-expand',
+                        'thrinkle-sidebar-menu-container-layout-mobile-expand',
+                        'thrinkle-sidebar-menu-container-layout-mobile-shrink'
                     )
                 }else{
                     this.sidebarContainer.classList.add('thrinkle-sidebar-container-layout-mobile-shrink')           
@@ -414,6 +477,13 @@ import { getCssVariable } from "../function.js";
                         'thrinkle-sidebar-container-layout-desktop-expand',
                         'thrinkle-sidebar-container-layout-desktop-shrink'
                     )
+
+                    this.sidebarMenuContainer.classList.add('thrinkle-sidebar-menu-container-layout-mobile-shrink')           
+                    this.sidebarMenuContainer.classList.remove(
+                        'thrinkle-sidebar-menu-container-layout-mobile-expand',
+                        'thrinkle-sidebar-menu-container-layout-desktop-expand',
+                        'thrinkle-sidebar-menu-container-layout-desktop-shrink'
+                    )
                 }
             }
         }
@@ -421,6 +491,7 @@ import { getCssVariable } from "../function.js";
             const shrink = this.sidebarCloseIconContainer.getAttribute('shrink')
             console.log(window.innerWidth)
             console.log(this.sidebarContainer)
+            console.log(this.sidebarMenuContainer)
             if(shrink==='false'){
                 this.switchDeviceModes()
                 return `
