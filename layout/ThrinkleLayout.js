@@ -36,9 +36,12 @@ import { getCssVariable, setupAnimation } from "../function.js";
             // keep this element invisible till css is fully loaded
             this.setAttribute('data-thrinkle-loading', '');
             // create the sidebar container
+            // this.sidebarDummyContainer = document.createElement('div')
+            // this.sidebarDummyContainer.classList.add('thrinkle-sidebar-dummy-container')
             this.sidebarContainer = document.createElement("div");
             this.sidebarContainer.classList.add('thrinkle-sidebar-container') 
-            
+            // this.sidebarDummyContainer.appendChild(this.sidebarContainer)
+
             // create the content container 
             this.contentContainer = document.createElement("div");
             this.contentContainer.classList.add('thrinkle-content-container')
@@ -58,7 +61,8 @@ import { getCssVariable, setupAnimation } from "../function.js";
             this.contentContainer.appendChild(this.articleContainer)
             // append the siderbar container and the content container to the 
             // thrinkle layout
-            this.appendChild(this.sidebarContainer)  
+            this.appendChild(this.sidebarContainer)
+            // this.appendChild(this.sidebarDummyContainer)  
             this.appendChild(this.contentContainer)
             
             this.sidebarMenuContainer = document.createElement('div')
@@ -88,8 +92,7 @@ import { getCssVariable, setupAnimation } from "../function.js";
 
             this.siteTitleScroll = document.createElement('div')
             this.siteTitleScroll.classList.add('thrinkle-site-title-scroll')
-            this.siteTitleScroll.innerText = this.title
-
+            
             const spanTitle = document.createElement('span')
             spanTitle.classList.add('thrinkle-site-title-span')
             this.toggleOpenOnDesktop(spanTitle)
@@ -378,22 +381,33 @@ import { getCssVariable, setupAnimation } from "../function.js";
             }	
             
             @media screen and (width >= 667px){
+                .thrinkle-sidebar-dummy-container{
+                    display: flex;
+                    flex-direction: column;
+                    width: 63px;
+                    top:0px;
+                    padding: 0px;
+                    overflow: none;
+                    transition: width 0.5s ease;
+                    background-color: red;
+                }
                 .thrinkle-sidebar-container{
                     display: flex;
                     flex-direction: row;
-                    max-width: 20%;
+                    /*max-width: 20%;*/
                     width: 63px;
                     position: sticky;
                     top:0px;
+                    height: 80vh;
                     padding: 18px;
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    overflow: hidden;
+                    padding-left: 5px;
+                    padding-right: 0px;
+                    overflow: none;
                     transition: width 0.5s ease;
                     background-color: transparent;
                 }
                 .thrinkle-sidebar-container.open{
-                    width: min(300px,20%);
+                    width: max(500px,20%);
                     padding-left: 15px;
                     padding-right: 15px;
                 } 
@@ -498,9 +512,9 @@ import { getCssVariable, setupAnimation } from "../function.js";
                     display: flex;
                     flex-grow: 1;
                     flex-direction: column;
-                    min-width: 80%;
-                    width: 80%;
-                    margin-left: 10px;
+                    /*min-width: 80%;
+                    width: 80%;*/
+                    margin-left: 5px;
                     margin-right: 5px;
                     margin-top: 10px;
                     margin-bottom: 10px;
@@ -601,8 +615,8 @@ import { getCssVariable, setupAnimation } from "../function.js";
                         this.toggleMenuContainersOpenState()
                     }else{
                         this.removeMenuContainersOpenState()
-                        this.toggleOpenOnDesktop(this.sidebarContainer)
-                        this.toggleOpenOnDesktop(this.menuContainer)
+                        this.toggleOpenOnMobile(this.sidebarContainer)
+                        this.toggleOpenOnMobile(this.menuContainer)
                     }
                     
                     const shrinked = this.sidebarCloseIconContainer.getAttribute('shrinked')
@@ -648,6 +662,7 @@ import { getCssVariable, setupAnimation } from "../function.js";
             this.sidebarContainer.classList.toggle('open')
             this.menuContainer.classList.toggle('open')
             this.sidebarSiteTitleContainer.classList.toggle('open')
+            document.querySelector('.thrinkle-site-title-span').classList.toggle('open')
             
             const menuItems = document.querySelectorAll('.thrinkle-menu-item')
             menuItems.forEach(item => {
@@ -678,6 +693,7 @@ import { getCssVariable, setupAnimation } from "../function.js";
             this.sidebarContainer.classList.remove('open')
             this.menuContainer.classList.remove('open')
             this.sidebarSiteTitleContainer.classList.remove('open')
+            document.querySelector('.thrinkle-site-title-span').classList.remove('open')
             
             const menuItems = document.querySelectorAll('.thrinkle-menu-item')
             menuItems.forEach(item => {
@@ -714,8 +730,8 @@ import { getCssVariable, setupAnimation } from "../function.js";
             }else{
                 this.removeMenuContainersOpenState()
                 if(this.sidebarCloseIconContainer.getAttribute('shrinked')==='false'){
-                    this.sidebarContainer.classList.toggle('open')
-                    this.menuContainer.classList.toggle('open')
+                    this.toggleOpenOnMobile(this.sidebarContainer)
+                    this.toggleOpenOnMobile(this.menuContainer)
                 }
             }
         }
@@ -779,7 +795,12 @@ import { getCssVariable, setupAnimation } from "../function.js";
         }
 
         toggleOpenOnDesktop(element){
-            if(window.innerWidth>=667){
+            if(window.innerWidth >= 667){
+                element.classList.toggle('open')
+            }
+        }
+        toggleOpenOnMobile(element){
+            if(window.innerWidth < 667){
                 element.classList.toggle('open')
             }
         }
