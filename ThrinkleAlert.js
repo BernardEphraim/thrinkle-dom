@@ -490,8 +490,7 @@ export default class ThrinkleAlert extends HTMLElement {
             if(this.hasAttribute('animate')){
                 setupAnimation({
                     element: this,
-                    animationName: this.hasAttribute('animationname') ? 
-                        this.getAttribute('animationname') : getCssVariable('--thrinkle-animation-name') 
+                    animationName: this.hasAttribute('animationname') ? this.getAttribute('animationname') : getCssVariable('--thrinkle-animation-name') 
                 })
             }
             // Create media query matcher

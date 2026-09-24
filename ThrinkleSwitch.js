@@ -442,7 +442,7 @@ export default class ThrinkleSwitch extends HTMLElement {
         }.bind(this), true);
 	}	
 	disconnectedCallback() {
-		console.log("Custom element removed from page.");
+		// console.log("Custom element removed from page.");
 	}	
 	adoptedCallback() {
 		// console.log("Custom element moved to new page.");

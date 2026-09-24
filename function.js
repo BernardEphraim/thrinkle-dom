@@ -222,21 +222,33 @@ export function setCssVariable(varName, value) {
     document.documentElement.style.setProperty(name, value);
 }
 
-export function setupAnimation({animationName,element}){ 
+export function setupAnimation({
+  element,
+  animationName,
+  animationDirection,
+  animationFillMode,
+  animationDuration,
+  animationTimingFunction,
+  animationIterationCount,
+  animationDelay,
+  animationPlayState,
+  animationTimeline,
+  animationRotationAngle
+}){ 
         // Trigger animation strictly AFTER styles/theme are painted
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 // // this.classList.add('animate-enter');
                 element.style.animationName = animationName;
-                element.style.animationDirection = element.hasAttribute('animationdirection') ? element.getAttribute('animationdirection') : 'forwards';
-                element.style.animationFillMode = element.hasAttribute('animationfillmode') ? element.getAttribute('animationfillmode') : 'both';
-                element.style.animationDuration = element.hasAttribute('animationduration') ? element.getAttribute('animationduration') : '1s';
-                element.style.animationTimingFunction = element.hasAttribute('animationtimingfunction') ? element.getAttribute('animationtimingfunction') : 'cubic-bezier(0.34, 1.56, 0.64, 1)'; 
-                element.style.animationIterationCount = element.hasAttribute('animationiterationcount') ? element.getAttribute('animationiterationcount') : '1';
-                element.style.animationDelay = element.hasAttribute('animationdelay') ? element.getAttribute('animationdelay') : '0ms';
-                element.style.animationPlayState = element.hasAttribute('animationplaystate') ? element.getAttribute('animationplaystate') : 'running';
-                element.style.animationTimeline = element.hasAttribute('animationtimeline') ? element.getAttribute('animationtimeline') : 'running';
-                element.style.animationRotationAngle = element.hasAttribute('animationrotationangle') ? element.getAttribute('animationrotationangle') : '360deg';
+                element.style.animationDirection = animationDirection || (element.hasAttribute('animationdirection') ? element.getAttribute('animationdirection') : 'forwards');
+                element.style.animationFillMode = animationFillMode || (element.hasAttribute('animationfillmode') ? element.getAttribute('animationfillmode') : 'both');
+                element.style.animationDuration = animationDuration || (element.hasAttribute('animationduration') ? element.getAttribute('animationduration') : '1s');
+                element.style.animationTimingFunction = animationTimingFunction || (element.hasAttribute('animationtimingfunction') ? element.getAttribute('animationtimingfunction') : 'cubic-bezier(0.34, 1.56, 0.64, 1)'); 
+                element.style.animationIterationCount = animationIterationCount || (element.hasAttribute('animationiterationcount') ? element.getAttribute('animationiterationcount') : '1');
+                element.style.animationDelay = animationDelay || (element.hasAttribute('animationdelay') ? element.getAttribute('animationdelay') : '0ms');
+                element.style.animationPlayState = animationPlayState || (element.hasAttribute('animationplaystate') ? element.getAttribute('animationplaystate') : 'running');
+                element.style.animationTimeline = animationTimeline || (element.hasAttribute('animationtimeline') ? element.getAttribute('animationtimeline') : 'running');
+                element.style.animationRotationAngle = animationRotationAngle || (element.hasAttribute('animationrotationangle') ? element.getAttribute('animationrotationangle') : '360deg');
                 
             });
         });

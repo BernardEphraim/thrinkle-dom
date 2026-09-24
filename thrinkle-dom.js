@@ -11,7 +11,19 @@ window.customElements.define('thrinkle-container', ThrinkleContainer);
 window.customElements.define('thrinkle-column', ThrinkleColumn);
 window.customElements.define('thrinkle-alert', ThrinkleAlert);
 window.customElements.define('thrinkle-layout',ThrinkleLayout);
+let script = document.head.querySelector('script#lucide_script');
+
+if (!script) {
+  script = document.createElement('script');
+  script.setAttribute('id', 'lucide_script');
+  script.src = 'https://unpkg.com/lucide@1.47.0';
+  script.rel = 'javascript';
+  document.head.appendChild(script)
+}
 window.addEventListener('thrinkle-styles-loaded', function(e) {
+  if(window.lucide){
+    window.lucide.createIcons();
+  }
   setCssVariable('--thrinkle-disabled',getCssVariable('--thrinkle-gray-300'));
   setCssVariable('--thrinkle-focus',getCssVariable('--thrinkle-gray-200'));
   setCssVariable('--thrinkle-focus-style',getCssVariable('--thrinkle-border-solid'));
@@ -45,5 +57,8 @@ initStyles()
   .then(() => {
     // Dispatch event so custom elements or app scripts know styles are ready
     window.dispatchEvent(new CustomEvent('thrinkle-styles-loaded'));
+    
   })
   .catch((err) => console.error(err));
+
+  
