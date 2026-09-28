@@ -13,10 +13,12 @@
     iconsize="16"
     title="Thrinkle Labs lorem ipsum "
     logourl="./images/logo.svg"
+    avatar="./images/photo.jpg"
+    user="Bernard Ephraim John"
 >
     <thrinkle-container type="fluid" break="sm" exitanimationname="slide-left-mobile-exit-animation">
 		<thrinkle-column size='3' offset='6' break="sm">
-			<div style="height: 508px; background-color:tomato; "><i data-lucide="file-badge"></i> rty</div>
+			<div style="height: 508px; background-color:tomato;"><i data-lucide="file-badge"></i> rty</div>
 			<div style="height: 508px; background-color:orange; word-wrap: break-word;">rty</div>
             <thrinkle-alert 
             animate
@@ -118,11 +120,35 @@
     })
         const layout1 = document.querySelector('#layout')
         // console.log(layout.menu)
-        layout1.menu=[
+        layout1.userProfile = {
+            user: {
+                avatar:"./images/photo.jpg",
+                name: 'Johnson Michael Jackson Mary',
+                email: 'ephraim1989ben@gmail.com',
+                menu:[
+                    {title: 'settings',url:'/',icon:'settings'},
+                    {title: 'help',url:'./images/logo.jfif', icon:'circle-question-mark'},
+                    {title: 'settings',url:'/',icon:'settings'},
+                    {title: 'help',url:'./settings', icon:'circle-question-mark'},
+                    {title: 'logout',url:'./logout', icon:'log-out', method:'post'}
+                ],
+                menuSettings:{
+                    needsContainer: true,
+                    needsDivider: true
+                }
+            }
+        }
+        layout1.sidebarMenu={            
+            menuSettings:{
+                needsContainer: false,
+                needsDivider: false
+            },
+            menu:[
             {groupTitle:'Platform',
                 menu:[
                     {title: 'dashboard',url:'/',icon:'users'},
-                    {title: 'beans',url:'./images/logo.jfif'}
+                    {title: 'beans',url:'./images/logo.jfif'},
+                    {title: 'logout',url:'./logout', icon:'log-out', method:'post'}
                 ]
             },
             {groupTitle:'Dry',
@@ -192,6 +218,7 @@
                 ]
             }
         ]
+    }
     // })
     // console.log(layout.menu)
 </script>

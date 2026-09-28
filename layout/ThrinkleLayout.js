@@ -22,12 +22,12 @@ import { getCssVariable, setupAnimation } from "../function.js";
 	@property replacestyle - can either be true or false, indicates whether the user provided css classes should replace the default css class. true replaces, false appends
 */
     export default class ThrinkleLayout extends HTMLElement {
-        static observedAttributes = ["menu","type"];
+        static observedAttributes = ["sidebarMenu","type"];
         
         constructor() {
             super();
             /*set up this custom element attributes*/
-            this._menu = []   
+            this._sidebarMenu = []   
             
             this.id=this.hasAttribute('id') ? this.getAttribute('id') : `thrinkle-layout-${Math.floor(Math.random() * 1000000)}` 
             this.title = this.hasAttribute('title') ? this.getAttribute('title') : 'Site title' 
@@ -38,13 +38,22 @@ import { getCssVariable, setupAnimation } from "../function.js";
             // create the sidebar container
             // this.sidebarDummyContainer = document.createElement('div')
             // this.sidebarDummyContainer.classList.add('thrinkle-sidebar-dummy-container')
+            // this.toggleOpenOnDesktop(this.sidebarDummyContainer)
             this.sidebarContainer = document.createElement("div");
             this.sidebarContainer.classList.add('thrinkle-sidebar-container') 
+            this.toggleOpenOnDesktop(this.sidebarContainer)
             // this.sidebarDummyContainer.appendChild(this.sidebarContainer)
 
             // create the content container 
+            
+            this.dummyContentContainer = document.createElement('div')
+            this.dummyContentContainer.classList.add('thrinkle-dummy-content-container')
+            
             this.contentContainer = document.createElement("div");
             this.contentContainer.classList.add('thrinkle-content-container')
+            
+            this.dummyContentContainer.appendChild(this.contentContainer)
+            
             // create the head container
             this.headContainer = document.createElement('div')
             this.headContainer.classList.add('thrinkle-head-container')
@@ -61,14 +70,14 @@ import { getCssVariable, setupAnimation } from "../function.js";
             this.contentContainer.appendChild(this.articleContainer)
             // append the siderbar container and the content container to the 
             // thrinkle layout
-            this.appendChild(this.sidebarContainer)
-            // this.appendChild(this.sidebarDummyContainer)  
-            this.appendChild(this.contentContainer)
+            this.appendChild(this.sidebarContainer) 
+            this.appendChild(this.dummyContentContainer)  
+            // this.appendChild(this.contentContainer)
             
             this.sidebarMenuContainer = document.createElement('div')
             this.sidebarMenuContainer.classList.add('thrinkle-sidebar-menu-container')
             this.sidebarContainer.appendChild(this.sidebarMenuContainer)
-            this.toggleOpenOnDesktop(this.sidebarContainer)
+            
             this.sidebarMenuPad = document.createElement('div')
             this.sidebarMenuPad.classList.add('thrinkle-sidebar-menu-pad')
             this.sidebarContainer.appendChild(this.sidebarMenuPad)
@@ -193,13 +202,14 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 position: relative;
                 display: flex;
                 flex-direction: row;
-                overflow-y: auto;
-                scrollbar-gutter: stable;
+                /*overflow-y: auto;
+                scrollbar-gutter: stable;*/
                 padding: 0px;
                 margin: 0px;
-                min-height: 100vh;
+                /*min-height: 100vh;*/
+                height: 100vh;
                 width: 100%;
-                background-color: #f9fafb; 
+                background-color: #f8f8f8; 
                 font-family: 'Instrument Sans', 
                     ui-sans-serif, 
                     system-ui, 
@@ -215,6 +225,18 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 /*padding: 20px; */ 
                               
             }
+
+            .thrinkle-dummy-content-container{
+                box-sizing: border-box;             
+                display: flex;
+                flex-grow: 1;
+                flex-direction: column;
+                overflow-y: auto;
+                scrollbar-color: #c8cdd8 transparent;
+                scrollbar-gutter: stable;
+                scrollbar-width: thin;
+                background-color: transparent;
+            }
             .thrinkle-head-container{
                 display: flex;
                 align-items: center;
@@ -225,8 +247,8 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 border-top-left-radius: 0.5rem;
                 border-bottom-width: 1px;
                 border-bottom-style: solid;
-                border-bottom-color: #f3f4f6;//--thrinkle-gray-100
-                background-color: #f9fafb; //--thrinkle-gray-50
+                border-bottom-color: #f3f4f6;/*--thrinkle-gray-100*/
+                background-color: #f9fafb; /*--thrinkle-gray-50*/
             }
             .thrinkle-sidebar-close-icon-container{
                 width: 28px;
@@ -287,7 +309,7 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 flex-direction: row;
                 align-items: center;
                 overflow: hidden;
-                background-color: #f9fafb;
+                background-color: transparent;
                 transition: height 0.5s ease;
             }
             
@@ -335,9 +357,12 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 box-sizing: border-box; 
                 background-color: transparent;
                 overflow-y: auto;
+                scrollbar-color: #c8cdd8 transparent;
+                scrollbar-gutter: stable;
+                scrollbar-width: thin;
                 overflow-x: hidden;
-                flex: 1;
                 white-space: no-wrap;
+                margin-top: 10px;
             }
            
             .thrinkle-menu-group{
@@ -363,6 +388,10 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 background-color: #f3f4f6;
                 border-radius: 0.5rem;
             }
+            .thrinkle-extra-item-container{
+                padding-left: 5px;
+                padding-right: 5px;
+            }
             .thrinkle-menu-item-icon{
                 width: 18px;
                 height: 18px;
@@ -373,32 +402,124 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 overflow: hidden;
             }
             
+            .thrinkle-user-profile-slab{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 40px;
+                padding: 5px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+                background-color: transparent;
+                border-radius: 0.5rem;
+                cursor: pointer;
+
+            }
+            .thrinkle-user-profile-slab:hover{
+                background-color: #f3f4f6;
+            }
+                
+            .thrinkle-user-avatar{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 15px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-color: #e5e7eb;
+            }
+            .thrinkle-username{
+                display: flex;
+                flex: 1;
+                margin-left: 10px;
+                font-weight: bold;
+            }
+            .thrinkle-username-click{
+
+            }
 
             
+            .thrinkle-tool-tip-container{
+                display: none;
+                opacity: 0;
+                max-width: 300px;
+                width: max-content;
+                height: max-content;
+                position: absolute;
+                z-index: 9999;     
+                padding-bottom: 5px;           
+                border-radius: 0.5rem;
+                background-color: #f9fafb;
+                box-shadow: 
+                    0px 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                    0px 2px 4px -2px rgba(0, 0, 0, 0.1),
+                    0px -1px 1px -1px rgba(0, 0, 0, 0.1), 
+                    0px -1px 1px -1px rgba(0, 0, 0, 0.1);                
+            }
+            .thrinkle-tool-tip-container.open{
+                display: block;
+                opacity: 1;
+                transition: opacity 1s ease;
+                transition-behavior: allow-discrete;
+                @starting-style {
+                    opacity: 0;
+                }
+            }
+
+            .thrinkle-user-display{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: max-content;
+                padding: 10px;
+                background-color: transparent;
+                border-top-radius: 0.5rem;                
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                border-bottom-color: #e5e7eb;
+                cursor: default;
+            }
+            
+            .thrinkle-username-container{
+                display: block;
+                flex: 1;
+                margin-left: 10px;
+                font-weight: bold;
+            }
+            .thrinkle-username-container span{
+                display: block;
+                font-weight: normal;
+                color: #6b7280;
+            }
+
+            .thrinkle-divider{
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                border-bottom-color: #e5e7eb;
+                width: 100%;
+                padding-top: 2px;
+                padding-bottom: 2px;
+            }
             /* Hide the alert when the data-thrinkle-loading attribute is present */
             .thrinkle-layout[data-thrinkle-loading] {
                 display: none;
             }	
             
             @media screen and (width >= 667px){
-                .thrinkle-sidebar-dummy-container{
-                    display: flex;
-                    flex-direction: column;
-                    width: 63px;
-                    top:0px;
-                    padding: 0px;
-                    overflow: none;
-                    transition: width 0.5s ease;
-                    background-color: red;
-                }
                 .thrinkle-sidebar-container{
                     display: flex;
                     flex-direction: row;
                     /*max-width: 20%;*/
                     width: 63px;
-                    position: sticky;
                     top:0px;
-                    height: 80vh;
+                    height: 100vh;
                     padding: 18px;
                     padding-left: 5px;
                     padding-right: 0px;
@@ -407,7 +528,7 @@ import { getCssVariable, setupAnimation } from "../function.js";
                     background-color: transparent;
                 }
                 .thrinkle-sidebar-container.open{
-                    width: max(500px,20%);
+                    width: max(400px,20%);
                     padding-left: 15px;
                     padding-right: 15px;
                 } 
@@ -435,7 +556,9 @@ import { getCssVariable, setupAnimation } from "../function.js";
                     padding: 0px;
                     background-color: transparent;
                 }
-                
+                .thrinkle-menu-container{
+                    flex: 1;
+                }
                 .thrinkle-menu-group-title{
                     /*display: none;*/
                     height: 0px; 
@@ -473,6 +596,7 @@ import { getCssVariable, setupAnimation } from "../function.js";
                     align-items: center;
                 }
                 .thrinkle-menu-container.open{
+                    flex: 1;
                     width: 100%;
                     padding-top: 20px;                
                     scrollbar-gutter: stable;
@@ -495,6 +619,14 @@ import { getCssVariable, setupAnimation } from "../function.js";
                     white-space: no-wrap;
                     background-color: transparent;
                 }
+                .thrinkle-menu-item-button{
+                    width: 100%;
+                    background-color: transparent;
+                    border-width: 0px;
+                    text-align: left;
+                    font-size: 1rem;
+                }
+
                 .thrinkle-menu-item-title-span{
                     display: none;
                 }
@@ -503,6 +635,26 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 }
                 .thrinkle-sidebar-menu-pad{
                     display: none;
+                }
+                
+                .thrinkle-user-profile-slab.open{
+                
+                }
+                .thrinkle-user-avatar.open{
+
+                }
+                                
+                .thrinkle-username{
+                    display: none;
+                }                
+                .thrinkle-username.open{
+                    display: flex;
+                }
+                .thrinkle-username-click{
+                    display: none;
+                }
+                .thrinkle-username-click.open{
+                    display: flex;
                 }
                 /* sidebar menu container*/
 
@@ -513,9 +665,10 @@ import { getCssVariable, setupAnimation } from "../function.js";
                     flex-grow: 1;
                     flex-direction: column;
                     /*min-width: 80%;
-                    width: 80%;*/
+                    width: 80%;
+                    min-height: 0px;*/
                     margin-left: 5px;
-                    margin-right: 5px;
+                    margin-right: 10px;
                     margin-top: 10px;
                     margin-bottom: 10px;
                     border-radius: 0.5rem;
@@ -555,7 +708,8 @@ import { getCssVariable, setupAnimation } from "../function.js";
                     background-color: #f9fafb;
                 }
                 .thrinkle-menu-container.open{
-                    padding-top: 20px;                
+                    padding-top: 20px;
+                    height: 80%;                
                     scrollbar-gutter: stable;
                 }
                 .thrinkle-menu-group{
@@ -579,6 +733,13 @@ import { getCssVariable, setupAnimation } from "../function.js";
                     width: 100%;
                     background-color: transparent;
                     white-space: no-wrap;
+                }
+                .thrinkle-menu-item-button{
+                    width: 100%;
+                    background-color: transparent;
+                    border-width: 0px;
+                    text-align: left;
+                    font-size: 1rem;
                 }
                 .thrinkle-sidebar-menu-pad{
                     display: flex;
@@ -641,7 +802,8 @@ import { getCssVariable, setupAnimation } from "../function.js";
 
                 // retrieve values that are passed by user 
                 // in javascript
-                this._upgradeProperty('menu');
+                this._upgradeProperty('sidebarMenu');
+                this._upgradeProperty('userProfile');
                 
                 // Create media query matcher
                 this.mediaQuery = window.matchMedia(`(width >= ${getCssVariable(`--thrinkle-br-sm`)})`);
@@ -687,6 +849,9 @@ import { getCssVariable, setupAnimation } from "../function.js";
             menuItemGroupTitles.forEach(item => {
                 item.classList.toggle('open')
             });
+
+            this.username.classList.toggle('open')
+            this.usernameClick.classList.toggle('open')
         }
 
         removeMenuContainersOpenState(){
@@ -718,6 +883,9 @@ import { getCssVariable, setupAnimation } from "../function.js";
             menuItemGroupTitles.forEach(item => {
                 item.classList.remove('open')
             });
+
+            this.username.classList.remove('open')
+            this.usernameClick.classList.remove('open')
         }
         handleMediaQueryMatch(element,query){
             if(query.matches){
@@ -732,13 +900,14 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 if(this.sidebarCloseIconContainer.getAttribute('shrinked')==='false'){
                     this.toggleOpenOnMobile(this.sidebarContainer)
                     this.toggleOpenOnMobile(this.menuContainer)
+                    this.toggleOpenOnMobile(this.username)
+                    this.toggleOpenOnMobile(this.usernameClick)
                 }
             }
         }
         getSidebarIcon (){
             const shrinked = this.sidebarCloseIconContainer.getAttribute('shrinked')
             if(shrinked==='false'){              
-                // this.sidebarCloseIconContainer.setAttribute("shrinked","true")
                 return `
                     <svg 
                         xmlns="http://www.w3.org/2000/svg" 
@@ -756,7 +925,6 @@ import { getCssVariable, setupAnimation } from "../function.js";
                         <path fill="none" stroke="${getCssVariable('thrinkle-gray-750')}" d="m16 15-3-3 3-3"/>
                     </svg>`
             }else{               
-                // this.sidebarCloseIconContainer.setAttribute("shrinked","false")
                 return `
                     <svg 
                         xmlns="http://www.w3.org/2000/svg" 
@@ -785,15 +953,22 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 this[prop] = value;
             }
         }
-        set menu(value) {
-            this._menu = value;
+        set sidebarMenu(value) {
+            this._sidebarMenu = value;
             this.renderMenu(); // Trigger an update in your component
+            this.renderUserProfileSlab()
         }
 
-        get menu() {
-            return this._menu;
+        get sidebarMenu() {
+            return this._sidebarMenu;
         }
 
+        set userProfile(value){
+            this._userProfile = value
+        }
+        get userProfile(){
+            return this._userProfile
+        }
         toggleOpenOnDesktop(element){
             if(window.innerWidth >= 667){
                 element.classList.toggle('open')
@@ -804,58 +979,231 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 element.classList.toggle('open')
             }
         }
-        renderMenu() {
-            
+        renderMenu() {            
            // add menu 
             this.menuContainer = document.createElement('div')
             this.menuContainer.classList.add('thrinkle-menu-container')
             this.toggleOpenOnDesktop(this.menuContainer)
             this.sidebarMenuContainer.appendChild(this.menuContainer)
-            this._menu.forEach((group)=>{
-                const menuGroup = document.createElement('div')
-                menuGroup.classList.add('thrinkle-menu-group')
-                this.toggleOpenOnDesktop(menuGroup)
-                this.menuContainer.appendChild(menuGroup) 
+            this._sidebarMenu.menu.forEach((group)=>{
+                console.log(group)
+                // const menuGroupContainer = document.createElement('div')
+                // menuGroupContainer.classList.add('thrinkle-menu-group')
+                // this.toggleOpenOnDesktop(menuGroupContainer)
+                // this.menuContainer.appendChild(menuGroupContainer) 
 
-                const menuGroupTitle = document.createElement('div')
-                menuGroupTitle.classList.add(
-                    'thrinkle-menu-group-title',
-                    'thrinkle-text-zinc-700'
-                )
-                this.toggleOpenOnDesktop(menuGroupTitle)
-                menuGroupTitle.innerText = group.groupTitle
-                menuGroup.appendChild(menuGroupTitle)
-                group.menu.forEach((menu)=>{
-                    const itemContainer = document.createElement('div')
-                    itemContainer.classList.add('thrinkle-menu-item-group')
-                    if(this.isActiveNavLink(menu.url)){
-                        itemContainer.classList.add('active')
-                    }
-                    this.toggleOpenOnDesktop(itemContainer)
-                    const itemIconContainer = document.createElement('div')
-                    itemIconContainer.classList.add('thrinkle-menu-item-icon')
-                    this.toggleOpenOnDesktop(itemIconContainer)
-                    itemIconContainer.innerHTML=menu.icon? `<i data-lucide="${menu.icon}" style="width:18px;height:18px"></i>` : ''
-                    const title = document.createElement('a')
+                // const menuGroupTitle = document.createElement('div')
+                // menuGroupTitle.classList.add(
+                //     'thrinkle-menu-group-title',
+                //     'thrinkle-text-zinc-700'
+                // )
+                // this.toggleOpenOnDesktop(menuGroupTitle)
+                // menuGroupTitle.innerText = group.groupTitle
+                // menuGroupContainer.appendChild(menuGroupTitle)
+                const menuGroupContainer = this.generateMenuGroupContainer(group)
+                this.generateMenu({
+                    menuGroupContainer: menuGroupContainer,
+                    group: group
+                })
+                // group.menu.forEach((menu)=>{
+                //     const itemContainer = document.createElement('div')
+                //     itemContainer.classList.add('thrinkle-menu-item-group')
+                //     if(this.isActiveNavLink(menu.url)){
+                //         itemContainer.classList.add('active')
+                //     }
+                //     this.toggleOpenOnDesktop(itemContainer)
+                //     const itemIconContainer = document.createElement('div')
+                //     itemIconContainer.classList.add('thrinkle-menu-item-icon')
+                //     this.toggleOpenOnDesktop(itemIconContainer)
+                //     itemIconContainer.innerHTML=menu.icon? `<i data-lucide="${menu.icon}" style="width:18px;height:18px"></i>` : ''
+                //     const title = document.createElement('a')
+                //     title.classList.add(
+                //         'thrinkle-menu-item',
+                //         'thrinkle-text-gray-700'
+                //     )
+                //     this.toggleOpenOnDesktop(title)
+                //     title.appendChild(itemIconContainer)
+                //     const span = document.createElement('span')
+                //     span.classList.add('thrinkle-menu-item-title-span')
+                //     span.innerText = menu.title
+                //     this.toggleOpenOnDesktop(span)
+                //     title.appendChild(span)
+                //     title.href = menu.url
+                //     itemContainer.appendChild(title)
+                //     menuGroup.appendChild(itemContainer)
+                // })
+
+            })
+            // add menu            
+        }
+        generateMenuGroupContainer(group){
+            const menuGroupContainer = document.createElement('div')
+            menuGroupContainer.classList.add('thrinkle-menu-group')
+            this.toggleOpenOnDesktop(menuGroupContainer)
+            this.menuContainer.appendChild(menuGroupContainer) 
+
+            const menuGroupTitle = document.createElement('div')
+            menuGroupTitle.classList.add(
+                'thrinkle-menu-group-title',
+                'thrinkle-text-zinc-700'
+            )
+            this.toggleOpenOnDesktop(menuGroupTitle)
+            menuGroupTitle.innerText = group.groupTitle
+            menuGroupContainer.appendChild(menuGroupTitle)
+            return menuGroupContainer
+        }
+        generateMenu({
+            menuGroupContainer, // the container to hold this group of menus
+            group, // the object holding the menus in this group
+            needsContainer=false, // indicates if each menu should be placed in a padded container
+            needsDivider=false // indicates if a divider is needed between menu items
+        }){
+            const menuCount = group.menu.length
+            let count = 0
+            group.menu.forEach((menu)=>{
+                const itemContainer = document.createElement('div')
+                itemContainer.classList.add('thrinkle-menu-item-group')
+                if(this.isActiveNavLink(menu.url)){
+                    itemContainer.classList.add('active')
+                }
+                this.toggleOpenOnDesktop(itemContainer)
+
+                const itemIconContainer = document.createElement('div')
+                itemIconContainer.classList.add('thrinkle-menu-item-icon')
+                this.toggleOpenOnDesktop(itemIconContainer)
+                itemIconContainer.innerHTML=menu.icon? `<i data-lucide="${menu.icon}" style="width:18px;height:18px"></i>` : ''
+                let title;
+                if(menu?.method){
+                    title = document.createElement('form')
+                    title.classList.add('thrinkle-menu-item')
+                    title.action = menu.url
+                    title.method = menu.method
+
+                    const button = document.createElement('button')
+                    button.classList.add(
+                        // 'thrinkle-menu-item',
+                        'thrinkle-menu-item-button',
+                        'thrinkle-text-gray-700'
+                    )
+                    this.toggleOpenOnDesktop(button)
+                    button.appendChild(itemIconContainer)
+                    
+                    const span = document.createElement('span')
+                    span.classList.add('thrinkle-menu-item-title-span')
+                    span.innerText = menu.title
+                    this.toggleOpenOnDesktop(span)
+                    button.appendChild(span)
+                    
+                    title.appendChild(button)
+                }else{
+                    title = document.createElement('a')
                     title.classList.add(
                         'thrinkle-menu-item',
                         'thrinkle-text-gray-700'
                     )
                     this.toggleOpenOnDesktop(title)
                     title.appendChild(itemIconContainer)
+                    
                     const span = document.createElement('span')
                     span.classList.add('thrinkle-menu-item-title-span')
                     span.innerText = menu.title
                     this.toggleOpenOnDesktop(span)
                     title.appendChild(span)
                     title.href = menu.url
-                    itemContainer.appendChild(title)
-                    menuGroup.appendChild(itemContainer)
-                })
+                }
 
+                // const title = document.createElement('a')
+                // title.classList.add(
+                //     'thrinkle-menu-item',
+                //     'thrinkle-text-gray-700'
+                // )
+                // this.toggleOpenOnDesktop(title)
+                // title.appendChild(itemIconContainer)
+                
+                // const span = document.createElement('span')
+                // span.classList.add('thrinkle-menu-item-title-span')
+                // span.innerText = menu.title
+                // this.toggleOpenOnDesktop(span)
+                // title.appendChild(span)
+                // title.href = menu.url
+                itemContainer.appendChild(title)
+                if(needsDivider && count < menuCount && count > 0){
+                    let divider = document.createElement('div')
+                    divider.classList.add('thrinkle-divider')
+                    menuGroupContainer.appendChild(divider)
+                }
+                count++
+                if(needsContainer){
+                    const extraItemContainer = document.createElement('div')
+                    extraItemContainer.classList.add('thrinkle-extra-item-container')
+                    extraItemContainer.appendChild(itemContainer)
+                    menuGroupContainer.appendChild(extraItemContainer)
+                }else{
+                    menuGroupContainer.appendChild(itemContainer)
+                }
+                
             })
-            // add menu
+        }
+        getInitials(string=''){
+            return string.split(' ').map(word=>word.charAt(0)).toString().replaceAll(',','').toUpperCase()
+        }
+        renderUserProfileSlab(){
+            // add user profile slab
+            this.userProfileSlab = document.createElement('div')
+            this.userProfileSlab.classList.add('thrinkle-user-profile-slab')   
+            this.sidebarMenuContainer.appendChild(this.userProfileSlab)            
+            // add user profile slab
             
+            this.userAvater = document.createElement('div')
+            this.userAvater.classList.add('thrinkle-user-avatar') 
+            
+            // if(this.hasAttribute('avatar')){
+            //     this.userAvater.style.backgroundImage = `url(${this.getAttribute('avatar')})`
+            // }else{
+            //     if(this.hasAttribute('user')){
+            //         this.userAvater.innerText = this.getInitials(this.getAttribute('user'))
+            //     }
+            // }
+            if(this.userProfile.user.avatar){
+                this.userAvater.style.backgroundImage = `url(${this.userProfile.user.avatar})`
+            }else{
+                if(this.userProfile.user.name){
+                    this.userAvater.innerText = this.getInitials(this.userProfile.user.name)
+                }else{
+                    this.userAvater.innerText = this.getInitials('User Photo')
+                }
+            }           
+            this.userAvater.addEventListener('click',(e)=>{
+                this.popUpToolTip()    
+            })
+            this.userProfileSlab.appendChild(this.userAvater)
+
+            this.username = document.createElement('div')
+            this.username.classList.add('thrinkle-username') 
+            this.toggleOpenOnDesktop(this.username)
+            this.username.innerText = this.userProfile.user.name ? this.userProfile.user.name : 'username'
+            
+            this.username.addEventListener('click',(e)=>{
+                this.popUpToolTip()    
+            })
+
+            this.userProfileSlab.appendChild(this.username)
+
+            this.usernameClick = document.createElement('div')
+            this.usernameClick.classList.add('thrinkle-username-click') 
+            this.usernameClick.innerHTML = `<i data-lucide="chevrons-up-down" style="width:18px;height:18px"></i>`
+            this.toggleOpenOnDesktop(this.usernameClick)
+            this.usernameClick.addEventListener('click',(e)=>{
+                this.popUpToolTip()    
+            })
+            this.userProfileSlab.appendChild(this.usernameClick)
+            this.renderToolTip()
+        }
+        popUpToolTip(){
+            this.toolTipContainer.classList.add('open')
+            const position = this.getToolTipPosition(this.toolTipContainer,this.userProfileSlab)
+            this.toolTipContainer.style.top = `${position.top}px`
+            this.toolTipContainer.style.left = `${position.left}px`
         }
         isActiveNavLink(href){
             try {
@@ -865,6 +1213,105 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 return targetUrl.origin === window.location.origin && targetPath === currentPath
             } catch (error) {
                 return false
+            }
+        }
+        renderToolTip(){
+            this.toolTipContainer = document.createElement('div')
+            this.toolTipContainer.classList.add('thrinkle-tool-tip-container')
+            document.addEventListener('click',(e)=>{
+                if(
+                    !this.toolTipContainer.contains(e.target) && 
+                    !this.username.contains(e.target) && 
+                    !this.userAvater.contains(e.target) && 
+                    !this.usernameClick.contains(e.target) && 
+                    !this.userProfileSlab.contains(e.target))
+                {
+                    if(this.toolTipContainer.classList.contains('open')){
+                        this.toolTipContainer.classList.remove('open')
+                    }                   
+                }
+            })            
+            this.userProfileSlab.appendChild(this.toolTipContainer)
+            
+
+
+            
+            // add user profile slab
+            this.userDisplay = document.createElement('div')
+            this.userDisplay.classList.add('thrinkle-user-display')   
+            this.toolTipContainer.appendChild(this.userDisplay)            
+            
+            
+            this.avater = document.createElement('div')
+            this.avater.classList.add('thrinkle-user-avatar') 
+            
+            if(this.userProfile.user.avatar){
+                this.avater.style.backgroundImage = `url(${this.userProfile.user.avatar})`
+            }else{
+                if(this.userProfile.user.name){
+                    this.avater.innerText = this.getInitials(this.userProfile.user.name)
+                }else{
+                    this.avater.innerText = this.getInitials('User Photo')
+                }
+            }           
+            
+            this.userDisplay.appendChild(this.avater)
+
+            this.usernameDisplay = document.createElement('div')
+            this.usernameDisplay.classList.add('thrinkle-username-container') 
+            this.toggleOpenOnDesktop(this.usernameDisplay)
+            this.usernameDisplay.appendChild(document.createTextNode(this.userProfile.user.name ? this.userProfile.user.name : 'username'))
+            
+            this.usernameEmail = document.createElement('span')
+            this.usernameEmail.appendChild(document.createTextNode(this.userProfile.user.email ? this.userProfile.user.email : 'email'))
+            this.usernameDisplay.appendChild(this.usernameEmail)
+            
+            this.userDisplay.appendChild(this.usernameDisplay)
+
+            
+            // add user profile slab
+            
+            // add settings
+            this.generateMenu({
+                menuGroupContainer:this.toolTipContainer,
+                group:this.userProfile.user,
+                needsContainer: this.userProfile?.user?.menuSettings?.needsContainer ?? true,
+                needsDivider: this.userProfile?.user?.menuSettings?.needsDivider ?? true
+                })
+            // add settings
+        }
+        getToolTipPosition(toolTip,target){
+            let targetRect = target.getBoundingClientRect()
+            let toolTipRect = toolTip.getBoundingClientRect()
+            let top = targetRect.top - (toolTipRect.height + 5)
+            // let left = targetRect.left - (toolTipRect.left + 5)
+            let left = 5;
+            let right = targetRect.right - (toolTipRect.right + 5)
+            let bottom = targetRect.bottom - (toolTipRect.bottom + 5)
+            
+            if(top <= 0 ){    
+                // check along the y-axis
+                if(targetRect.bottom + toolTipRect.height + 5 < window.innerHeight){
+                    top = targetRect.bottom + 5;
+                }else{
+                    top = 5; 
+                }
+                // check along the x axis
+                if(targetRect.right + toolTipRect.width + 5 < window.innerWidth){
+                    left = targetRect.right + 5;
+                }else{
+                    left = targetRect.right - toolTipRect.width;
+                }                
+            }else{
+                if(targetRect.left - (toolTipRect.width + 5) < 0){
+                    left = targetRect.left
+                }
+            }
+            return {
+                top: top, 
+                left: left, 
+                right: right, 
+                bottom: bottom
             }
         }
     }
