@@ -371,7 +371,10 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 white-space: no-wrap;
                 background-color: transparent;
             }
-            
+            .thrinkle-menu-sub-group-pad{
+                margin-left: 15px;
+                width: calc(100% - 15px);
+            }
             .thrinkle-menu-item-group{
                 display: flex;
                 flex-direction: row;
@@ -986,62 +989,33 @@ import { getCssVariable, setupAnimation } from "../function.js";
             this.toggleOpenOnDesktop(this.menuContainer)
             this.sidebarMenuContainer.appendChild(this.menuContainer)
             this._sidebarMenu.menu.forEach((group)=>{
-                console.log(group)
-                // const menuGroupContainer = document.createElement('div')
-                // menuGroupContainer.classList.add('thrinkle-menu-group')
-                // this.toggleOpenOnDesktop(menuGroupContainer)
-                // this.menuContainer.appendChild(menuGroupContainer) 
-
-                // const menuGroupTitle = document.createElement('div')
-                // menuGroupTitle.classList.add(
-                //     'thrinkle-menu-group-title',
-                //     'thrinkle-text-zinc-700'
-                // )
-                // this.toggleOpenOnDesktop(menuGroupTitle)
-                // menuGroupTitle.innerText = group.groupTitle
-                // menuGroupContainer.appendChild(menuGroupTitle)
-                const menuGroupContainer = this.generateMenuGroupContainer(group)
+                // this generates the menu group container
+                const menuGroupContainer = this.generateMenuGroupContainer({group:group})
+                // this generates the menu items in the above group
                 this.generateMenu({
                     menuGroupContainer: menuGroupContainer,
-                    group: group
+                    group: group,
+                    needsContainer: this._sidebarMenu?.menuSettings?.needsContainer ?? false,
+                    needsDivider: this._sidebarMenu?.menuSettings?.needsDivider ?? false
                 })
-                // group.menu.forEach((menu)=>{
-                //     const itemContainer = document.createElement('div')
-                //     itemContainer.classList.add('thrinkle-menu-item-group')
-                //     if(this.isActiveNavLink(menu.url)){
-                //         itemContainer.classList.add('active')
-                //     }
-                //     this.toggleOpenOnDesktop(itemContainer)
-                //     const itemIconContainer = document.createElement('div')
-                //     itemIconContainer.classList.add('thrinkle-menu-item-icon')
-                //     this.toggleOpenOnDesktop(itemIconContainer)
-                //     itemIconContainer.innerHTML=menu.icon? `<i data-lucide="${menu.icon}" style="width:18px;height:18px"></i>` : ''
-                //     const title = document.createElement('a')
-                //     title.classList.add(
-                //         'thrinkle-menu-item',
-                //         'thrinkle-text-gray-700'
-                //     )
-                //     this.toggleOpenOnDesktop(title)
-                //     title.appendChild(itemIconContainer)
-                //     const span = document.createElement('span')
-                //     span.classList.add('thrinkle-menu-item-title-span')
-                //     span.innerText = menu.title
-                //     this.toggleOpenOnDesktop(span)
-                //     title.appendChild(span)
-                //     title.href = menu.url
-                //     itemContainer.appendChild(title)
-                //     menuGroup.appendChild(itemContainer)
-                // })
 
             })
             // add menu            
         }
-        generateMenuGroupContainer(group){
+        generateMenuGroupContainer({
+            group, // the menu group object
+            isSubGroup = false, // indicates if this is a sub menu
+        }){
+            // creates the group container
             const menuGroupContainer = document.createElement('div')
             menuGroupContainer.classList.add('thrinkle-menu-group')
+            if(isSubGroup){
+               menuGroupContainer.classList.add('thrinkle-menu-sub-group-pad') 
+            }
             this.toggleOpenOnDesktop(menuGroupContainer)
+            // appends the group container to the menu container
             this.menuContainer.appendChild(menuGroupContainer) 
-
+            // creates the container for the group title
             const menuGroupTitle = document.createElement('div')
             menuGroupTitle.classList.add(
                 'thrinkle-menu-group-title',
@@ -1055,92 +1029,126 @@ import { getCssVariable, setupAnimation } from "../function.js";
         generateMenu({
             menuGroupContainer, // the container to hold this group of menus
             group, // the object holding the menus in this group
+            isSubMenu=false, // indicates if this is a sub menu
+            subMenuGroupContainer=null, // required if this is sub menu
             needsContainer=false, // indicates if each menu should be placed in a padded container
             needsDivider=false // indicates if a divider is needed between menu items
         }){
+            // gets the total number of menu items in this group
             const menuCount = group.menu.length
+            // tracks the sequence of menu item generation
             let count = 0
             group.menu.forEach((menu)=>{
-                const itemContainer = document.createElement('div')
-                itemContainer.classList.add('thrinkle-menu-item-group')
-                if(this.isActiveNavLink(menu.url)){
-                    itemContainer.classList.add('active')
-                }
-                this.toggleOpenOnDesktop(itemContainer)
-
-                const itemIconContainer = document.createElement('div')
-                itemIconContainer.classList.add('thrinkle-menu-item-icon')
-                this.toggleOpenOnDesktop(itemIconContainer)
-                itemIconContainer.innerHTML=menu.icon? `<i data-lucide="${menu.icon}" style="width:18px;height:18px"></i>` : ''
-                let title;
-                if(menu?.method){
-                    title = document.createElement('form')
-                    title.classList.add('thrinkle-menu-item')
-                    title.action = menu.url
-                    title.method = menu.method
-
-                    const button = document.createElement('button')
-                    button.classList.add(
-                        // 'thrinkle-menu-item',
-                        'thrinkle-menu-item-button',
-                        'thrinkle-text-gray-700'
-                    )
-                    this.toggleOpenOnDesktop(button)
-                    button.appendChild(itemIconContainer)
-                    
-                    const span = document.createElement('span')
-                    span.classList.add('thrinkle-menu-item-title-span')
-                    span.innerText = menu.title
-                    this.toggleOpenOnDesktop(span)
-                    button.appendChild(span)
-                    
-                    title.appendChild(button)
+                if(!menu.title && menu.groupTitle){
+                    // this generates the sub menu group container
+                    const subMenuGroupContainer = this.generateMenuGroupContainer({
+                        group: menu,
+                        isSubGroup: true
+                    })
+                    // this generates the menu items in the above group
+                    this.generateMenu({
+                        subMenuGroupContainer: subMenuGroupContainer,
+                        menuGroupContainer: menuGroupContainer,
+                        group: menu,
+                        isSubMenu: true,
+                        needsContainer: this._sidebarMenu?.menuSettings?.needsContainer ?? false,
+                        needsDivider: this._sidebarMenu?.menuSettings?.needsDivider ?? false
+                    })
                 }else{
-                    title = document.createElement('a')
-                    title.classList.add(
-                        'thrinkle-menu-item',
-                        'thrinkle-text-gray-700'
-                    )
-                    this.toggleOpenOnDesktop(title)
-                    title.appendChild(itemIconContainer)
-                    
-                    const span = document.createElement('span')
-                    span.classList.add('thrinkle-menu-item-title-span')
-                    span.innerText = menu.title
-                    this.toggleOpenOnDesktop(span)
-                    title.appendChild(span)
-                    title.href = menu.url
+                    // creates the menu item container
+                    const itemContainer = document.createElement('div')
+                    itemContainer.classList.add('thrinkle-menu-item-group')
+                    // sets the active item
+                    if(this.isActiveNavLink(menu.url)){
+                        itemContainer.classList.add('active')
+                    }
+                    this.toggleOpenOnDesktop(itemContainer)
+                    // add menu item icon
+                    const itemIconContainer = document.createElement('div')
+                    itemIconContainer.classList.add('thrinkle-menu-item-icon')
+                    this.toggleOpenOnDesktop(itemIconContainer)
+                    itemIconContainer.innerHTML=menu.icon? `<i data-lucide="${menu.icon}" style="width:18px;height:18px"></i>` : ''
+                    // add menu item title
+                    let title;
+                    if(menu?.method){
+                        // if the menu item is expected to use a specific http method
+                        // use a form instead
+                        title = document.createElement('form')
+                        title.classList.add('thrinkle-menu-item')
+                        title.action = menu.url
+                        title.method = menu.method
+                        // add a button to the form to enable sending the request
+                        const button = document.createElement('button')
+                        button.classList.add(
+                            'thrinkle-menu-item-button',
+                            'thrinkle-text-gray-700'
+                        )
+                        this.toggleOpenOnDesktop(button)
+                        button.appendChild(itemIconContainer)
+                        // add the menu title to the button
+                        const span = document.createElement('span')
+                        span.classList.add('thrinkle-menu-item-title-span')
+                        span.innerText = menu.title
+                        this.toggleOpenOnDesktop(span)
+                        button.appendChild(span)
+                        
+                        title.appendChild(button)
+                    }else{
+                        // if the menu item is a normal hyperlink, create an anchor 
+                        // tag instead
+                        title = document.createElement('a')
+                        title.classList.add(
+                            'thrinkle-menu-item',
+                            'thrinkle-text-gray-700'
+                        )
+                        this.toggleOpenOnDesktop(title)
+                        title.appendChild(itemIconContainer)
+                        // add the title of the menu item
+                        const span = document.createElement('span')
+                        span.classList.add('thrinkle-menu-item-title-span')
+                        span.innerText = menu.title
+                        this.toggleOpenOnDesktop(span)
+                        title.appendChild(span)
+                        title.href = menu.url
+                    }
+                    // append the menu item title (anchor tag or form) to the 
+                    // menu itemcontainer
+                    itemContainer.appendChild(title)
+                    // add a divider line if needed
+                    if(needsDivider && count < menuCount && count > 0){
+                        let divider = document.createElement('div')
+                        divider.classList.add('thrinkle-divider')
+                        if(isSubMenu){
+                            subMenuGroupContainer.appendChild(divider)
+                        }else{
+                            menuGroupContainer.appendChild(divider)
+                        }
+                        
+                    }
+                    count++
+                    // sometimes the menu item may require a container around 
+                    // it for better presentation, if this is the case then 
+                    // add one
+                    if(needsContainer){
+                        const extraItemContainer = document.createElement('div')
+                        extraItemContainer.classList.add('thrinkle-extra-item-container')
+                        extraItemContainer.appendChild(itemContainer)
+                        if(isSubMenu){
+                            subMenuGroupContainer.appendChild(extraItemContainer)
+                            menuGroupContainer.appendChild(subMenuGroupContainer)
+                        }else{
+                            menuGroupContainer.appendChild(extraItemContainer)
+                        }
+                    }else{
+                        if(isSubMenu){
+                            subMenuGroupContainer.appendChild(itemContainer)
+                            menuGroupContainer.appendChild(subMenuGroupContainer)
+                        }else{
+                            menuGroupContainer.appendChild(itemContainer)
+                        }
+                    }
                 }
-
-                // const title = document.createElement('a')
-                // title.classList.add(
-                //     'thrinkle-menu-item',
-                //     'thrinkle-text-gray-700'
-                // )
-                // this.toggleOpenOnDesktop(title)
-                // title.appendChild(itemIconContainer)
                 
-                // const span = document.createElement('span')
-                // span.classList.add('thrinkle-menu-item-title-span')
-                // span.innerText = menu.title
-                // this.toggleOpenOnDesktop(span)
-                // title.appendChild(span)
-                // title.href = menu.url
-                itemContainer.appendChild(title)
-                if(needsDivider && count < menuCount && count > 0){
-                    let divider = document.createElement('div')
-                    divider.classList.add('thrinkle-divider')
-                    menuGroupContainer.appendChild(divider)
-                }
-                count++
-                if(needsContainer){
-                    const extraItemContainer = document.createElement('div')
-                    extraItemContainer.classList.add('thrinkle-extra-item-container')
-                    extraItemContainer.appendChild(itemContainer)
-                    menuGroupContainer.appendChild(extraItemContainer)
-                }else{
-                    menuGroupContainer.appendChild(itemContainer)
-                }
                 
             })
         }

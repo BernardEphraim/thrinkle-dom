@@ -147,7 +147,15 @@
             {groupTitle:'Platform',
                 menu:[
                     {title: 'dashboard',url:'/',icon:'users'},
-                    {title: 'beans',url:'./images/logo.jfif'},
+                    {groupTitle:'Students',
+                        menu:[
+                            {title: 'name',url:'/',icon:'graduation-cap'},
+                            {groupTitle:'Fees',
+                                menu:[
+                                    {title: 'Term',url:'/',icon:'graduation-cap'},
+                                    {title: 'session',url:'./images/logo.jfif'},
+                                ]},
+                        ]},
                     {title: 'logout',url:'./logout', icon:'log-out', method:'post'}
                 ]
             },
