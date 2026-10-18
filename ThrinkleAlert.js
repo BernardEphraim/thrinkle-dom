@@ -307,7 +307,7 @@ export default class ThrinkleAlert extends HTMLElement {
                         color = this.hasAttribute('color') ? 
                             this.getAttribute('color') : getCssVariable('--thrinkle-green-700')
                         this.style.backgroundColor = this.hasAttribute('bgdarker') ?
-                            generateContrastedDarkerColor(color) : generateContrastedLighterColor(color) 
+                            generateContrastedDarkerColor({hex: color}) : generateContrastedLighterColor({hex: color}) 
                         this.style.color = color
 
                         // set icon
@@ -331,7 +331,7 @@ export default class ThrinkleAlert extends HTMLElement {
                         color = this.hasAttribute('color') ? 
                             this.getAttribute('color') : getCssVariable('--thrinkle-orange-700')
                         this.style.backgroundColor = this.hasAttribute('bgdarker') ?
-                            generateContrastedDarkerColor(color) : generateContrastedLighterColor(color) 
+                            generateContrastedDarkerColor({hex: color}) : generateContrastedLighterColor({hex: color}) 
                         this.style.color = color
                         // set icon
                         this.iconContainer.innerHTML = `
@@ -355,7 +355,7 @@ export default class ThrinkleAlert extends HTMLElement {
                         color = this.hasAttribute('color') ? 
                             this.getAttribute('color') : getCssVariable('--thrinkle-pink-700')
                         this.style.backgroundColor = this.hasAttribute('bgdarker') ?
-                            generateContrastedDarkerColor(color) : generateContrastedLighterColor(color) 
+                            generateContrastedDarkerColor({hex: color}) : generateContrastedLighterColor({hex: color}) 
                         this.style.color = color
                         // set icon
                         this.iconContainer.innerHTML = `
@@ -379,7 +379,7 @@ export default class ThrinkleAlert extends HTMLElement {
                         color = this.hasAttribute('color') ? 
                             this.getAttribute('color') : getCssVariable('--thrinkle-sky-700')
                         this.style.backgroundColor = this.hasAttribute('bgdarker') ?
-                            generateContrastedDarkerColor(color) : generateContrastedLighterColor(color) 
+                            generateContrastedDarkerColor({hex: color}) : generateContrastedLighterColor({hex: color}) 
                         this.style.color = color
                         // set icon
                         this.iconContainer.innerHTML =`
@@ -403,7 +403,7 @@ export default class ThrinkleAlert extends HTMLElement {
                         color = this.hasAttribute('color') ? 
                             this.getAttribute('color') : getCssVariable('--thrinkle-neutral-700')
                         this.style.backgroundColor = this.hasAttribute('bgdarker') ?
-                            generateContrastedDarkerColor(color,9) : generateContrastedLighterColor(color,9) 
+                            generateContrastedDarkerColor({hex: color,targetRatio: 9}) : generateContrastedLighterColor({hex: color,targetRatio: 9}) 
                         this.style.color = color
                         // set icon
                         this.iconContainer.innerHTML =`

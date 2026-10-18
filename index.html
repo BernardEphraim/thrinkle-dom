@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     
+    <script type="module" src="./thrinkle-dom.js"></script> 
     
 </head>
 <body>
 <thrinkle-layout
     id="layout"
     iconsize="16"
-    title="Thrinkle Labs lorem ipsum "
+    title="Thrinkle Labs lorem ipsum Jesus is Lord"
     logourl="./images/logo.svg"
     avatar="./images/photo.jpg"
     user="Bernard Ephraim John"
 >
     <thrinkle-container type="fluid" break="sm" exitanimationname="slide-left-mobile-exit-animation">
 		<thrinkle-column size='3' offset='6' break="sm">
-			<div style="height: 508px; background-color:tomato;"><i data-lucide="file-badge"></i> rty</div>
+			<div style="height: 508px; background-color:tomato; ;"><i data-lucide="file-badge"></i> rty</div>
 			<div style="height: 508px; background-color:orange; word-wrap: break-word;">rty</div>
             <thrinkle-alert 
             animate
@@ -105,8 +105,13 @@
 	</thrinkle-container>
 </thrinkle-layout>
 
-  
-   <script type="module" src="./thrinkle-dom.js"></script> 
+<div id="form">
+    <form action="./" method="post">
+        <input name="username"/>
+        <input name="save" type="submit"/>
+    </form>
+</div>
+   
 </body>
 
 <script>
@@ -115,119 +120,194 @@
         alert(e)
     }
     // lucide.createIcons();
-    window.addEventListener('thrinkle-styles-loaded',(e)=>{
-        
-    })
-        const layout1 = document.querySelector('#layout')
-        // console.log(layout.menu)
-        layout1.userProfile = {
-            user: {
-                avatar:"./images/photo.jpg",
-                name: 'Johnson Michael Jackson Mary',
-                email: 'ephraim1989ben@gmail.com',
-                menu:[
-                    {title: 'settings',url:'/',icon:'settings'},
-                    {title: 'help',url:'./images/logo.jfif', icon:'circle-question-mark'},
-                    {title: 'settings',url:'/',icon:'settings'},
-                    {title: 'help',url:'./settings', icon:'circle-question-mark'},
-                    {title: 'logout',url:'./logout', icon:'log-out', method:'post'}
-                ],
-                menuSettings:{
-                    needsContainer: true,
-                    needsDivider: true
-                }
+    
+    const layout1 = document.querySelector('#layout')
+    layout1.footer = {
+        settings:{
+            // backgroundColor: "oklch(90% 0.1 270)",
+        },
+        form:{
+            id: 'form',
+            position: {
+                vertical: 'within', // 'within' | 'top' | 'bottom'
+                horizontal: 'left' // 'left' | 'center' | 'right'
             }
-        }
-        layout1.sidebarMenu={            
-            menuSettings:{
-                needsContainer: false,
-                needsDivider: false
+        },
+        policies: [
+            {
+                title:'cookies',
+                url: './cookies/settings'
             },
-            menu:[
-            {groupTitle:'Platform',
-                menu:[
-                    {title: 'dashboard',url:'/',icon:'users'},
-                    {groupTitle:'Students',
-                        menu:[
-                            {title: 'name',url:'/',icon:'graduation-cap'},
-                            {groupTitle:'Fees',
-                                menu:[
-                                    {title: 'Term',url:'/',icon:'graduation-cap'},
-                                    {title: 'session',url:'./images/logo.jfif'},
-                                ]},
-                        ]},
-                    {title: 'logout',url:'./logout', icon:'log-out', method:'post'}
+            {
+                title:'privacy',
+                url: './privacy'
+            }
+        ],
+        copyright: "thrinkle",
+        socials: [
+            {
+                icon: "facebook",
+                url: 'https://facebook.com/thrinkle'
+            },
+            {
+                icon: "phone",
+                url: '+2348138444755'
+            },
+            {
+                icon: "whatsapp",
+                url: '+2348138444755'
+            },
+            {
+                icon: "sms",
+                url: '+2348138444755'
+            },
+            {
+                icon: "linkedIn",
+                url: '+2348138444755'
+            },
+            {
+                icon: "youtube",
+                url: 'https://youtube.com/thrinkle'
+            }
+        ],
+        links: [
+            {
+                heading: 'Product',
+                links: [
+                    {title: 'Overview',url: './overview'},
+                    {title: 'Features',url: './features'},
+                    {title: 'Solutions',url: './solutions'},
                 ]
-            },
-            {groupTitle:'Dry',
-                menu:[
-                    {title: 'rice',url:'./images/logo.svg'},
-                    {title: 'beans',url:'./images/logo.jfif'}
-                ]
-            },
-            {groupTitle:'Platform',
-                menu:[
-                    {title: 'dashboard',url:'/',icon:'users'},
-                    {title: 'beans',url:'./images/logo.jfif'}
-                ]
-            },
-            {groupTitle:'Dry',
-                menu:[
-                    {title: 'rice',url:'./images/logo.svg'},
-                    {title: 'beans',url:'./images/logo.jfif'}
-                ]
-            },
-            {groupTitle:'Platform',
-                menu:[
-                    {title: 'dashboard',url:'/',icon:'users'},
-                    {title: 'beans',url:'./images/logo.jfif'}
-                ]
-            },
-            {groupTitle:'Dry',
-                menu:[
-                    {title: 'rice',url:'./images/logo.svg'},
-                    {title: 'beans',url:'./images/logo.jfif'}
-                ]
-            },
-            {groupTitle:'Platform',
-                menu:[
-                    {title: 'dashboard',url:'/',icon:'users'},
-                    {title: 'beans',url:'./images/logo.jfif'}
-                ]
-            },
-            {groupTitle:'Dry',
-                menu:[
-                    {title: 'rice',url:'./images/logo.svg'},
-                    {title: 'beans',url:'./images/logo.jfif'}
-                ]
-            },
-            {groupTitle:'Platform',
-                menu:[
-                    {title: 'dashboard',url:'/',icon:'users'},
-                    {title: 'beans',url:'./images/logo.jfif'}
-                ]
-            },
-            {groupTitle:'Dry',
-                menu:[
-                    {title: 'rice',url:'./images/logo.svg'},
-                    {title: 'beans',url:'./images/logo.jfif'}
-                ]
-            },
-            {groupTitle:'Platform',
-                menu:[
-                    {title: 'dashboard',url:'/',icon:'users'},
-                    {title: 'beans',url:'./images/logo.jfif'}
-                ]
-            },
-            {groupTitle:'Dry',
-                menu:[
-                    {title: 'rice',url:'./images/logo.svg'},
-                    {title: 'beans',url:'./images/logo.jfif'}
+            },            
+            {
+                heading: 'Company',
+                links: [
+                    {title: 'About Us',url: './about-us'},
+                    {title: 'Features',url: './features'},
+                    {title: 'Solutions',url: './solutions'},
                 ]
             }
         ]
     }
-    // })
-    // console.log(layout.menu)
+    layout1.userProfile = {
+        user: {
+            avatar:"./images/photo.jpg",
+            name: 'Johnson Michael Jackson Mary',
+            email: 'ephraim1989ben@gmail.com',
+            menu:[
+                {title: 'settings',url:'/',icon:'settings'},
+                {title: 'help',url:'./images/logo.jfif', icon:'circle-question-mark'},
+                {title: 'settings',url:'/',icon:'settings'},
+                {title: 'help',url:'./settings', icon:'circle-question-mark'},
+                {title: 'logout',url:'./logout', icon:'log-out', method:'post'}
+            ],
+            menuSettings:{
+                needsContainer: true,
+                needsDivider: true
+            }
+        }
+    }
+
+    layout1.quickAccessMenu={            
+        menuSettings:{
+            needsContainer: false,
+            needsDivider: false
+        },
+        menu:[
+            {title: 'dashboard',url:'/graduation',icon:'users'},
+            {title: 'name',url:'/name',icon:'graduation-cap'},
+            {title: 'Term',url:'/term',icon:'graduation-cap'},
+            {title: 'session',url:'./session'}
+        ]
+    }
+
+    layout1.sidebarMenu={            
+        menuSettings:{
+            needsContainer: false,
+            needsDivider: false
+        },
+        menu:[
+        {groupTitle:'Platform',
+            menu:[
+                {title: 'dashboard',url:'/',icon:'users'},
+                {groupTitle:'Students',
+                    menu:[
+                        {title: 'name',url:'/',icon:'graduation-cap'},
+                        {groupTitle:'Fees',
+                            menu:[
+                                {title: 'Term',url:'/',icon:'graduation-cap'},
+                                {title: 'session',url:'./images/logo.jfif'}
+                            ]},
+                    ]},
+                {title: 'logout',url:'./logout', icon:'log-out', method:'post'}
+            ]
+        },
+        {groupTitle:'Dry',
+            menu:[
+                {title: 'rice',url:'./images/logo.svg'},
+                {title: 'beans',url:'./images/logo.jfif'}
+            ]
+        },
+        {groupTitle:'Platform',
+            menu:[
+                {title: 'dashboard',url:'/',icon:'users'},
+                {title: 'beans',url:'./images/logo.jfif'}
+            ]
+        },
+        {groupTitle:'Dry',
+            menu:[
+                {title: 'rice',url:'./images/logo.svg'},
+                {title: 'beans',url:'./images/logo.jfif'}
+            ]
+        },
+        {groupTitle:'Platform',
+            menu:[
+                {title: 'dashboard',url:'/',icon:'users'},
+                {title: 'beans',url:'./images/logo.jfif'}
+            ]
+        },
+        {groupTitle:'Dry',
+            menu:[
+                {title: 'rice',url:'./images/logo.svg'},
+                {title: 'beans',url:'./images/logo.jfif'}
+            ]
+        },
+        {groupTitle:'Platform',
+            menu:[
+                {title: 'dashboard',url:'/',icon:'users'},
+                {title: 'beans',url:'./images/logo.jfif'}
+            ]
+        },
+        {groupTitle:'Dry',
+            menu:[
+                {title: 'rice',url:'./images/logo.svg'},
+                {title: 'beans',url:'./images/logo.jfif'}
+            ]
+        },
+        {groupTitle:'Platform',
+            menu:[
+                {title: 'dashboard',url:'/',icon:'users'},
+                {title: 'beans',url:'./images/logo.jfif'}
+            ]
+        },
+        {groupTitle:'Dry',
+            menu:[
+                {title: 'rice',url:'./images/logo.svg'},
+                {title: 'beans',url:'./images/logo.jfif'}
+            ]
+        },
+        {groupTitle:'Platform',
+            menu:[
+                {title: 'dashboard',url:'/',icon:'users'},
+                {title: 'beans',url:'./images/logo.jfif'}
+            ]
+        },
+        {groupTitle:'Dry',
+            menu:[
+                {title: 'rice',url:'./images/logo.svg'},
+                {title: 'beans',url:'./images/logo.jfif'}
+            ]
+        }
+    ]}
 </script>
 </html>

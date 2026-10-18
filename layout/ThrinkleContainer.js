@@ -23,6 +23,71 @@
         static observedAttributes = ["break","type"];
         constructor() {
             super();
+            this.css = `
+            /* Style for the container */
+            .thrinkle-container,
+            .thrinkle-container-fluid,
+            .thrinkle-container-unpadded{
+                padding:0px;
+                margin:0px;
+                min-height: fit-content;
+                display: flex;
+                flex-direction: row;
+                background-color: transparent;
+            }
+            .thrinkle-container-fluid{
+                width: 100%;
+                padding: 0px;
+            }		
+            .thrinkle-container{
+                width: 80%;
+                padding: 10px;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+            .thrinkle-container-unpadded{
+                width: 100%;
+                padding: 10px;
+            }
+            `;
+            /*bundle css object*/
+        }
+        /* setup the getters and setters of this custom element */
+        // get type() { return 'ThrinkleContainerElement'; }//needed for form elements
+        get break() { return this.getAttribute('break') }
+        set break(val) { this.setAttribute('break',val) }
+        get type() { return this.getAttribute('type') }
+        set type(val) { this.setAttribute('type',val) }
+
+        attributeChangedCallback(name, oldValue, newValue) {
+            //responds to changes in attribute
+            switch (name) {
+                case 'break':
+                    /** remove old break class */
+                    this.classList.remove(`thrinkle-br-${oldValue}`)
+                    /** add new break class */
+                    this.classList.add(`thrinkle-br-${newValue}`)   
+                    break ;
+                case 'type':               
+                    /** remove old type class */
+                    if(oldValue==='padded'){
+                        this.classList.remove('thrinkle-container');
+                    }else if (oldValue==='unpadded'){
+                        this.classList.remove('thrinkle-container-unpadded');
+                    }else{
+                        this.classList.remove('thrinkle-container-fluid');
+                    }
+                    /** remove new type class */ 
+                    if(newValue==='padded'){
+                        this.classList.add('thrinkle-container');
+                    }else if (newValue==='unpadded'){
+                        this.classList.add('thrinkle-container-unpadded');
+                    }else{
+                        this.classList.add('thrinkle-container-fluid');
+                    }              
+            }
+        }
+        connectedCallback() {
             /*set up this custom element attributes*/    
             // Your custom element initialization logic here            
             if(this.hasAttribute('type')){
@@ -94,76 +159,11 @@
             /*bundle css object*/
             const style = document.createElement('style');
             style.setAttribute('id','thrinkle_container')
-            this.css = `
-            /* Style for the container */
-            .thrinkle-container,
-            .thrinkle-container-fluid,
-            .thrinkle-container-unpadded{
-                padding:0px;
-                margin:0px;
-                min-height: fit-content;
-                display: flex;
-                flex-direction: row;
-                background-color: transparent;
-            }
-            .thrinkle-container-fluid{
-                width: 100%;
-                padding: 0px;
-            }		
-            .thrinkle-container{
-                width: 80%;
-                padding: 10px;
-                margin-left: 10%;
-                margin-right: 10%;
-            }
-            .thrinkle-container-unpadded{
-                width: 100%;
-                padding: 10px;
-            }
-            `;
             style.textContent = this.css;
             if(!document.head.querySelector("style#thrinkle_container")){
                 document.head.appendChild(style);
             }
-            /*bundle css object*/
-        }
-        /* setup the getters and setters of this custom element */
-        // get type() { return 'ThrinkleContainerElement'; }//needed for form elements
-        get break() { return this.getAttribute('break') }
-        set break(val) { this.setAttribute('break',val) }
-        get type() { return this.getAttribute('type') }
-        set type(val) { this.setAttribute('type',val) }
-
-        attributeChangedCallback(name, oldValue, newValue) {
-            //responds to changes in attribute
-            switch (name) {
-                case 'break':
-                    /** remove old break class */
-                    this.classList.remove(`thrinkle-br-${oldValue}`)
-                    /** add new break class */
-                    this.classList.add(`thrinkle-br-${newValue}`)   
-                    break ;
-                case 'type':               
-                    /** remove old type class */
-                    if(oldValue==='padded'){
-                        this.classList.remove('thrinkle-container');
-                    }else if (oldValue==='unpadded'){
-                        this.classList.remove('thrinkle-container-unpadded');
-                    }else{
-                        this.classList.remove('thrinkle-container-fluid');
-                    }
-                    /** remove new type class */ 
-                    if(newValue==='padded'){
-                        this.classList.add('thrinkle-container');
-                    }else if (newValue==='unpadded'){
-                        this.classList.add('thrinkle-container-unpadded');
-                    }else{
-                        this.classList.add('thrinkle-container-fluid');
-                    }              
-            }
-        }
-        connectedCallback() {
-            
+           
         }	
         disconnectedCallback() {
             

@@ -27,11 +27,57 @@ export default class ThrinkleColumn extends HTMLElement {
     static observedAttributes = ["size","offset"];
     constructor() {
         super();
+        /*bundle css object*/
+        const style = document.createElement('style');
+        style.setAttribute('id','thrinkle_column')
+        this.css = `
+        /* Style for the column */
+        .thrinkle-column{
+            height: max-content;
+			padding: 0.3em;
+			margin: 0px;				
+		}
+        /* Hide the alert when the data-thrinkle-loading attribute is present */
+        .thrinkle-column[data-thrinkle-loading] {
+            display: none;
+        }
+        `;
+        style.textContent = this.css;
+        if(!document.head.querySelector("style#thrinkle_column")){
+            document.head.appendChild(style);
+        }
+        /*bundle css object*/
+    }
+    /* setup the getters and setters of this custom element */
+    get type() { return 'ThrinkleColumnElement'; }//needed for form elements
+    get size() { return this.getAttribute('size') }
+    set size(val) { this.setAttribute('size',val) }
+    get offset() { return this.getAttribute('offset') }
+    set offset(val) { this.setAttribute('offset',val) }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        //responds to changes in attribute
+		switch (name) {
+			case 'size':
+                /** remove old column class */
+                this.classList.remove(`thrinkle-col-${oldValue}`)
+                /** add new column class */
+                this.classList.add(`thrinkle-col-${newValue}`)   
+				break ;
+            case 'offset':               
+                /** remove old offset class */
+                this.classList.remove(`thrinkle-offset-${oldValue}`)
+                /** remove new offset class */
+                this.classList.add(`thrinkle-offset-${newValue}`)                
+		}
+	}
+
+    connectedCallback() {
         /*set up this custom element attributes*/    
         // Your custom element initialization logic here            
         this.classList.add('thrinkle-column');  
         // keep this element invisible till css is fully loaded
-        this.setAttribute('data-thrinkle-loading', ''); 
+        // this.setAttribute('data-thrinkle-loading', ''); 
         this.id=this.hasAttribute('id') ? this.getAttribute('id') : `thrinkle-column-${Math.floor(Math.random() * 1000000)}`                
         //bind to external handlers if provided
         if(this.hasAttribute('onclick')){
@@ -84,52 +130,8 @@ export default class ThrinkleColumn extends HTMLElement {
         }else{
             this.break = 'sm'
         }
-        /*bundle css object*/
-        const style = document.createElement('style');
-        style.setAttribute('id','thrinkle_column')
-        this.css = `
-        /* Style for the column */
-        .thrinkle-column{
-            height: max-content;
-			padding: 0.3em;
-			margin: 0px;				
-		}
-        /* Hide the alert when the data-thrinkle-loading attribute is present */
-        .thrinkle-column[data-thrinkle-loading] {
-            display: none;
-        }
-        `;
-        style.textContent = this.css;
-        if(!document.head.querySelector("style#thrinkle_column")){
-            document.head.appendChild(style);
-        }
-        /*bundle css object*/
-    }
-    /* setup the getters and setters of this custom element */
-    get type() { return 'ThrinkleColumnElement'; }//needed for form elements
-    get size() { return this.getAttribute('size') }
-    set size(val) { this.setAttribute('size',val) }
-    get offset() { return this.getAttribute('offset') }
-    set offset(val) { this.setAttribute('offset',val) }
+        
 
-    attributeChangedCallback(name, oldValue, newValue) {
-        //responds to changes in attribute
-		switch (name) {
-			case 'size':
-                /** remove old column class */
-                this.classList.remove(`thrinkle-col-${oldValue}`)
-                /** add new column class */
-                this.classList.add(`thrinkle-col-${newValue}`)   
-				break ;
-            case 'offset':               
-                /** remove old offset class */
-                this.classList.remove(`thrinkle-offset-${oldValue}`)
-                /** remove new offset class */
-                this.classList.add(`thrinkle-offset-${newValue}`)                
-		}
-	}
-
-    connectedCallback() {
         window.addEventListener('thrinkle-styles-loaded', function(e) {
             // Create media query matcher
             this.mediaQuery = window.matchMedia(`(width ${this.break==='lg'?'>=':'<'} ${getCssVariable(`--thrinkle-br-${this.break}`)})`);

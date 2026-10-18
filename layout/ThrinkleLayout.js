@@ -1,4 +1,4 @@
-import { getCssVariable, setupAnimation } from "../function.js";
+import { getCssVariable, hexToOklch,oklchLightnessContrast, setupAnimation, getSocialSVG } from "../function.js";
 
 /**
  * working thrinkle container class written on the 9/11/2023 by Bernard Ephraim
@@ -57,6 +57,9 @@ import { getCssVariable, setupAnimation } from "../function.js";
             // create the head container
             this.headContainer = document.createElement('div')
             this.headContainer.classList.add('thrinkle-head-container')
+            // create a container to hold the footer and article
+            this.articleFooterContainer = document.createElement('div')
+            this.articleFooterContainer.classList.add('thrinkle-article-footer-container')
             // create the article container
             this.articleContainer = document.createElement('div')
             this.articleContainer.classList.add('thrinkle-article-container')
@@ -64,10 +67,12 @@ import { getCssVariable, setupAnimation } from "../function.js";
             while(this.firstChild){
                 this.articleContainer.appendChild(this.firstChild)
             }
+            this.articleFooterContainer.appendChild(this.articleContainer)
             // append the head container and the article container to the content
             // container
             this.contentContainer.appendChild(this.headContainer)  
-            this.contentContainer.appendChild(this.articleContainer)
+            // this.contentContainer.appendChild(this.articleContainer)
+            this.contentContainer.appendChild(this.articleFooterContainer)
             // append the siderbar container and the content container to the 
             // thrinkle layout
             this.appendChild(this.sidebarContainer) 
@@ -194,6 +199,20 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 }
             }   
             /*bundle css object*/
+            this.footerBgColor = "#000000";
+            this.footerHeadingColor = "#000000";
+            this.footerLinkColor = "#000000";
+            this.footerLinkHoverColor = "#ffffff";
+            if(this.footer?.settings?.backgroundColor){
+                this.footerBgColor = hexToOklch(this.footer.settings.backgroundColor).color
+            }else{
+                this.footerBgColor = 'oklch(9% 0 0)'
+            }            
+            this.footerColor = oklchLightnessContrast(this.footerBgColor)
+            console.log(this.footerColor)
+            this.footerHeadingColor = this.footerColor.contrast
+            this.footerLinkColor = this.footerColor.deepContrast
+            this.footerLinkHoverColor = this.footerColor.midContrast
             const style = document.createElement('style');
             style.setAttribute('id','thrinkle_container')
             this.css = `
@@ -202,11 +221,8 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 position: relative;
                 display: flex;
                 flex-direction: row;
-                /*overflow-y: auto;
-                scrollbar-gutter: stable;*/
                 padding: 0px;
                 margin: 0px;
-                /*min-height: 100vh;*/
                 height: 100vh;
                 width: 100%;
                 background-color: #f8f8f8; 
@@ -222,7 +238,6 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 font-size: 0.9rem;               
             }	
             .thrinkle-sidebar-container{
-                /*padding: 20px; */ 
                               
             }
 
@@ -284,20 +299,122 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 font-weight: 400;
                 font-size: 0.9rem;
             }
-            .thrinkle-article-container{
-                /*display: flex;
-                flex-grow: 1;
-                min-height: 350px;
-                height: max-content;  
-                
-                overflow-y: auto;
-                scrollbar-gutter: stable;*/   
+
+            .thrinkle-article-footer-container{
+                display: flex;
+                flex-direction: column;
+                background-color: #f9fafb;
                 width: 100%;
-                padding: 0.5rem;
+                height: max-content;
                 border-bottom-right-radius: 0.5rem;
                 border-bottom-left-radius: 0.5rem;
+            }
+
+            .thrinkle-article-container{ 
+                flex: 1;
+                width: 100%;
+                padding: 0.5rem;
                 background-color: #f9fafb;
             }
+
+            /* footer */
+            .thrinkle-footer{
+                background-color: ${this.footerBgColor};
+                width: 100%;
+                min-height: 100px;
+                height: max-content;
+                border-bottom-right-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+            }
+            .thrinkle-footer-heading{
+                font-weight: 600;
+                font-size: 1rem;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 8px;
+                padding-right: 8px;
+                color: ${this.footerHeadingColor};
+                display: block;
+            }
+            .thrinkle-footer-link,
+            .thrinkle-policy a{
+                display: block;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 8px;
+                padding-right: 8px;
+                font-size: 0.8rem;
+                color: ${this.footerLinkColor};
+                transition: color 0.3s ease,
+                            font-size 0.3s ease;
+            }
+            a.thrinkle-footer-link, 
+            a.thrinkle-social-icon,
+            .thrinkle-policy a{
+                text-decoration: none;
+            }            
+            a.thrinkle-footer-link:hover,
+            .thrinkle-policy a:hover{
+                color: ${this.footerLinkHoverColor};                
+                font-size: 0.75rem;
+            }
+            
+            .thrinkle-copyright{
+                display: flex;
+                flex: 1;
+                justify-content: center;
+                align-items: center;
+                height: max-content;
+                padding: 5px;
+                border-bottom-right-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+                background-color: transparent;
+                color: ${this.footerLinkColor};
+            }
+            .thrinkle-policy{
+                display: flex;
+                flex: 1;
+                justify-content: left;
+                align-items: left;
+                height: max-content;
+                padding: 5px;
+                border-bottom-right-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+                background-color: transparent;
+                color: ${this.footerLinkColor};
+            }
+            
+            .thrinkle-socials{
+                display: flex;
+                flex: 1;
+                justify-content: left;
+                height: max-content;
+                padding: 5px;
+                border-bottom-right-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+                background-color: transparent;
+                color: ${this.footerLinkColor};
+            }
+            .thrinkle-social-icon{
+                margin-left: 5px;
+                margin-right: 5px;
+                width: 20px;
+                height: 20px;
+                fill: ${this.footerLinkColor};
+                stroke: ${this.footerLinkColor};
+                transition: fill 0.3s ease, 
+                            stroke 0.3s ease,
+                            width 0.3s ease,
+                            height 0.3s ease;
+            }            
+            .thrinkle-social-icon:hover{
+                width: 18px;
+                height: 18px;
+                cursor: pointer;
+                fill: ${this.footerLinkHoverColor};
+                stroke: ${this.footerLinkHoverColor};
+            }
+            /* footer */
 
             .thrinkle-sidebar-site-title-container{
                 padding: 5px;
@@ -341,7 +458,7 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 min-width: 0px;
                 height: 32px;
                 overflow: hidden;
-                font-weight: bold;
+                font-weight: 600;
                 white-space: nowrap;
             }
             .thrinkle-site-title-scroll{
@@ -390,6 +507,7 @@ import { getCssVariable, setupAnimation } from "../function.js";
             .thrinkle-menu-item-group.active{
                 background-color: #f3f4f6;
                 border-radius: 0.5rem;
+                font-weight: 500;
             }
             .thrinkle-extra-item-container{
                 padding-left: 5px;
@@ -405,6 +523,26 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 overflow: hidden;
             }
             
+            .thrinkle-quick-access-menu-container{
+                display: flex;
+                flex-direction: column;
+                width: calc(100% - 15px);
+                max-height: 150px;
+                scrollbar-color: #c8cdd8 transparent;
+                scrollbar-gutter: stable;
+                scrollbar-width: thin;
+                overflow-x: hidden;
+                overflow-y: auto;
+                margin-top: 15px;
+                margin-left: 15px;
+                margin-right: 15px;
+                background-color: transparent;
+            }
+            div.thrinkle-quick-access-menu-container a{
+                color: #525252;
+                font-weight: 400;
+                font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            }
             .thrinkle-user-profile-slab{
                 display: flex;
                 flex-direction: row;
@@ -440,7 +578,7 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 display: flex;
                 flex: 1;
                 margin-left: 10px;
-                font-weight: bold;
+                font-weight: 500;
             }
             .thrinkle-username-click{
 
@@ -510,6 +648,9 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 padding-top: 2px;
                 padding-bottom: 2px;
             }
+
+            
+
             /* Hide the alert when the data-thrinkle-loading attribute is present */
             .thrinkle-layout[data-thrinkle-loading] {
                 display: none;
@@ -519,7 +660,6 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 .thrinkle-sidebar-container{
                     display: flex;
                     flex-direction: row;
-                    /*max-width: 20%;*/
                     width: 63px;
                     top:0px;
                     height: 100vh;
@@ -563,7 +703,6 @@ import { getCssVariable, setupAnimation } from "../function.js";
                     flex: 1;
                 }
                 .thrinkle-menu-group-title{
-                    /*display: none;*/
                     height: 0px; 
                     padding-top: 0px;
                     padding-bottom: 0px; 
@@ -667,9 +806,6 @@ import { getCssVariable, setupAnimation } from "../function.js";
                     display: flex;
                     flex-grow: 1;
                     flex-direction: column;
-                    /*min-width: 80%;
-                    width: 80%;
-                    min-height: 0px;*/
                     margin-left: 5px;
                     margin-right: 10px;
                     margin-top: 10px;
@@ -807,6 +943,7 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 // in javascript
                 this._upgradeProperty('sidebarMenu');
                 this._upgradeProperty('userProfile');
+                this._upgradeProperty('footer');
                 
                 // Create media query matcher
                 this.mediaQuery = window.matchMedia(`(width >= ${getCssVariable(`--thrinkle-br-sm`)})`);
@@ -959,7 +1096,9 @@ import { getCssVariable, setupAnimation } from "../function.js";
         set sidebarMenu(value) {
             this._sidebarMenu = value;
             this.renderMenu(); // Trigger an update in your component
+            this.renderQuickAccessMenu()
             this.renderUserProfileSlab()
+            this.renderFooter()
         }
 
         get sidebarMenu() {
@@ -971,6 +1110,12 @@ import { getCssVariable, setupAnimation } from "../function.js";
         }
         get userProfile(){
             return this._userProfile
+        }
+        set footer(value){
+            this._footer = value
+        }
+        get footer(){
+            return this._footer
         }
         toggleOpenOnDesktop(element){
             if(window.innerWidth >= 667){
@@ -1024,6 +1169,7 @@ import { getCssVariable, setupAnimation } from "../function.js";
             this.toggleOpenOnDesktop(menuGroupTitle)
             menuGroupTitle.innerText = group.groupTitle
             menuGroupContainer.appendChild(menuGroupTitle)
+            menuGroupContainer.id = `thrinkle_menu_group_${Date.now()}`
             return menuGroupContainer
         }
         generateMenu({
@@ -1038,22 +1184,45 @@ import { getCssVariable, setupAnimation } from "../function.js";
             const menuCount = group.menu.length
             // tracks the sequence of menu item generation
             let count = 0
-            group.menu.forEach((menu)=>{
+            group.menu.forEach((menu, index, array)=>{
                 if(!menu.title && menu.groupTitle){
                     // this generates the sub menu group container
-                    const subMenuGroupContainer = this.generateMenuGroupContainer({
-                        group: menu,
-                        isSubGroup: true
-                    })
-                    // this generates the menu items in the above group
-                    this.generateMenu({
-                        subMenuGroupContainer: subMenuGroupContainer,
-                        menuGroupContainer: menuGroupContainer,
-                        group: menu,
-                        isSubMenu: true,
-                        needsContainer: this._sidebarMenu?.menuSettings?.needsContainer ?? false,
-                        needsDivider: this._sidebarMenu?.menuSettings?.needsDivider ?? false
-                    })
+                    if(isSubMenu){
+                        // generate the sub menu group
+                        let subMenuGroup = this.generateMenuGroupContainer({
+                            group: menu,
+                            isSubGroup: true
+                        })
+                        // append the sub menu group to the previous sub menu group
+                        subMenuGroupContainer.appendChild(subMenuGroup)
+                        // append the parent sub menu group to the main menu group
+                        menuGroupContainer.appendChild(subMenuGroupContainer)
+                        // this generates the menu items in the above group
+                        this.generateMenu({
+                            subMenuGroupContainer: subMenuGroup, // append the menu to 
+                            // the sub sub menu
+                            menuGroupContainer: menuGroupContainer,
+                            group: menu,
+                            isSubMenu: true,
+                            needsContainer: this._sidebarMenu?.menuSettings?.needsContainer ?? false,
+                            needsDivider: this._sidebarMenu?.menuSettings?.needsDivider ?? false
+                        })
+                    }else{
+                        subMenuGroupContainer = this.generateMenuGroupContainer({
+                            group: menu,
+                            isSubGroup: true
+                        })
+                        
+                        // this generates the menu items in the above group
+                        this.generateMenu({
+                            subMenuGroupContainer: subMenuGroupContainer,
+                            menuGroupContainer: menuGroupContainer,
+                            group: menu,
+                            isSubMenu: true,
+                            needsContainer: this._sidebarMenu?.menuSettings?.needsContainer ?? false,
+                            needsDivider: this._sidebarMenu?.menuSettings?.needsDivider ?? false
+                        })
+                    }
                 }else{
                     // creates the menu item container
                     const itemContainer = document.createElement('div')
@@ -1135,26 +1304,165 @@ import { getCssVariable, setupAnimation } from "../function.js";
                         extraItemContainer.appendChild(itemContainer)
                         if(isSubMenu){
                             subMenuGroupContainer.appendChild(extraItemContainer)
-                            menuGroupContainer.appendChild(subMenuGroupContainer)
                         }else{
                             menuGroupContainer.appendChild(extraItemContainer)
                         }
                     }else{
                         if(isSubMenu){
                             subMenuGroupContainer.appendChild(itemContainer)
-                            menuGroupContainer.appendChild(subMenuGroupContainer)
                         }else{
                             menuGroupContainer.appendChild(itemContainer)
                         }
                     }
+                    
                 }
                 
                 
             })
         }
+
         getInitials(string=''){
             return string.split(' ').map(word=>word.charAt(0)).toString().replaceAll(',','').toUpperCase()
         }
+        
+        renderFooter(){
+            this.thrinklefooter = document.createElement('div');
+            this.thrinklefooter.classList.add('thrinkle-footer');
+            this.articleFooterContainer.appendChild(this.thrinklefooter);
+            // add form if there is any
+            let form = null;
+            if(this.footer.form?.id !='' || this.footer.form?.id != null){
+                form = document.getElementById(this.footer.form.id);
+            }
+            const formVerticalPosition = this.footer.form?.position?.vertical ? this.footer.form.position.vertical.toLowerCase() : 'top';
+            let formHorizontalPosition = this.footer.form?.position?.horizontal ? this.footer.form.position.horizontal.toLowerCase() : 'left';
+            switch (formHorizontalPosition) {
+                case 'left':
+                    formHorizontalPosition = 'thrinkle-horizontal-left-self';
+                    form.style.margin = "13px";
+                    break;
+                case 'center':
+                    formHorizontalPosition = 'thrinkle-horizontal-center-self';
+                    break;
+                case 'right':
+                    formHorizontalPosition = 'thrinkle-horizontal-right-self';
+                    form.style.margin = "13px";
+                    break;            
+                default:
+                    formHorizontalPosition = 'thrinkle-horizontal-left-self';
+                    form.style.margin = "13px";
+                    break;
+            }
+
+            // add form at the top
+            if(form && formVerticalPosition === 'top'){
+                const formContainer = document.createElement('div');
+                this.thrinklefooter.appendChild(formContainer);
+                form.classList.add(formHorizontalPosition);
+                formContainer.appendChild(form);
+            }
+            // add footer links in columns
+            if(this.footer.links.length != 0){
+                this.thrinkleContainer = document.createElement('thrinkle-container');
+                this.thrinkleContainer.setAttribute('type','fluid');
+                this.thrinklefooter.appendChild(this.thrinkleContainer);
+                // check for menu groups
+                this.footer.links.forEach((group)=>{
+                    const thrinkleColumn = document.createElement('thrinkle-column');
+                    this.thrinkleContainer.appendChild(thrinkleColumn);
+                    const heading = document.createElement('label');
+                    heading.classList.add('thrinkle-footer-heading');
+                    heading.textContent = group.heading;
+                    thrinkleColumn.appendChild(heading);
+                    group.links.forEach((link)=>{
+                        const footerLink = document.createElement('a');
+                        footerLink.classList.add('thrinkle-footer-link');
+                        footerLink.href = link.url;
+                        footerLink.textContent = link.title;
+                        thrinkleColumn.appendChild(footerLink);
+                    })
+                })
+                // add form beside links
+                if(form && formVerticalPosition === 'within'){
+                    const formContainer = document.createElement('thrinkle-column');
+                    this.thrinkleContainer.appendChild(formContainer);
+                    form.classList.add(formHorizontalPosition);
+                    form.style.margin = "8px";
+                    formContainer.appendChild(form);
+                }
+            } 
+            // add social links 
+            if(this.footer.socials.length!==0) {
+                this.thrinkleSocials = document.createElement('div');
+                this.thrinkleSocials.classList.add('thrinkle-socials');
+                this.thrinklefooter.appendChild(this.thrinkleSocials);
+                this.footer.socials.forEach(social => {
+                    const thrinkleSocial = document.createElement('a');
+                    thrinkleSocial.innerHTML = getSocialSVG(social.icon).replace('<svg',`<svg class="thrinkle-social-icon"`);
+                    // format special urls
+                    const iconLowerCase = social.icon.toLowerCase();
+                    if(iconLowerCase.includes('tel') || 
+                        iconLowerCase.includes('phone') || 
+                        iconLowerCase.includes('call') || 
+                        iconLowerCase.includes('handset')
+                    ){
+                        thrinkleSocial.href = `tel:${social.url.replace(/[^\d+]/g, '')}`;
+                    }else if(iconLowerCase.includes('sms')){
+                        thrinkleSocial.href = `sms:${social.url.replace(/[^\d+]/g, '')}`;
+                    }else if(iconLowerCase.includes('whatsapp')){
+                        thrinkleSocial.href = `https://wa.me/${social.url.replace(/\D/g, '')}`;
+                    }else{
+                        thrinkleSocial.href = social.url;
+                    }
+                    thrinkleSocial.target = '_blank';
+                    this.thrinkleSocials.appendChild(thrinkleSocial);
+                });
+                
+            }
+
+            // add form at the bottom 
+            if(form && formVerticalPosition === 'bottom'){
+                const formContainer = document.createElement('div');
+                this.thrinklefooter.appendChild(formContainer);
+                form.classList.add(formHorizontalPosition);
+                formContainer.appendChild(form);
+            }
+            // add policy links
+            if(this.footer.policies.length !== 0){
+                this.thrinklePolicies = document.createElement('div');
+                this.thrinklePolicies.classList.add('thrinkle-policy');
+                this.footer.policies.forEach(policy => {
+                    const policyLink = document.createElement('a');
+                    policyLink.textContent = policy.title;
+                    policyLink.href = policy.url;
+                    this.thrinklePolicies.appendChild(policyLink);
+                });
+                
+                this.thrinklefooter.appendChild(this.thrinklePolicies);
+            }
+            // add copyright
+            if(this.footer.copyright){
+                this.thrinkleCopyright = document.createElement('div');
+                this.thrinkleCopyright.classList.add('thrinkle-copyright');
+                this.thrinkleCopyright.textContent = this.footer.copyright;
+                this.thrinklefooter.appendChild(this.thrinkleCopyright);
+            }                                                                  
+        }
+
+        renderQuickAccessMenu(){
+            this.quickAccessMenuContainer = document.createElement('div')
+            this.quickAccessMenuContainer.classList.add('thrinkle-quick-access-menu-container')   
+            this.sidebarMenuContainer.appendChild(this.quickAccessMenuContainer) 
+            // add settings
+            this.generateMenu({
+                menuGroupContainer:this.quickAccessMenuContainer,
+                group:this.quickAccessMenu,
+                needsContainer: this.quickAccessMenu?.menuSettings?.needsContainer ?? true,
+                needsDivider: this.quickAccessMenu?.menuSettings?.needsDivider ?? true
+                })
+            // add settings
+        }
+
         renderUserProfileSlab(){
             // add user profile slab
             this.userProfileSlab = document.createElement('div')
@@ -1240,15 +1548,11 @@ import { getCssVariable, setupAnimation } from "../function.js";
                 }
             })            
             this.userProfileSlab.appendChild(this.toolTipContainer)
-            
-
-
-            
+                       
             // add user profile slab
             this.userDisplay = document.createElement('div')
             this.userDisplay.classList.add('thrinkle-user-display')   
             this.toolTipContainer.appendChild(this.userDisplay)            
-            
             
             this.avater = document.createElement('div')
             this.avater.classList.add('thrinkle-user-avatar') 
@@ -1276,7 +1580,6 @@ import { getCssVariable, setupAnimation } from "../function.js";
             
             this.userDisplay.appendChild(this.usernameDisplay)
 
-            
             // add user profile slab
             
             // add settings
