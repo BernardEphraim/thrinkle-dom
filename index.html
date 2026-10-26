@@ -10,8 +10,9 @@
 <body>
 <thrinkle-layout
     id="layout"
-    iconsize="16"
-    title="Thrinkle Labs lorem ipsum Jesus is Lord"
+    toggleiconsize="16"
+    title="Website title"
+    page="Page title"
     logourl="./images/logo.svg"
     avatar="./images/photo.jpg"
     user="Bernard Ephraim John"
@@ -116,21 +117,35 @@
 
 <script>
     
-    function setSystemState(e){
-        alert(e)
-    }
-    // lucide.createIcons();
     
     const layout1 = document.querySelector('#layout')
+    layout1.container = {
+        logoUrl: "./images/logo.svg",
+        // backgroundColor: "oklch(0.982 0.1 150)",
+        scrollbar:{
+            backgroundColor: "oklch(0.982 0.1 150)",
+        },
+        head:{
+            // backgroundColor: "oklch(0.982 0.1 150)",
+            // borderBottomColor: "oklch(0.42 0.2 150)",
+        },
+        article:{
+            // backgroundColor: "oklch(0.982 0.1 270)",
+            // boxShadowColor: "oklch(0.982 0.1 270 / 0.5)",
+        }
+    }
     layout1.footer = {
         settings:{
-            // backgroundColor: "oklch(90% 0.1 270)",
+            backgroundColor: "oklch(90% 0.1 270)",
+            linkCategoryColor: "oklch(30% 0.1 270)",
+            linkColor: "oklch(10% 0.1 270)",
+            linkHoverColor: "oklch(50% 0.1 270)",
         },
-        form:{
+        html:{
             id: 'form',
             position: {
-                vertical: 'within', // 'within' | 'top' | 'bottom'
-                horizontal: 'left' // 'left' | 'center' | 'right'
+                // vertical: 'within', // 'within' | 'top' | 'bottom'
+                // horizontal: 'left' // 'left' | 'center' | 'right'
             }
         },
         policies: [
@@ -191,7 +206,7 @@
     }
     layout1.userProfile = {
         user: {
-            avatar:"./images/photo.jpg",
+            // avatar:"./images/photo.jpg",
             name: 'Johnson Michael Jackson Mary',
             email: 'ephraim1989ben@gmail.com',
             menu:[
@@ -224,7 +239,18 @@
     layout1.sidebarMenu={            
         menuSettings:{
             needsContainer: false,
-            needsDivider: false
+            needsDivider: false,
+            // backgroundColor: "oklch(90% 0.4 270)",
+            // hoverBgColor: "oklch(50% 0.1 270)",
+            // avatarBgColor: "oklch(60% 0.1 140)",
+            // toggleIconColor: "oklch(90% 0.1 120)",
+            // toggleIconSize: 12,
+            toolTip:{
+                // backgroundColor: "oklch(30% 0.4 140)",
+                // boxShadowColor: "oklch(90% 0.1 140)",
+                textColor: "oklch(90% 0.1 270)"
+            },
+            overlayColor: "oklch(0.5 0.1 140)",
         },
         menu:[
         {groupTitle:'Platform',

@@ -1,6 +1,17 @@
 :root{
-    /** gray colors */
-        --thrinkle-gray-50: #f9fafb;
+    /** gray colors */        
+        --thrinkle-gray-50: oklch(0.993 0 0);
+        --thrinkle-gray-100: oklch(0.982 0 0);
+        --thrinkle-gray-200: oklch(0.961 0 0);
+        --thrinkle-gray-300: oklch(0.94 0 0);
+        --thrinkle-gray-400: oklch(0.918 0 0);
+        --thrinkle-gray-500: oklch(0.894 0 0);
+        --thrinkle-gray-600: oklch(0.865 0 0);
+        --thrinkle-gray-700: oklch(0.818 0 0);
+        --thrinkle-gray-800: oklch(0.649 0 0);
+        --thrinkle-gray-900: oklch(0.503 0 0);
+        --thrinkle-gray-950: oklch(0.375 0 0);
+        /* --thrinkle-gray-50: #f9fafb;
         --thrinkle-gray-100: #f3f4f6;
         --thrinkle-gray-200: #e5e7eb;
         --thrinkle-gray-300: #d1d5db;
@@ -10,6 +21,6 @@
         --thrinkle-gray-700: #374151;
         --thrinkle-gray-800: #1f2937;
         --thrinkle-gray-900: #111827;
-        --thrinkle-gray-950: #030712;
+        --thrinkle-gray-950: #030712; */
     /** gray colors */
 }

@@ -1,0 +1,1228 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "backup.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "function.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "toTitleCase",
+          "parameters": [
+            {
+              "name": "str"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "generateContrastedDarkerColor",
+          "parameters": [
+            {
+              "name": "{\r\n  hex, \r\n  targetRatio= 4.5,\r\n  output= \"hex\"\r\n}"
+            },
+            {
+              "description": "Input background color (e.g., \"#E8F5E9\" or \"#123478\")",
+              "name": "hex",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "description": "Target contrast ratio (default 4.5 for WCAG AA)",
+              "name": "targetRatio",
+              "type": {
+                "text": "number"
+              }
+            }
+          ],
+          "description": "Calculates a dynamic, mathematically contrasted darker shade \r\nderived directly from the input hex color.",
+          "return": {
+            "type": {
+              "text": "string"
+            }
+          }
+        },
+        {
+          "kind": "function",
+          "name": "getLuminance",
+          "parameters": [
+            {
+              "name": "rVal"
+            },
+            {
+              "name": "gVal"
+            },
+            {
+              "name": "bVal"
+            },
+            {
+              "description": ": number, gVal: numbr, bVal: number}",
+              "name": "",
+              "type": {
+                "text": "rVal"
+              }
+            }
+          ],
+          "description": "Calculate WCAG relative luminance from RGB (0-1).",
+          "return": {
+            "type": {
+              "text": "number"
+            }
+          }
+        },
+        {
+          "kind": "function",
+          "name": "hslToRgb",
+          "parameters": [
+            {
+              "name": "hVal"
+            },
+            {
+              "name": "sVal"
+            },
+            {
+              "name": "lVal"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "hue2rgb",
+          "parameters": [
+            {
+              "name": "p"
+            },
+            {
+              "name": "q"
+            },
+            {
+              "name": "t"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "toHex",
+          "parameters": [
+            {
+              "name": "x"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "generateContrastedLighterColor",
+          "parameters": [
+            {
+              "name": "{\r\n  hex, \r\n  targetRatio= 4.5,\r\n  output=\"hex\"\r\n}"
+            },
+            {
+              "description": "Input background color (e.g., \"#123478\" or \"#1B5E20\")",
+              "name": "hex",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "description": "Target contrast ratio (default 4.5 for WCAG AA)",
+              "name": "targetRatio",
+              "type": {
+                "text": "number"
+              }
+            }
+          ],
+          "description": "Calculates a dynamic, mathematically contrasted lighter shade \r\nderived directly from the input hex color.",
+          "return": {
+            "type": {
+              "text": "string"
+            }
+          }
+        },
+        {
+          "kind": "function",
+          "name": "oklchLightnessContrast",
+          "parameters": [
+            {
+              "name": "color"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "hexToOklch",
+          "parameters": [
+            {
+              "name": "color"
+            },
+            {
+              "description": "The hex color string (e.g., \"#3b82f6\" or \"3b82f6\")",
+              "name": "hex",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "description": "Converts a 6-digit HEX color string to an OKLCH color object.",
+          "return": {
+            "type": {
+              "text": "{\r\n * L: number, \r\n * C: number, \r\n * H: number, \r\n * color: string, \r\n * contrast: string,\r\n * deepContrast: string\r\n * }"
+            }
+          }
+        },
+        {
+          "kind": "function",
+          "name": "getCssVariable",
+          "parameters": [
+            {
+              "name": "varName"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "removeClassesStartingWith",
+          "parameters": [
+            {
+              "name": "prefix"
+            },
+            {
+              "name": "element"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "setCssVariable",
+          "parameters": [
+            {
+              "name": "varName"
+            },
+            {
+              "name": "value"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "setupAnimation",
+          "parameters": [
+            {
+              "name": "{\r\n  element,\r\n  animationName,\r\n  animationDirection,\r\n  animationFillMode,\r\n  animationDuration,\r\n  animationTimingFunction,\r\n  animationIterationCount,\r\n  animationDelay,\r\n  animationPlayState,\r\n  animationTimeline,\r\n  animationRotationAngle\r\n}"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "getSVG",
+          "parameters": [
+            {
+              "name": "icon"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "toTitleCase",
+          "declaration": {
+            "name": "toTitleCase",
+            "module": "function.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "generateContrastedDarkerColor",
+          "declaration": {
+            "name": "generateContrastedDarkerColor",
+            "module": "function.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getLuminance",
+          "declaration": {
+            "name": "getLuminance",
+            "module": "function.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "hslToRgb",
+          "declaration": {
+            "name": "hslToRgb",
+            "module": "function.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "hue2rgb",
+          "declaration": {
+            "name": "hue2rgb",
+            "module": "function.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "toHex",
+          "declaration": {
+            "name": "toHex",
+            "module": "function.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "generateContrastedLighterColor",
+          "declaration": {
+            "name": "generateContrastedLighterColor",
+            "module": "function.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "oklchLightnessContrast",
+          "declaration": {
+            "name": "oklchLightnessContrast",
+            "module": "function.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "hexToOklch",
+          "declaration": {
+            "name": "hexToOklch",
+            "module": "function.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getCssVariable",
+          "declaration": {
+            "name": "getCssVariable",
+            "module": "function.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "removeClassesStartingWith",
+          "declaration": {
+            "name": "removeClassesStartingWith",
+            "module": "function.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "setCssVariable",
+          "declaration": {
+            "name": "setCssVariable",
+            "module": "function.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "setupAnimation",
+          "declaration": {
+            "name": "setupAnimation",
+            "module": "function.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getSVG",
+          "declaration": {
+            "name": "getSVG",
+            "module": "function.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "thrinkle-dom.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "thrinkle-switch",
+          "declaration": {
+            "name": "ThrinkleSwitch",
+            "module": "/ThrinkleSwitch.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "thrinkle-container",
+          "declaration": {
+            "name": "ThrinkleContainer",
+            "module": "/layout/ThrinkleContainer.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "thrinkle-column",
+          "declaration": {
+            "name": "ThrinkleColumn",
+            "module": "/layout/ThrinkleColumn.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "thrinkle-alert",
+          "declaration": {
+            "name": "ThrinkleAlert",
+            "module": "/ThrinkleAlert.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "thrinkle-layout",
+          "declaration": {
+            "name": "ThrinkleLayout",
+            "module": "/layout/ThrinkleLayout.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "thrinkle-toggle-switch.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "thrinkle Toggle Switch implementation \r\n\r\n<div class=\"thrinkle-switch-container\" \r\ndata-onclick=\"setSystemState\" \r\ndata-onstatelabel=\"Live\" \r\ndata-offstatelabel=\"Test\" \r\ndata-onstatevalue=\"1\" \r\ndata-offstatevalue=\"0\"\r\ndata-value=\"\" \r\ndata-state=\"on\"\r\ndata-buttonstyle=\"style_class\"\r\ndata-buttoncontainerstyle=\"style_class\"\r\ndata-switchlabelstyle=\"style_class\"\r\ndata-switchcontainerstyle=\"style_class\"\r\n>\r\n<div class=\"thrinkle-toggle-container\">\r\n<div class=\"thrinkle-toggle-handle\"></div>\r\n</div>\r\n<div class=\"thrinkle-switch-label\"></div>\r\n</div>\r\nthe snippet above describes the html structure of the thrinkle toggle switch implementation",
+          "name": "ThrinkleToggleSwitch",
+          "members": [
+            {
+              "kind": "method",
+              "name": "toggleButton",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "toggleKeypress",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "attributeSwitchOnStateChangeHandler",
+              "parameters": [
+                {
+                  "name": "{container,...props}"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"button\""
+            },
+            {
+              "kind": "field",
+              "name": "tabIndex",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"0\""
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ThrinkleToggleSwitch",
+          "declaration": {
+            "name": "ThrinkleToggleSwitch",
+            "module": "thrinkle-toggle-switch.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "ThrinkleAlert.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ThrinkleAlert",
+          "members": [
+            {
+              "kind": "field",
+              "name": "type",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "size"
+            },
+            {
+              "kind": "field",
+              "name": "offset"
+            },
+            {
+              "kind": "method",
+              "name": "handleMediaQueryMatch",
+              "parameters": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "query"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'alert'"
+            },
+            {
+              "kind": "field",
+              "name": "id"
+            },
+            {
+              "kind": "field",
+              "name": "iconSize"
+            },
+            {
+              "kind": "field",
+              "name": "htmlText"
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "``"
+            },
+            {
+              "kind": "field",
+              "name": "iconWrapper"
+            },
+            {
+              "kind": "field",
+              "name": "iconContainer"
+            },
+            {
+              "kind": "field",
+              "name": "alertTypeContainer"
+            },
+            {
+              "kind": "field",
+              "name": "contentContainer"
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "default": "` /* Style for the column */ .thrinkle-alert{ /* Keep element hidden until styles and JavaScript layout finish loading */ padding: 0.6rem; margin: 0px; display: flex; flex-direction: row; border-radius: 0.5rem; font-size: 0.75rem; box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1); font-family: system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif; } .thrinkle-alert-mobile{ width: max(250px,80vw); } .thrinkle-alert-desktop{ width: min(300px,100%); } /* Hide the alert when the data-thrinkle-loading attribute is present */ .thrinkle-alert[data-thrinkle-loading] { display: none; } .thrinkle-icon-wrapper{ background-color: transparent; display: flex; flex-direction: row; justify-content: center; align-items: center; font-size: 0.75rem; margin-left: 0; height: max-content; } .thrinkle-alert-icon-container{ background-color: transparent; height: max-content; width: max-content; font-weight: bold; align-content: center; font-size: 0.75rem; cursor: default; } .thrinkle-alert-type-container{ background-color: transparent; height: max-content; width: max-content; font-weight: bold; padding-left: 0.5rem; padding-right: 0.5rem; text-align: left; align-content: center; font-size: 0.75rem; cursor: default; } .thrinkle-alert-content-container{ background-color: transparent; height: max-content; /*width: 80%;*/ word-wrap: break-word; font-size: 0.75rem; text-align: left; cursor: default; } .thrinkle-alert-dismiss-container{ background-color: transparent; height: 15px; width: 15px; font-size: 0.75rem; cursor: pointer; } `"
+            },
+            {
+              "kind": "field",
+              "name": "textContent"
+            }
+          ],
+          "events": [
+            {
+              "name": "thrinkle-alert-connected",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "thrinkle-alert",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ThrinkleAlert",
+            "module": "ThrinkleAlert.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "ThrinkleSwitch.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "working thrinkle switch class written on the 19/10/2023 by Bernard Ephraim\r\nThrinkleSwitch element is a toggle switch that can be used as a normal toggle switch within and outside\r\nan HTML form element\r\nDeclared form:\r\n<thrinkle-switch \r\n     name=\"switch1\"\r\n     id=\"switch1\"\r\n     onclick=\"setSystemState\" \r\n     onstatelabel=\"Server\" \r\n     offstatelabel=\"Reciever\" \r\n     onstatevalue=\"1\" \r\n     offstatevalue=\"0\"\r\n     value=\"0\"\r\n     state=\"off\"\r\n     oncolor=\"skyblue\"\r\n     offcolor=\"maroon\"\r\n     borderwidth=\"1px\"\r\n ></thrinkle-switch>\r\n Internal structure:\r\n <div class=\"thrinkle-switch-container\">\r\n<div class=\"thrinkle-toggle-container\">\r\n<div class=\"thrinkle-toggle-handle\"></div>\r\n</div>\r\n<div class=\"thrinkle-switch-label\"></div>\r\n</div>\r\n  \r\n  the snippet above describes the html structure of the thrinkle toggle switch implementation",
+          "name": "ThrinkleSwitch",
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "form",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "value"
+            },
+            {
+              "kind": "field",
+              "name": "oldValue",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "setOldValue",
+              "parameters": [
+                {
+                  "name": "val"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "toggleValue",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "toggleKeypress",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "toggleSwitchProps",
+              "parameters": [
+                {
+                  "name": "{container,button,switchLabel}"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "toggleSwitchOffFunction",
+              "parameters": [
+                {
+                  "name": "{container,button,switchLabel}"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "toggleSwitchOnFunction",
+              "parameters": [
+                {
+                  "name": "{container,button,switchLabel}"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getValue"
+            },
+            {
+              "kind": "method",
+              "name": "setValue",
+              "parameters": [
+                {
+                  "name": "val"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getOldValue"
+            },
+            {
+              "kind": "field",
+              "name": "_internals"
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"presentation\""
+            },
+            {
+              "kind": "field",
+              "name": "container"
+            },
+            {
+              "kind": "field",
+              "name": "button"
+            },
+            {
+              "kind": "field",
+              "name": "switchLabel"
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "default": "` /* Style for the toggle button */ .thrinkle-switch-container, .thrinkle-toggle-container, .thrinkle-toggle-handle, .thrinkle-switch-label { padding:0px; margin:0px; } .thrinkle-switch-container{ display: inline-flex; position: relative; width: fit-content; border-top-left-radius: 12px; border-bottom-left-radius: 12px; border-top-right-radius: 12px; border-bottom-right-radius: 12px; margin: 5px; cursor: pointer; } .thrinkle-switch-container:focus{ outline: transparent; } .thrinkle-toggle-container { display: inline-block; position: relative; width: 40px; height: 20px; border-radius: 10px; } .thrinkle-toggle-handle { display:inline-block; position: absolute; width: 14px; height: 14px; background-color: #fff; border-radius: 50%; transition: transform 0.2s; top:3px; } .thrinkle-switch-label{ display: inline-block; position: relative; padding-left:5px; color: var(--thrinkle-switch-off); font-weight: bold; font-size: 1em; width: fit-content; } /* Styling for the on and off states */ .thrinkle-on{ transform: translateX(22px); } .thrinkle-off{ transform: translateX(6px); } /*disabled state*/ .thrinkle-switch-container:disabled .thrinkle-red, .thrinkle-switch-container:disabled .thrinkle-green{ background-color: var(--thrinkle-disabled); } .thrinkle-switch-container:disabled .thrinkle-green-font, .thrinkle-switch-container:disabled .thrinkle-switch-label{ color: var(--thrinkle-disabled); } /* Hide the alert when the data-thrinkle-loading attribute is present */ .thrinkle-alert[data-thrinkle-loading] { display: none; } `"
+            },
+            {
+              "kind": "field",
+              "name": "textContent"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value"
+            },
+            {
+              "name": "disabled"
+            },
+            {
+              "type": {
+                "text": "offcolor"
+              },
+              "description": "takes on any hexadecimal or named color for the off state of the switch",
+              "name": "(optional)"
+            },
+            {
+              "type": {
+                "text": "replacestyle"
+              },
+              "description": "can either be true or false, indicates whether the user provided css classes should replace the default css class. true replaces, false appends",
+              "name": ""
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "thrinkle-switch",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ThrinkleSwitch",
+            "module": "ThrinkleSwitch.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "layout/ThrinkleColumn.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ThrinkleColumn",
+          "members": [
+            {
+              "kind": "field",
+              "name": "type",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "size"
+            },
+            {
+              "kind": "field",
+              "name": "offset"
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "default": "` /* Style for the column */ .thrinkle-column{ height: max-content; padding: 0.3em; margin: 0px; } /* Hide the alert when the data-thrinkle-loading attribute is present */ .thrinkle-column[data-thrinkle-loading] { display: none; } `"
+            },
+            {
+              "kind": "field",
+              "name": "textContent"
+            }
+          ],
+          "events": [
+            {
+              "name": "thrinkle-column-connected",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "size"
+            },
+            {
+              "name": "offset"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "thrinkle-column",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ThrinkleColumn",
+            "module": "layout/ThrinkleColumn.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "layout/ThrinkleContainer.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "working thrinkle container class written on the 9/11/2023 by Bernard Ephraim\r\nThrinkleContainer element is a container that can be used to arrange items on a window\r\nDeclared form:\r\n<thrinkle-container break=\"lg\" type='padded'>Some content</thrinkle-container>\r\n Internal structure:\r\n <thrinkle-container break=\"lg\">\r\n<thrinkle-column size='3' offset='6'>\r\n<div style=\"height: 58px; background-color:tomato\">rty</div>\r\n<div style=\"height: 58px; background-color:orange\">rty</div>\r\n</thrinkle-column>\r\n<thrinkle-column size='5'>44</thrinkle-column>\r\n</thrinkle-container>\r\n  \r\n  the snippet above describes the html structure of the thrinkle container implementation",
+          "name": "ThrinkleContainer",
+          "members": [
+            {
+              "kind": "field",
+              "name": "break",
+              "description": "(optional) - takes on xl, lg, md, sm, xs, and xxs as break points"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "description": "(optional) - takes padded, fluid,unpadded as values defaults to fluid, padded adds some padding to the container, fluid stretches the full width of parent container, unpadded takes the fluid form without inner padding"
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "default": "` /* Style for the container */ .thrinkle-container, .thrinkle-container-fluid, .thrinkle-container-unpadded{ padding:0px; margin:0px; min-height: fit-content; display: flex; flex-direction: row; background-color: transparent; } .thrinkle-container-fluid{ width: 100%; padding: 0px; } .thrinkle-container{ width: 80%; padding: 10px; margin-left: 10%; margin-right: 10%; } .thrinkle-container-unpadded{ width: 100%; padding: 10px; } `"
+            },
+            {
+              "description": "(optional) - accepts a valid css class for styling the swtich's outermost container. Note: when provided, it overrides the default style",
+              "name": "style",
+              "kind": "field"
+            },
+            {
+              "description": "can either be true or false, indicates whether the user provided css classes should replace the default css class. true replaces, false appends",
+              "name": "replacestyle",
+              "kind": "field"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "break"
+            },
+            {
+              "name": "type"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "thrinkle-container",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ThrinkleContainer",
+            "module": "layout/ThrinkleContainer.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "layout/ThrinkleLayout copy.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "working thrinkle container class written on the 9/11/2023 by Bernard Ephraim\r\nThrinkleContainer element is a container that can be used to arrange items on a window\r\nDeclared form:\r\n<thrinkle-container break=\"lg\" type='padded'>Some content</thrinkle-container>\r\n Internal structure:\r\n <thrinkle-container break=\"lg\">\r\n<thrinkle-column size='3' offset='6'>\r\n<div style=\"height: 58px; background-color:tomato\">rty</div>\r\n<div style=\"height: 58px; background-color:orange\">rty</div>\r\n</thrinkle-column>\r\n<thrinkle-column size='5'>44</thrinkle-column>\r\n</thrinkle-container>\r\n  \r\n  the snippet above describes the html structure of the thrinkle container implementation",
+          "name": "ThrinkleLayout",
+          "members": [
+            {
+              "kind": "field",
+              "name": "break",
+              "description": "(optional) - takes on xl, lg, md, sm, xs, and xxs as break points"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "description": "(optional) - takes padded, fluid,unpadded as values defaults to fluid, padded adds some padding to the container, fluid stretches the full width of parent container, unpadded takes the fluid form without inner padding"
+            },
+            {
+              "kind": "method",
+              "name": "handleMediaQueryMatch",
+              "parameters": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "query"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "switchDeviceModes"
+            },
+            {
+              "kind": "method",
+              "name": "getSidebarIcon"
+            },
+            {
+              "kind": "field",
+              "name": "id"
+            },
+            {
+              "kind": "field",
+              "name": "sidebarContainer"
+            },
+            {
+              "kind": "field",
+              "name": "contentContainer"
+            },
+            {
+              "kind": "field",
+              "name": "headContainer"
+            },
+            {
+              "kind": "field",
+              "name": "articleContainer"
+            },
+            {
+              "kind": "field",
+              "name": "sidebarMenuContainer"
+            },
+            {
+              "kind": "field",
+              "name": "sidebarMenuPad"
+            },
+            {
+              "kind": "field",
+              "name": "sidebarCloseIconContainer"
+            },
+            {
+              "kind": "field",
+              "name": "iconSize"
+            },
+            {
+              "kind": "field",
+              "name": "headContentContainer"
+            },
+            {
+              "kind": "field",
+              "name": "title"
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML"
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "default": "` /* Style for the container */ .thrinkle-layout{ position: relative; display: flex; flex-direction: row; overflow-y: auto; scrollbar-gutter: stable; padding: 0px; margin: 0px; min-height: 100vh; width: 100%; background-color: #f9fafb; /*border:2px solid green;*/ } /* Hide the alert when the data-thrinkle-loading attribute is present */ .thrinkle-layout[data-thrinkle-loading] { display: none; } .thrinkle-sidebar-container{ display: flex; flex-direction: row; transition: width 0.5s ease; } .thrinkle-sidebar-container-layout-mobile{ width: 0px; padding: 0; } .thrinkle-sidebar-container-layout-desktop{ max-width: 20%; width: 20%; padding: 10px; position: sticky; top:0; } .thrinkle-sidebar-container-layout-desktop-shrink{ width: 60px; } .thrinkle-sidebar-container-layout-desktop-expand{ width: 20%; } .thrinkle-sidebar-container-layout-mobile-shrink{ width: 0px; } .thrinkle-sidebar-container-layout-mobile-expand{ width: 100vw; height: 100vh; background-color: transparent; position:fixed; z-index: 99999; } /* sidebar menu container*/ .thrinkle-sidebar-menu-container{ height: 100%; background-color: white; } .thrinkle-sidebar-menu-container-layout-mobile{ transition: width 0.5s ease; width: 0px; padding: 0px; } .thrinkle-sidebar-menu-container-layout-desktop{ width: 100%; padding: 0px; } .thrinkle-sidebar-menu-container-layout-desktop-shrink{ width: 100%; } .thrinkle-sidebar-menu-container-layout-desktop-expand{ width: 100%; } .thrinkle-sidebar-menu-container-layout-mobile-shrink{ width: 0px; } .thrinkle-sidebar-menu-container-layout-mobile-expand{ width: max(200px, 80%); } .thrinkle-sidebar-menu-pad-layout-desktop{ display: none; } .thrinkle-sidebar-menu-pad-layout-mobile{ display: flex; flex-grow: 1; background-color: rgba(0,0,0,0.5); } /* sidebar menu container */ .thrinkle-content-container{ box-sizing: border-box; } .thrinkle-content-container-layout-mobile{ width: 100vw; } .thrinkle-content-container-layout-desktop{ display: flex; flex-grow: 1; flex-direction: column; min-width: 80%; width: 80%; margin-left: 10px; margin-right: 5px; margin-top: 10px; margin-bottom: 10px; border-radius: 0.5rem; box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1), 0px -1px 1px -1px rgba(0, 0, 0, 0.1), 0px -1px 1px -1px rgba(0, 0, 0, 0.1); } .thrinkle-head-container{ display: flex; align-items: center; min-height: 60px; height: 60px; width: 100%; border-top-right-radius: 0.5rem; border-top-left-radius: 0.5rem; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #f3f4f6;//--thrinkle-gray-100 background-color: #f9fafb; //--thrinkle-gray-50 } .thrinkle-sidebar-close-icon-container{ width: 28px; height: 28px; margin-left: 10px; margin-right: 10px; display: flex; justify-content: center; align-items: center; background-color: transparent; } .thrinkle-sidebar-close-icon-container:hover{ border-radius: 10px; background-color: #f3f4f6; /*--thrinkle-gray-100 */ } .thrinkle-head-content-container{ display: flex; flex-grow: 1; flex-direction: row; align-items: center; height: 50px; padding-right: 0.5rem; background-color: transparent; font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-weight: 400; font-size: 0.9rem; } .thrinkle-article-container{ /*display: flex; flex-grow: 1; min-height: 350px; height: max-content; overflow-y: auto; scrollbar-gutter: stable;*/ width: 100%; padding: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem; background-color: #f9fafb; } `"
+            },
+            {
+              "kind": "field",
+              "name": "textContent"
+            },
+            {
+              "description": "(optional) - accepts a valid css class for styling the swtich's outermost container. Note: when provided, it overrides the default style",
+              "name": "style",
+              "kind": "field"
+            },
+            {
+              "description": "can either be true or false, indicates whether the user provided css classes should replace the default css class. true replaces, false appends",
+              "name": "replacestyle",
+              "kind": "field"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "break"
+            },
+            {
+              "name": "type"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "thrinkle-layout",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ThrinkleLayout",
+            "module": "layout/ThrinkleLayout copy.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "layout/ThrinkleLayout.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "working thrinkle container class written on the 9/11/2023 by Bernard Ephraim",
+          "name": "ThrinkleLayout",
+          "members": [
+            {
+              "kind": "method",
+              "name": "toggleMenuContainersOpenState"
+            },
+            {
+              "kind": "method",
+              "name": "removeMenuContainersOpenState"
+            },
+            {
+              "kind": "method",
+              "name": "handleMediaQueryMatch",
+              "parameters": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "query"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getSidebarIcon"
+            },
+            {
+              "kind": "method",
+              "name": "_upgradeProperty",
+              "parameters": [
+                {
+                  "name": "prop"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "sidebarMenu"
+            },
+            {
+              "kind": "field",
+              "name": "userProfile"
+            },
+            {
+              "kind": "field",
+              "name": "footer"
+            },
+            {
+              "kind": "method",
+              "name": "toggleOpenOnDesktop",
+              "parameters": [
+                {
+                  "name": "element"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "toggleOpenOnMobile",
+              "parameters": [
+                {
+                  "name": "element"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderMenu"
+            },
+            {
+              "kind": "method",
+              "name": "generateMenuGroupContainer",
+              "parameters": [
+                {
+                  "name": "{\r\n            group, // the menu group object\r\n            isSubGroup = false, // indicates if this is a sub menu\r\n        }"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "generateMenu",
+              "parameters": [
+                {
+                  "name": "{\r\n            menuGroupContainer, // the container to hold this group of menus\r\n            group, // the object holding the menus in this group\r\n            isSubMenu=false, // indicates if this is a sub menu\r\n            subMenuGroupContainer=null, // required if this is sub menu\r\n            needsContainer=false, // indicates if each menu should be placed in a padded container\r\n            needsDivider=false // indicates if a divider is needed between menu items\r\n        }"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getInitials",
+              "parameters": [
+                {
+                  "name": "string",
+                  "default": "''"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderFooter"
+            },
+            {
+              "kind": "method",
+              "name": "renderQuickAccessMenu"
+            },
+            {
+              "kind": "method",
+              "name": "setAvatar",
+              "parameters": [
+                {
+                  "name": "avaterContainer"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderUserProfileSlab"
+            },
+            {
+              "kind": "method",
+              "name": "popUpToolTip"
+            },
+            {
+              "kind": "method",
+              "name": "isActiveNavLink",
+              "parameters": [
+                {
+                  "name": "href"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderToolTip"
+            },
+            {
+              "kind": "method",
+              "name": "getToolTipPosition",
+              "parameters": [
+                {
+                  "name": "toolTip"
+                },
+                {
+                  "name": "target"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "_sidebarMenu",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]"
+            },
+            {
+              "description": "(optional) - takes padded, fluid,unpadded as values defaults to fluid, padded adds some padding to the container, fluid stretches the full width of parent container, unpadded takes the fluid form without inner padding",
+              "name": "type",
+              "kind": "field"
+            },
+            {
+              "description": "(optional) - accepts a valid css class for styling the swtich's outermost container. Note: when provided, it overrides the default style",
+              "name": "style",
+              "kind": "field"
+            },
+            {
+              "description": "can either be true or false, indicates whether the user provided css classes should replace the default css class. true replaces, false appends",
+              "name": "replacestyle",
+              "kind": "field"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "sidebarMenu"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "description": "a unique identifier for this element. Note: it is useful for setting up the sidebar menu and other settings in JavaScript",
+              "name": "id"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "thrinkle-layout",
+          "customElement": true,
+          "summary": "is a container that sets up a layout for a web application. \r\nIt provides a sidebar, header, content area, and footer. The layout is responsive \r\nand can be customized through attributes and properties.\r\nDeclared form:\r\n<thrinkle-layout>Some content</thrinkle-layout>\r\nInternal structure:\r\n<thrinkle-layout\r\nid=\"layout\"\r\niconsize=\"16\"\r\ntitle=\"Website title\"\r\npage=\"Page title\"\r\nlogourl=\"./images/logo.svg\"\r\navatar=\"./images/photo.jpg\"\r\nuser=\"Bernard Ephraim John\"\r\n></thrinkle-layout>\r\n\r\nthe snippet above describes the html structure of the thrinkle container implementation;"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ThrinkleLayout",
+            "module": "layout/ThrinkleLayout.js"
+          }
+        }
+      ]
+    }
+  ]
+}
