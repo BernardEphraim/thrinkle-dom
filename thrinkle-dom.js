@@ -1,4 +1,5 @@
-import ThrinkleSwitch from './ThrinkleSwitch.js';
+import ThrinkleSwitch from './form-elements/ThrinkleSwitch.js';
+import ThrinkleInput from './form-elements/ThrinkleInput.js';
 import ThrinkleContainer from './layout/ThrinkleContainer.js';
 import ThrinkleColumn from './layout/ThrinkleColumn.js';
 import ThrinkleAlert from './ThrinkleAlert.js';
@@ -7,6 +8,7 @@ import ThrinkleLayout from './layout/ThrinkleLayout.js';
 
 // 1. Register Web Components
 window.customElements.define('thrinkle-switch', ThrinkleSwitch);
+window.customElements.define('thrinkle-input', ThrinkleInput);
 window.customElements.define('thrinkle-container', ThrinkleContainer);
 window.customElements.define('thrinkle-column', ThrinkleColumn);
 window.customElements.define('thrinkle-alert', ThrinkleAlert);

@@ -18,9 +18,28 @@
     user="Bernard Ephraim John"
 >
     <thrinkle-container type="fluid" break="sm" exitanimationname="slide-left-mobile-exit-animation">
-		<thrinkle-column size='3' offset='6' break="sm">
-			<div style="height: 508px; background-color:tomato; ;"><i data-lucide="file-badge"></i> rty</div>
-			<div style="height: 508px; background-color:orange; word-wrap: break-word;">rty</div>
+		<thrinkle-column size='3' offset='2' break="sm">
+			<form action="" target="_blank" method="get">
+                <thrinkle-input 
+                    id="name" 
+                    name="name" 
+                    label="Name" 
+                    placeholder="name" 
+                    type="password" 
+                    value="tel"
+                    rounded
+                    icon
+                    ></thrinkle-input>
+                <button type="submit">submit</button>
+                <span onclick="
+                    let ele = document.getElementById('name');
+                    console.log('value',ele.value)
+                    ele.value = 'mirabel';
+                    alert(ele.value)
+                    console.log('value',ele.value)
+                ">click</span>
+            </form>
+            
             <thrinkle-alert 
             animate
             animationname="bounce-animation"

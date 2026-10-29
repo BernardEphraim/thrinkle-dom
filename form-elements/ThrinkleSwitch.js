@@ -1,4 +1,4 @@
-import { getCssVariable, setCssVariable } from "./function.js";
+import { getCssVariable, setCssVariable } from "../function.js";
 
 /**
  * working thrinkle switch class written on the 19/10/2023 by Bernard Ephraim
@@ -269,7 +269,7 @@ export default class ThrinkleSwitch extends HTMLElement {
                 color: var(--thrinkle-disabled);
             }
             /* Hide the alert when the data-thrinkle-loading attribute is present */
-            .thrinkle-alert[data-thrinkle-loading] {
+            .thrinkle-switch-container[data-thrinkle-loading] {
                 display: none;
             }
 		`;
