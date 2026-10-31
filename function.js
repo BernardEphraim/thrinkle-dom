@@ -4,6 +4,13 @@ export function toTitleCase(str) {
     });
 }
 
+export function padLeft(string,length=2,pad='0'){
+  let str = String(string);
+  while (str.length < length) {
+    str = `${pad}${str}`;
+  }
+  return str;
+}
 /**
  * Calculates a dynamic, mathematically contrasted darker shade 
  * derived directly from the input hex color.
