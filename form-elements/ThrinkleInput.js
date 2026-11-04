@@ -676,6 +676,10 @@ export default class ThrinkleInput extends HTMLElement {
                 case 'date':
                     this.validateDate(this.getAttribute('value'));
                     break;
+                case 'range':
+                case 'number':
+                    this.validateNumber(this.getAttribute('value'));
+                    break;
                 case 'month':
                     // do nothing
                     break;
@@ -683,6 +687,15 @@ export default class ThrinkleInput extends HTMLElement {
                     // do nothing
                     break;
                 case 'time':
+                    // do nothing
+                    break;
+                case 'checkbox':
+                    // do nothing
+                    break;
+                case 'radio':
+                    // do nothing
+                    break;
+                case 'color':
                     // do nothing
                     break;
                 case 'text':
@@ -743,6 +756,13 @@ export default class ThrinkleInput extends HTMLElement {
                     });
                     defaultLeftIcon = true;
                     break;
+                case 'range':
+                    this.thrinkleLeftIconDiv.innerHTML = getSVG('move-horizontal');
+                    this.input.addEventListener('input',(e)=>{
+                        this.validateNumber(this.input.value);                        
+                    });
+                    defaultLeftIcon = true;
+                    break;
                 case 'tel':
                     this.thrinkleLeftIconDiv.innerHTML = getSVG('phone');
                     this.input.addEventListener('input',(e)=>{
@@ -768,6 +788,14 @@ export default class ThrinkleInput extends HTMLElement {
                 case 'time':
                     this.thrinkleLeftIconDiv.innerHTML = getSVG('watch');
                     defaultLeftIcon = true;  
+                    break;
+                case 'color':
+                    this.thrinkleLeftIconDiv.innerHTML = getSVG('paint-roller');
+                    defaultLeftIcon = true;  
+                    break;
+                case 'checkbox':
+                    break;
+                case 'radio':
                     break;
                 case 'text':
                 default:
@@ -861,6 +889,27 @@ export default class ThrinkleInput extends HTMLElement {
                 font-weight: bold;     
                 box-shadow: 0px 0px 2px 4px oklch(from oklch(0.811 0.02 256) l c h/0.35);         
 			}
+
+            .thrinkle-input-container:has(.thrinkle-input[type="checkbox"]){             
+                width: fit-content;
+                padding-left: 2px;  
+                padding-right: 2px;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+            
+            .thrinkle-input-container:has(.thrinkle-input[type="radio"]){ 
+                width: fit-content;
+                padding-left: 2px;  
+                padding-right: 2px;
+                border-top-left-radius: 9999px;
+                border-bottom-left-radius: 9999px;
+                border-top-right-radius: 9999px;
+                border-bottom-right-radius: 9999px;
+            }
+
             .thrinkle-left-icon-div,
             .thrinkle-right-icon-div{ 
                 display: flex;
@@ -889,11 +938,19 @@ export default class ThrinkleInput extends HTMLElement {
             }
             .thrinkle-input-div{
                 display: flex;
-                align-items: center; 
-                flex: 1;               
+                align-items: center;            
                 border-style: solid;
                 border-width: 1px;
                 border-color: transparent;
+                background-color: transparent;
+            }
+            .thrinkle-input-div:not(:has(.thrinkle-input[type="checkbox"])),
+            .thrinkle-input-div:not(:has(.thrinkle-input[type="radio"])){
+                flex: 1;
+            }
+            .thrinkle-input-div:has(.thrinkle-input[type="checkbox"])),
+            .thrinkle-input-div:has(.thrinkle-input[type="radio"])){
+            
             }
             .thrinkle-input{
                 color: oklch(20% 0 0);                
@@ -911,6 +968,15 @@ export default class ThrinkleInput extends HTMLElement {
                 padding: 5px;
                 height: 100%;
                 width: 100%;
+            }
+            .thrinkle-input[type="checkbox"],
+            .thrinkle-input[type="radio"]{
+                width: auto;
+                outline: none;
+                border-color: transparent;
+            }
+            .thrinkle-input[type="color"]{
+                height: 2rem;
             }
 			
             .thrinkle-feedback{
