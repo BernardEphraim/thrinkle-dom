@@ -1,6 +1,6 @@
 :root{
     /** blue colors */
-    --thrinkle-blue-50: #eff6ff;
+    /* --thrinkle-blue-50: #eff6ff;
     --thrinkle-blue-100: #dbeafe;
     --thrinkle-blue-200: #bfdbfe;
     --thrinkle-blue-300: #93c5fd;
@@ -10,6 +10,22 @@
     --thrinkle-blue-700: #1d4ed8;
     --thrinkle-blue-800: #1e40af;
     --thrinkle-blue-900: #1e3a8a;
-    --thrinkle-blue-950: #172554;
+    --thrinkle-blue-950: #172554; */
+
+    
+    --thrinkle-blue-25: oklch(0.852 0.073 264.052);
+    --thrinkle-blue-50: oklch(0.785 0.108 264.052);
+    --thrinkle-blue-100: oklch(0.719 0.146 264.052);
+    --thrinkle-blue-200: oklch(0.652 0.185 264.052);
+    --thrinkle-blue-300: oklch(0.585 0.226 264.052);
+    --thrinkle-blue-400: oklch(0.519 0.269 264.052);
+    --thrinkle-blue-500: oklch(0.452 0.266 264.052);
+    --thrinkle-blue-600: oklch(0.385 0.226 264.052);
+    --thrinkle-blue-700: oklch(0.319 0.187 264.052);
+    --thrinkle-blue-800: oklch(0.252 0.148 264.052);
+    --thrinkle-blue-900: oklch(0.185 0.109 264.052);
+    --thrinkle-blue-950: oklch(0.119 0.07 264.052);
+    --thrinkle-blue-975: oklch(0.052 0.031 264.052);
+
 /** blue colors */
 }

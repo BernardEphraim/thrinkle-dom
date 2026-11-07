@@ -22,10 +22,12 @@ import { getSVG, padLeft } from "../function.js";
  * @attr {string} pattern - a regular expression used in matching input
  * @attr {number} size - indicates how many characters wide the input field should be
  * @attr {boolean} international - when present, indicates that the phone number should be in international format
+ * @attr {number} margin - defines the margin of the component, default is 5px
+ * @attr {boolean} required - default false, when present, indicates that the input field must be filled out before submitting the form
  */
 export default class ThrinkleInput extends HTMLElement {
     static formAssociated = true;//needed for form elements
-	static observedAttributes = ["value","disabled","label"];
+	static observedAttributes = ["value","disabled","accept","type","name","margin","label"];
     constructor() {
         super();
         /*set up this custom element attributes*/
@@ -38,9 +40,19 @@ export default class ThrinkleInput extends HTMLElement {
     /* setup the getters and setters of this custom element */
     get form() { return this._internals.form;}//needed for form elements
     get name() { return this.getAttribute('name');}//needed for form elements
-    get type() { return 'ThrinkleInputElement';}//needed for form elements
+    set name(val) { this.setAttribute('name',val);}//needed for form elements
+    get accept() { return this.getAttribute('accept');}//needed for form elements
+    set accept(val) { this.setAttribute('accept',val);}//needed for form elements
+    get type() { return this.input.type;}//needed for form elements
+    set type(val) { this.setAttribute('type',val);}//needed for form elements
     get value(){ return this.input.value;}//needed for form elements
     set value(val){this.setAttribute('value',val);}//needed for form elements
+    get label(){ return this.inputLabel.textContent;}//needed for form elements
+    set label(val){
+        this.setAttribute('label',val);
+    }//needed for form elements
+    set icon(val){this.setAttribute('icon',val);}//needed for form elements
+    set margin(val){this.setAttribute('margin',val);}//needed for form elements
     
 	updateFormValue(value){
         // updates the value of the form element
@@ -512,6 +524,36 @@ export default class ThrinkleInput extends HTMLElement {
                 }
                 this.updateFormValue(newValue)
 				break ;
+			case 'accept':
+                //set form accept, this accept is used for form related operations
+                if(this.input?.accept) {
+                    this.input.accept = newValue;
+                }
+                this.updateFormValue(newValue)
+				break ;
+			case 'type':
+                //set form type, this type is used for form related operations
+                if(this.input?.type) {
+                    this.input.type = newValue;
+                }
+                this.updateFormValue(newValue)
+				break ;
+			case 'name':
+                //set form name, this name is used for form related operations
+                if(this.input?.name) {
+                    this.input.name = newValue;
+                }
+				break;
+			case 'margin':
+                //set form name, this name is used for form related operations
+                this.style.margin = newValue;
+				break ;
+			case 'label':
+                //set form name, this name is used for form related operations
+                if(this.inputLabel?.textContent){
+                    this.inputLabel.textContent = newValue;
+                }                
+				break ;
             case 'disabled':
                 if(!this.hasAttribute('disabled')){
                     this._internals.ariaDisabled = 'false';
@@ -542,30 +584,39 @@ export default class ThrinkleInput extends HTMLElement {
         // keep this element invisible till css is fully loaded
         this.setAttribute('data-thrinkle-loading', '');
         
-
-    	this.classList.add("thrinkle-input-group");
-        /*setup this custom element attributes*/
-		this.label = document.createElement("label");
-    	this.label.classList.add("thrinkle-input-label");
-        this.label.role = "presentation";
-
         //setup css classes
-        
         const radius = this.hasAttribute('rounded') ? 9999 : 7;
         const padding = 5;
+    	this.classList.add("thrinkle-input-group");
+        
+        if(this.hasAttribute('margin')){
+           this.style.margin = `${this.getAttribute('margin')}px`; 
+        }
+        if(this.margin){
+           this.style.margin = `${this.margin}px`; 
+        }        
+        if(!this.hasAttribute('margin') && !this.margin){
+           this.style.margin = '5px'; 
+        }
+        /*setup this custom element attributes*/
+		this.inputLabel = document.createElement("label");
+    	this.inputLabel.classList.add("thrinkle-input-label");
+        this.inputLabel.role = "presentation";
+
+        
 
         if(this.hasAttribute('labelstyle')){
             if(this.hasAttribute('replacestyle') && this.getAttribute('replacestyle')==="true"){
-                this.label.className=this.getAttribute('labelstyle');
+                this.inputLabel.className=this.getAttribute('labelstyle');
             }else{
-                this.label.classList.add(this.getAttribute('labelstyle'))
+                this.inputLabel.classList.add(this.getAttribute('labelstyle'))
             }
         }
         if(this.hasAttribute('labelinlinestyle')){
             if(this.hasAttribute('replacestyle') && this.getAttribute('replacestyle')==="true"){
-                this.label.style.cssText =this.getAttribute('labelinlinestyle')
+                this.inputLabel.style.cssText =this.getAttribute('labelinlinestyle')
             }else{
-                this.label.style.cssText += `; ${this.getAttribute('labelinlinestyle')}`;
+                this.inputLabel.style.cssText += `; ${this.getAttribute('labelinlinestyle')}`;
             }
         }
         // create the input element within the component
@@ -615,6 +666,10 @@ export default class ThrinkleInput extends HTMLElement {
         if(this.hasAttribute('step')){
             this.input.step = this.getAttribute('step');
         }
+        
+        if(this.hasAttribute('accept')){
+            this.input.accept = this.getAttribute('accept');
+        }
         // listen to the input operation and update the associated form internals
         this.input.addEventListener('input', (e)=>{
             this.updateFormValue(e.target.value);
@@ -636,11 +691,11 @@ export default class ThrinkleInput extends HTMLElement {
         // generate an ID for the input
         this.input.id = `thrinkle-input-${Date.now()}`;
         // link the input to the label via the ID
-        this.label.htmlFor = this.input.id;
+        this.inputLabel.htmlFor = this.input.id;
         // set the label
-        this.label.textContent = this.getAttribute('label') || '';
+        this.inputLabel.textContent = this.getAttribute('label') || '';
        
-		this.appendChild(this.label);
+		this.appendChild(this.inputLabel);
         // create the container to hold the icons (if any) and input element
         this.thrinkleInputContainer = document.createElement('div');
         this.thrinkleInputContainer.classList.add('thrinkle-input-container');
@@ -679,6 +734,9 @@ export default class ThrinkleInput extends HTMLElement {
                 case 'range':
                 case 'number':
                     this.validateNumber(this.getAttribute('value'));
+                    break;
+                case 'file':
+                    // do nothing
                     break;
                 case 'month':
                     // do nothing
@@ -793,6 +851,10 @@ export default class ThrinkleInput extends HTMLElement {
                     this.thrinkleLeftIconDiv.innerHTML = getSVG('paint-roller');
                     defaultLeftIcon = true;  
                     break;
+                case 'file':
+                    this.thrinkleLeftIconDiv.innerHTML = getSVG('folders');
+                    defaultLeftIcon = true;  
+                    break;
                 case 'checkbox':
                     break;
                 case 'radio':
@@ -854,7 +916,6 @@ export default class ThrinkleInput extends HTMLElement {
                 border-width: 1px;
                 border-color: transparent;
                 padding: 5px;
-				margin: 5px;
 			}           
 			
 			.thrinkle-input-label{
@@ -973,12 +1034,28 @@ export default class ThrinkleInput extends HTMLElement {
             .thrinkle-input[type="radio"]{
                 width: auto;
                 outline: none;
+                border: 0;
                 border-color: transparent;
             }
             .thrinkle-input[type="color"]{
                 height: 2rem;
             }
-			
+			.thrinkle-input[type="file"]::file-selector-button{
+                background-color: oklch(0.894 0 0);
+                font-size: 0.875rem;
+                font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+                color: black;
+                padding: 5px 10px;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                font-weight: 400;
+                margin-right: 12px;
+                transition: background-color 0.2s ease;
+            }
+            .thrinkle-input[type="file"]::file-selector-button:hover {
+                background-color: oklch(0.818 0 0);
+            }
             .thrinkle-feedback{
                 width: 100%;
                 margin-left: 15px;

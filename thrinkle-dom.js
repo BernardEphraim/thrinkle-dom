@@ -6,11 +6,15 @@ import ThrinkleColumn from './layout/ThrinkleColumn.js';
 import ThrinkleAlert from './ThrinkleAlert.js';
 import { getCssVariable, setCssVariable } from './function.js';
 import ThrinkleLayout from './layout/ThrinkleLayout.js';
+import ThrinkleButton from './form-elements/ThrinkleButton.js';
+import ThrinkleAudioInput from './form-elements/ThrinkleAudioInput.js';
 
 // 1. Register Web Components
 window.customElements.define('thrinkle-switch', ThrinkleSwitch);
 window.customElements.define('thrinkle-input', ThrinkleInput);
 window.customElements.define('thrinkle-image-input', ThrinkleImageInput);
+window.customElements.define('thrinkle-button', ThrinkleButton);
+window.customElements.define('thrinkle-audio-input', ThrinkleAudioInput);
 window.customElements.define('thrinkle-container', ThrinkleContainer);
 window.customElements.define('thrinkle-column', ThrinkleColumn);
 window.customElements.define('thrinkle-alert', ThrinkleAlert);

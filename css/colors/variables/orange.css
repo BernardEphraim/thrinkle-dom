@@ -1,15 +1,18 @@
 :root{
      /** orange colors */
-        --thrinkle-orange-50: #fff7ed;
-        --thrinkle-orange-100: #ffedd5;
-        --thrinkle-orange-200: #fed7aa;
-        --thrinkle-orange-300: #fdba74;
-        --thrinkle-orange-400: #fb923c;
-        --thrinkle-orange-500: #f97316;
-        --thrinkle-orange-600: #ea580c;
-        --thrinkle-orange-700: #c2410c;
-        --thrinkle-orange-800: #9a3412;
-        --thrinkle-orange-900: #7c2d12;
-        --thrinkle-orange-950: #431407;
+        
+    --thrinkle-orange-25: oklch(0.95 0.053 84.934);
+    --thrinkle-orange-50: oklch(0.932 0.072 84.934);
+    --thrinkle-orange-100: oklch(0.915 0.091 84.934);
+    --thrinkle-orange-200: oklch(0.897 0.111 84.934);
+    --thrinkle-orange-300: oklch(0.879 0.131 84.934);
+    --thrinkle-orange-400: oklch(0.862 0.151 84.934);
+    --thrinkle-orange-500: oklch(0.844 0.172 84.934);
+    --thrinkle-orange-600: oklch(0.778 0.159 84.934);
+    --thrinkle-orange-700: oklch(0.711 0.146 84.934);
+    --thrinkle-orange-800: oklch(0.644 0.132 84.934);
+    --thrinkle-orange-900: oklch(0.578 0.118 84.934);
+    --thrinkle-orange-950: oklch(0.511 0.105 84.934);
+    --thrinkle-orange-975: oklch(0.444 0.091 84.934);
     /** orange colors */
 }

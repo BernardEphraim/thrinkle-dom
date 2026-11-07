@@ -1,6 +1,6 @@
 :root{
     /** red colors */
-        --thrinkle-red-50: #fef2f2;
+        /* --thrinkle-red-50: #fef2f2;
         --thrinkle-red-100: #fee2e2;
         --thrinkle-red-200: #fecaca;
         --thrinkle-red-300: #fca5a5;
@@ -10,6 +10,20 @@
         --thrinkle-red-700: #b91c1c;
         --thrinkle-red-800: #991b1b;
         --thrinkle-red-900: #7f1d1d;
-        --thrinkle-red-950: #450a0a;
+        --thrinkle-red-950: #450a0a; */
+   
+        --thrinkle-red-25: oklch(0.95 0.025 29.234);
+        --thrinkle-red-50: oklch(0.896 0.054 29.234);
+        --thrinkle-red-100: oklch(0.843 0.087 29.234);
+        --thrinkle-red-200: oklch(0.789 0.122 29.234);
+        --thrinkle-red-300: oklch(0.735 0.162 29.234);
+        --thrinkle-red-400: oklch(0.682 0.207 29.234);
+        --thrinkle-red-500: oklch(0.628 0.258 29.234);
+        --thrinkle-red-600: oklch(0.561 0.23 29.234);
+        --thrinkle-red-700: oklch(0.495 0.203 29.234);
+        --thrinkle-red-800: oklch(0.428 0.176 29.234);
+        --thrinkle-red-900: oklch(0.361 0.148 29.234);
+        --thrinkle-red-950: oklch(0.295 0.121 29.234);
+        --thrinkle-red-975: oklch(0.228 0.094 29.234);
     /** red colors */
 }

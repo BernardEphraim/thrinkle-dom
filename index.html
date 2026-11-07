@@ -18,14 +18,32 @@
     user="Bernard Ephraim John"
 >
     <thrinkle-container type="fluid" break="sm" exitanimationname="slide-left-mobile-exit-animation">
-		<thrinkle-column size='3' offset='2' break="sm">
+		<thrinkle-column size='6' offset='2' break="sm">
 			<form action="" target="_blank" method="get">
+                <thrinkle-button
+                    label="save"
+                    type="submit"
+                    kind = "primary"
+                    radius = "10"
+                    icon = "handset"
+                ></thrinkle-button>
+                <thrinkle-image-input
+                    id="image" 
+                    label = "Select Image"
+                    radius = "20"
+                    cameralabel = "camera Image1"
+                    uploadlabel = "Upload Image"
+                    capturelabel = "Capture Image"
+                    initialvalue = "./images/photo.jpg"; 
+                ></thrinkle-image-input>
+                
                 <thrinkle-input 
                     id="name" 
                     name="name" 
                     label="Name" 
                     placeholder="name" 
-                    type="color" 
+                    accept="application/pdf"
+                    type="file" 
                     value="#10ff09"
                     min="20"
                     max="60"
